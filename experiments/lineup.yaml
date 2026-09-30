@@ -1,0 +1,76 @@
+# The paper's §V locomotion study: 3 designs x 10 seeds x 4 tasks = 120 runs.
+# `draft.lineup.configs` expands this; `scripts/train_all.py` writes the configs
+# under `generated/lineup_configs/`. tests/test_lineup_configs.py pins
+# the expansion. `v_max` is absent on purpose: it is `estimate_top_speed` on each
+# design's own machine (see tests/test_speed_shaping.py).
+#
+# Machines live at generated/<design>/quadruped.xml; runs are named
+# <design>_<task>_s<seed>.
+
+#: Seeds per (design, task); the spread across them is training variance.
+seeds: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+#: Three corners of the design space (experiments/quadruped_variants/).
+designs: [cheetah, bear, giraffe]
+
+#: The inertia-mismatch spec the perturbed evaluation arm draws from.
+dr_spec: experiments/twin_inertia_mismatch.json
+
+#: Hyperparameters every run shares. Changing one changes the study.
+common:
+  n_envs: 4096
+  save_interval: 250
+  device: cuda
+  logger: wandb
+  wandb_project: quadruped_lineup_seeds
+  terrain_scale_with_size: false
+  dimensional_weights: false
+
+#: Per-task settings:
+#:   stage        1 trains cold; 2 warm-starts from the same seed's flat policy
+#:   iterations   training budget
+#:   clamp        clamp the command to this design's own v_max
+#:   v_max_scale  fraction of that ceiling commanded
+#:   scan_fix     terrain_scan_fix (base_env.TERRAIN_SCAN_FIXES). Not uniform:
+#:                only terrain used the corrected scan, so every task states it.
+tasks:
+  flat:
+    task: quadruped
+    stage: 1
+    iterations: 1200
+    clamp: true
+    v_max_scale: 1.0
+    scan_fix: none
+    why: >-
+      the base policy every other axis warm-starts from. Command clamped to this
+      design's own estimated top speed.
+  velocity:
+    task: quadruped_velocity
+    stage: 2
+    iterations: 1800
+    clamp: false
+    scan_fix: none
+    why: >-
+      the speed axis. Command ramp is the shared absolute 15 m/s ceiling; the
+      reward shaping is sized off this design's own dimensions inside the task,
+      so no v_max_override.
+  terrain:
+    task: quadruped_terrain
+    stage: 2
+    iterations: 2000
+    clamp: true
+    # At 1.0 the giraffe stopped climbing.
+    v_max_scale: 0.5
+    scan_fix: all
+    why: >-
+      the step-height ladder. Command clamped: this axis
+      compares heights, not speeds.
+  push:
+    task: quadruped_push
+    stage: 2
+    iterations: 1500
+    clamp: false
+    scan_fix: none
+    why: >-
+      the stability axis. Kick is push._PUSH_BASE_RANGE on a fixed absolute
+      schedule for every design, so no v_max_override.

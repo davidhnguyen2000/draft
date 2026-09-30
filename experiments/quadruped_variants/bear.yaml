@@ -1,0 +1,51 @@
+# bear design variant: overrides on src/draft/robots/quadruped/parameters.yaml.
+# Generate: python scripts/generate_quadrupeds.py --only bear
+#
+# Bear: the heavy corner (MidGear actuators), at the top of the measured
+# quadruped size range.
+
+hip_roll_link_length: 0.18
+upper_leg_link_length: 0.38
+lower_leg_link_length: 0.36
+# Every joint uses the L-class actuator.
+hip_roll_mot: L
+hip_pitch_mot: L
+knee_mot: L
+# Drawn limb radius as a fraction of the actuator face (generation/tree_ops.py:
+# drawn_radius). Render-only: density is rescaled so link mass is unchanged.
+link_render_radius_scale: 1.0
+torso_lx: 0.62
+torso_ly: 0.46
+torso_lz: 0.30
+shoulder_width: 0.38
+motor_rho: 2700.0
+torso_rho: 180.0
+
+# MidGear actuators from the catalogue; rated numbers restated per class.
+L_motor: "RMD-X15-P20-450-E"      # MyActuator, 20.25:1, 166 x 90 mm, 3.50 kg
+L_motor_effort: 450.0
+L_motor_velocity: 11.31
+L_motor_gear: 20.25
+M_motor: "RMD-X12-P20-320-E"      # MyActuator, 20:1
+M_motor_effort: 320.0
+M_motor_velocity: 13.09
+M_motor_gear: 20.0
+S_motor: "RMD-X8-P20-120-E"       # MyActuator, 19.6:1, 96 x 76 mm, 1.40 kg
+S_motor_effort: 120.0
+S_motor_velocity: 16.55
+S_motor_gear: 19.612
+
+# Asserted, not fitted: no trend covers gearbox losses (docs/robot-format.md).
+L_motor_friction: 0.300
+M_motor_friction: 0.213
+S_motor_friction: 0.080
+L_motor_damping: 0.0400
+M_motor_damping: 0.0284
+S_motor_damping: 0.0107
+
+# Colour follows the actuator family (MidGear), as in scripts/figures/paper_style.py CAT.
+link_color: 0.891 0.605 0.444 1.000
+motor_color: 0.451 0.269 0.167 1.000
+mot_detail_color: 0.277 0.166 0.103 1.000
+torso_color: 0.867 0.518 0.322 1.000
+foot_color: 0.302 0.302 0.302 1.000

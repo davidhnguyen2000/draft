@@ -1,0 +1,145 @@
+torso_length: 0.5
+upper_core_link_length: 0.06
+# Spine segment between torso-pitch and torso-yaw axes: derived as the minimum
+# that keeps the two actuators apart (pitch presents its radius, yaw its length).
+lower_core_link_length: ${torso_pitch_motor_r + torso_yaw_motor_L}
+pelvis_link_length: 0.08
+neck_length: 0.2
+upper_hip_link_length: 0.07
+lower_hip_link_length: 0.15
+upper_leg_link_length: 0.2
+lower_leg_link_length: 0.2
+# Shin below the ankle-pitch axis: derived as the minimum that keeps the two
+# ankle actuators apart (both lie across the link, so radius + radius).
+ankle_link_length: ${ankle_pitch_motor_r + ankle_roll_motor_r}
+foot_length: 0.20   # see the foot_h note below
+# Shoulder-pitch to shoulder-roll actuators: the smallest value the packing gate
+# accepts, plus ~2 mm margin.
+upper_shoulder_link_length: 0.086
+# Shoulder-roll to shoulder-yaw actuators: packing minimum plus ~3 mm margin.
+lower_shoulder_link_length: 0.120
+bicep_link_length: 0.1
+# Elbow to wrist-yaw actuators: packing minimum plus ~2 mm margin.
+forearm_link_length: 0.106
+upper_wrist_link_length: 0.05
+lower_wrist_link_length: 0.08
+hand_link_length: 0.07
+shoulder_pitch_mot: M
+shoulder_roll_mot: M
+shoulder_yaw_mot: M
+elbow_mot: M
+wrist_roll_mot: S
+wrist_yaw_mot: S
+wrist_pitch_mot: S
+torso_roll_mot: L
+torso_pitch_mot: L
+torso_yaw_mot: L
+hip_pitch_mot: L
+hip_roll_mot: L
+hip_yaw_mot: L
+knee_mot: L
+ankle_pitch_mot: M
+ankle_roll_mot: M
+# Structural member radii are derived from `link_mass_class` (tree.yaml). The
+# DRAWN radius is this fraction of the tightest face of the adjoining actuators
+# (generation/tree_ops.py:drawn_radius); cosmetic only, since the emitted density
+# is rescaled so mass is unchanged. Delete the key to draw structural radii.
+link_render_radius_scale: 0.70
+# Bolt-flange overlap of a member into its actuator (the emitter's default),
+# stated so mesh.yaml can use the same gap.
+link_motor_penetration: 0.005
+# Roles whose actuator may be drawn inside the root mesh; any other raises
+# FeasibilityViolation. `shoulder_motor_inset` puts the shoulder pitch there.
+structure_overlap_allowed: [shoulder_pitch]
+# Clearance between the trunk loft's bottom and the waist actuator. Shared by
+# mesh.yaml (loft start) and tree.yaml's torso_roll_link (member length).
+torso_mesh_standoff: ${link_motor_penetration}
+# Top of the trunk loft above the shoulder axis; shared by mesh.yaml (loft end)
+# and tree.yaml (neck start).
+torso_cap_z: ${shoulder_pitch_motor_r * 1.5}
+# Foot dimensions scaled from measured humanoid feet (fractions of height).
+# `foot_h` is the measured ankle-to-sole envelope; `foot_plate_h` the sole plate.
+# A riser fills the rest (never less than the ankle-roll motor radius); any
+# excess is reported as a negative `ankle_to_sole_deficit_m`.
+foot_h: 0.06
+foot_plate_h: 0.015
+# Torso width at the shoulder band (the wall, not the shoulder span).
+shoulder_width: 0.2
+shoulder_depth: 0.15
+# Fraction of the shoulder-pitch actuator's length inside the torso wall
+# (0 = flush outside, 0.5 = axis on the wall, the maximum).
+shoulder_motor_inset: 0.3
+# Span between the two hip-pitch axes; twins state their measured span.
+hip_width: ${2 * hip_pitch_motor_L}
+head_radius: 0.09
+foot_width: 0.085
+foot_offset_x: 0.03
+hand_r: 0.035
+# Keys only: head/hand/foot densities are replaced at generation by the
+# population's measured segment densities (generation/generator.py:
+# derive_segment_densities); the key declares the segment. See feasibility_report.yaml.
+head_rho: 449.0
+hand_rho: 503.5
+foot_rho: 286.2
+# Limb member densities, likewise derived per measured class; `link_rho` prices
+# members with no measured class.
+thigh_rho: 803.0
+shank_rho: 524.0
+upper_arm_rho: 430.7
+forearm_rho: 908.4
+motor_rho: 2700.0  # fallback only; each class gets a trend-solved density
+# `torso_rho` is derived from the population's trunk density
+# (LinkTrends.trunk_density). The mass composition is audited against the
+# humanoid population. Distal taper (generation/tree_ops.py:apply_distal_taper)
+# is audited, not applied:
+# taper_mode: density
+
+mass_composition_reference: humanoid
+torso_rho: 650.0
+#
+# ── Motor classes ─────────────────────────────────────────────────────────────
+# Inputs: peak torque, no-load speed, reduction. Radius, length, density and
+# armature are derived by the fitted actuator trends (src/draft/trends/). No
+# class names a catalogued part, so every class is sized by the fit alone.
+L_motor_effort: 120.0
+L_motor_velocity: 5.864306286700947
+L_motor_gear: 64.0
+M_motor_effort: 72.0
+M_motor_velocity: 10.262536001726657
+M_motor_gear: 39.0
+S_motor_effort: 24.0
+S_motor_velocity: 11.519173063162574
+S_motor_gear: 36.0
+# Gearbox losses: asserted, not fitted (the actuator dataset has no friction data).
+L_motor_friction: 0.1
+M_motor_friction: 0.08
+S_motor_friction: 0.05
+L_motor_damping: 0.01
+M_motor_damping: 0.008
+S_motor_damping: 0.005
+link_color: 0.322 0.655 0.408 1.000
+motor_color: 0.200 0.380 0.231 1.000
+mot_detail_color: 0.075 0.169 0.106 1.000
+torso_color: 0.263 0.518 0.322 1.000
+foot_color: 0.322 0.655 0.408 1.000
+head_sphere_color: 0.227 0.467 0.278 1.000
+hand_sphere_color: 0.212 0.416 0.255 1.000
+left_eye_color: 0.404 0.322 0.259 1.000
+right_eye_color: 0.400 0.322 0.255 1.000
+# Joint ranges (rad).
+torso_roll_range: [-1.5, 1.5]
+torso_pitch_range: [-2.0, 0.1]
+torso_yaw_range: [-1.5, 1.5]
+hip_pitch_range: [-3.0, 1.5]
+hip_roll_range: [-1.5, 1.5]
+hip_yaw_range: [-1.5, 1.5]
+knee_range: [0.0, 3.0]
+ankle_pitch_range: [-1.5, 1.5]
+ankle_roll_range: [-1.5, 1.5]
+shoulder_pitch_range: [-3, 3]
+shoulder_roll_range: [-1.5, 1.5]
+shoulder_yaw_range: [-1.5, 1.5]
+elbow_range: [-2.5, 0]
+wrist_yaw_range: [-1.5, 1.5]
+wrist_pitch_range: [-1.5, 1.5]
+wrist_roll_range: [-1.5, 1.5]

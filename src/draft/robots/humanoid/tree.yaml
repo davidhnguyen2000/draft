@@ -1,0 +1,413 @@
+# tree.yaml — humanoid kinematic tree
+#
+# ${...} expressions resolve against parameters.yaml; `<joint>_mot: L` expands
+# to `<joint>_motor_*` keys the tree uses.
+#
+# OPTIONAL DOFs: `motor_for: <role>` names the joint whose actuator a body draws
+# (a body draws its child's actuator). `<role>_dof: false` in parameters.yaml
+# removes that joint and actuator but keeps the link
+# (generation/generator.py:prune_disabled_joints).
+#
+# LINK TYPES
+#   root   — floating base; freejoint + mesh from mesh.yaml
+#   basic  — structural cylinder + motor cylinder + detail ring
+#   sphere — structural cylinder + sphere cap (head, hand)
+#   foot   — riser + sole plate + 5 underside contact sites
+#   geom   — arbitrary primitive (cylinder / sphere / box)
+#
+# MIRROR: `mirror_of: <sibling>` + `mirror_axis: y` deep-copies the sibling,
+# negates positions and link/motor axes along y, and swaps left_/right_ prefixes.
+# Joint axes and ranges are kept, so both sides share one sign convention.
+
+name: torso_link
+type: root
+mesh_class: HumanoidTorsoMesh
+color: ${torso_color}
+# Standing height: one leg's segments plus ankle-to-sole,
+# `max(foot_h, ankle_roll_motor_r + foot_plate_h)`; must match the riser rule in
+# generation/spec_builder.py:_emit_foot_geoms.
+pos: [0, 0, "${torso_length + torso_roll_motor_r + lower_hip_link_length + upper_leg_link_length + lower_leg_link_length + ankle_link_length + max(foot_h, ankle_roll_motor_r + foot_plate_h)}"]
+sites:
+  - name: imu
+    pos: [0, 0, 0]
+sensors:
+  - type: gyro
+    name: imu_ang_vel
+    site: imu
+  - type: velocimeter
+    name: imu_lin_vel
+    site: imu
+  - type: accelerometer
+    name: imu_lin_acc
+    site: imu
+  - type: subtreeangmom
+    name: root_angmom
+    body: torso_link
+
+children:
+
+  # ── Head (fixed to torso) ───────────────────────────────────────────────────
+  # The neck starts at the trunk loft's cap, so none of it is inside the trunk.
+  - name: head_link
+    type: sphere
+    pos: [0, 0, "${torso_cap_z}"]
+    joint: null
+    geometry:
+      link_axis: z
+      link_l: ${max(neck_length - torso_cap_z, 0.005)}
+      link_mass_class: head
+      # Neck radius capped relative to the head; density rises to keep trend mass.
+      link_r_max: ${head_radius / 3}
+      sphere_dir: 1
+      sphere_r: ${head_radius}
+      sphere_rho: ${head_rho}
+      sphere_color: ${head_sphere_color}
+    children:
+      - name: left_eye_link
+        type: geom
+        pos: ["${head_radius * 0.82}", "${head_radius * 0.4}", "${max(neck_length - torso_cap_z, 0.005) + head_radius * 0.35}"]
+        joint: null
+        geometry:
+          shape: cylinder
+          axis: x
+          l: ${head_radius * 0.20}
+          r: ${head_radius * 0.12}
+          # Weightless, visual-only.
+          decorative: true
+          color: ${left_eye_color}
+      - name: right_eye_link
+        mirror_of: left_eye_link
+        mirror_axis: y
+
+  # ── Left shoulder (fixed housing + 7-DOF arm) ───────────────────────────────
+  #
+  # Body origin is the shoulder-pitch axis, with the actuator centred on it
+  # (`link_l: 0`: the actuator is the housing). `shoulder_motor_inset` is the
+  # fraction of the actuator's length inside the torso wall (max 0.5).
+  - name: left_shoulder_pitch_link
+    type: basic
+    pos: [0, "${shoulder_width / 2 + shoulder_pitch_motor_L * (0.5 - shoulder_motor_inset)}", 0]
+    joint: null
+    geometry:
+      link_l: 0
+      motor_axis: y
+      motor_class: ${shoulder_pitch_mot}
+      motor_for: shoulder_pitch
+    children:
+      - name: left_upper_shoulder_link
+        type: basic
+        pos: [0, 0, 0]
+        joint:
+          name: left_shoulder_pitch
+          axis: y
+          range: ${shoulder_pitch_range}
+          motor_class: ${shoulder_pitch_mot}
+        geometry:
+          link_axis: y
+          link_l: ${upper_shoulder_link_length}
+          link_mass_class: shoulder_link
+          motor_axis: x
+          motor_class: ${shoulder_roll_mot}
+          motor_for: shoulder_roll
+        children:
+          - name: left_lower_shoulder_link
+            type: basic
+            pos: [0, "${upper_shoulder_link_length}", 0]
+            joint:
+              name: left_shoulder_roll
+              axis: x
+              range: ${shoulder_roll_range}
+              motor_class: ${shoulder_roll_mot}
+            geometry:
+              link_axis: -z
+              link_l: ${lower_shoulder_link_length}
+              link_mass_class: shoulder_link
+              motor_axis: z
+              motor_class: ${shoulder_yaw_mot}
+              motor_for: shoulder_yaw
+            children:
+              - name: left_bicep_link
+                type: basic
+                pos: [0, 0, "${-lower_shoulder_link_length}"]
+                joint:
+                  name: left_shoulder_yaw
+                  axis: z
+                  range: ${shoulder_yaw_range}
+                  motor_class: ${shoulder_yaw_mot}
+                geometry:
+                  link_axis: -z
+                  link_l: ${bicep_link_length}
+                  link_mass_class: upper_arm
+                  link_rho: ${upper_arm_rho}
+                  motor_axis: y
+                  motor_class: ${elbow_mot}
+                  motor_for: elbow
+                children:
+                  - name: left_forearm_link
+                    type: basic
+                    pos: [0, 0, "${-bicep_link_length}"]
+                    joint:
+                      name: left_elbow
+                      axis: y
+                      range: ${elbow_range}
+                      motor_class: ${elbow_mot}
+                    geometry:
+                      link_axis: -z
+                      link_l: ${forearm_link_length}
+                      link_mass_class: forearm
+                      link_rho: ${forearm_rho}
+                      motor_axis: z
+                      motor_class: ${wrist_yaw_mot}
+                      motor_for: wrist_yaw
+                    children:
+                      - name: left_upper_wrist_link
+                        type: basic
+                        pos: [0, 0, "${-forearm_link_length}"]
+                        joint:
+                          name: left_wrist_yaw
+                          axis: z
+                          range: ${wrist_yaw_range}
+                          motor_class: ${wrist_yaw_mot}
+                        geometry:
+                          link_axis: -z
+                          link_l: ${upper_wrist_link_length}
+                          link_mass_class: wrist_link
+                          motor_axis: y
+                          motor_class: ${wrist_pitch_mot}
+                          motor_for: wrist_pitch
+                        children:
+                          - name: left_lower_wrist_link
+                            type: basic
+                            pos: [0, 0, "${-upper_wrist_link_length}"]
+                            joint:
+                              name: left_wrist_pitch
+                              axis: y
+                              range: ${wrist_pitch_range}
+                              motor_class: ${wrist_pitch_mot}
+                            geometry:
+                              link_axis: -z
+                              link_l: ${lower_wrist_link_length}
+                              link_mass_class: wrist_link
+                              motor_axis: x
+                              motor_class: ${wrist_roll_mot}
+                              motor_for: wrist_roll
+                            children:
+                              - name: left_hand_link
+                                type: sphere
+                                pos: [0, 0, "${-lower_wrist_link_length}"]
+                                joint:
+                                  name: left_wrist_roll
+                                  axis: x
+                                  range: ${wrist_roll_range}
+                                  motor_class: ${wrist_roll_mot}
+                                geometry:
+                                  link_axis: z
+                                  link_l: ${hand_link_length}
+                                  link_mass_class: hand
+                                  sphere_dir: -1
+                                  sphere_r: ${hand_r}
+                                  sphere_rho: ${hand_rho}
+                                  sphere_color: ${hand_sphere_color}
+                                sites:
+                                  - name: left_hand_sphere
+                                    pos: [0, 0, "${-hand_link_length}"]
+
+  # ── Right shoulder (mirror of left) ─────────────────────────────────────────
+  - name: right_shoulder_pitch_link
+    mirror_of: left_shoulder_pitch_link
+    mirror_axis: y
+
+  # ── Spine: torso_roll_link (fixed housing) ───────────────────────────────────
+  # The spine runs along X, then down (-Z). It starts at the trunk loft's bottom
+  # face; `torso_mesh_standoff` lengthens this member so it still meets the loft.
+  - name: torso_roll_link
+    type: basic
+    pos: ["${-upper_core_link_length - torso_roll_motor_L / 2}", 0, "${-(torso_length - lower_core_link_length - pelvis_link_length) + torso_mesh_standoff}"]
+    joint: null
+    geometry:
+      link_axis: -z
+      link_l: ${torso_roll_motor_r + torso_mesh_standoff}
+      link_mass_class: waist_link
+      motor_axis: x
+      motor_class: ${torso_roll_mot}
+      motor_for: torso_roll
+    children:
+
+      # torso_roll revolute
+      - name: upper_core_link
+        type: basic
+        pos: ["${torso_roll_motor_L / 2}", 0, "${-(torso_roll_motor_r + torso_mesh_standoff)}"]
+        joint:
+          name: torso_roll
+          axis: x
+          range: ${torso_roll_range}
+          motor_class: ${torso_roll_mot}
+        geometry:
+          link_axis: x
+          link_l: ${upper_core_link_length}
+          link_mass_class: waist_link
+          motor_axis: y
+          motor_class: ${torso_pitch_mot}
+          motor_for: torso_pitch
+        children:
+
+          # torso_pitch revolute
+          - name: lower_core_link
+            type: basic
+            pos: ["${upper_core_link_length}", 0, 0]
+            joint:
+              name: torso_pitch
+              axis: y
+              range: ${torso_pitch_range}
+              motor_class: ${torso_pitch_mot}
+            geometry:
+              link_axis: -z
+              link_l: ${lower_core_link_length}
+              link_mass_class: waist_link
+              motor_axis: z
+              motor_class: ${torso_yaw_mot}
+              motor_for: torso_yaw
+            children:
+
+              # torso_yaw revolute
+              - name: pelvis_link
+                type: basic
+                pos: [0, 0, "${-lower_core_link_length}"]
+                joint:
+                  name: torso_yaw
+                  axis: z
+                  range: ${torso_yaw_range}
+                  motor_class: ${torso_yaw_mot}
+                geometry:
+                  link_axis: -z
+                  link_l: ${pelvis_link_length}
+                  link_mass_class: torso
+                  motor_axis: y
+                  motor_class: ${torso_yaw_mot}
+                  motor_for: hip_pitch
+                  # The pelvis "hip bar" draws both hip-pitch actuators as one
+                  # geom at the hip-pitch class radius. Its length is at least
+                  # `hip_width` (so it reaches both hip axes), with density
+                  # scaled so it still weighs two hip-pitch actuators.
+                  motor_r: "${hip_pitch_motor_r}"
+                  motor_L: "${max(2 * hip_pitch_motor_L, hip_width)}"
+                  motor_rho: "${hip_pitch_motor_rho * 2 * hip_pitch_motor_L / max(2 * hip_pitch_motor_L, hip_width)}"
+                children:
+
+                  # ── Left leg ─────────────────────────────────────────────
+                  # `hip_width` is the span between the two hip-pitch axes.
+                  - name: left_upper_hip_link
+                    type: basic
+                    pos: [0, "${hip_width / 2}", "${-pelvis_link_length}"]
+                    joint:
+                      name: left_hip_pitch
+                      axis: y
+                      range: ${hip_pitch_range}
+                      motor_class: ${hip_pitch_mot}
+                    geometry:
+                      link_axis: y
+                      link_l: ${upper_hip_link_length}
+                      link_mass_class: hip_link
+                      motor_axis: x
+                      motor_class: ${hip_roll_mot}
+                      motor_for: hip_roll
+                    children:
+                      - name: left_lower_hip_link
+                        type: basic
+                        pos: [0, "${upper_hip_link_length}", 0]
+                        joint:
+                          name: left_hip_roll
+                          axis: x
+                          range: ${hip_roll_range}
+                          motor_class: ${hip_roll_mot}
+                        geometry:
+                          link_axis: -z
+                          link_l: ${lower_hip_link_length}
+                          link_mass_class: hip_link
+                          motor_axis: z
+                          motor_class: ${hip_yaw_mot}
+                          motor_for: hip_yaw
+                        children:
+                          - name: left_upper_leg_link
+                            type: basic
+                            pos: [0, 0, "${-lower_hip_link_length}"]
+                            joint:
+                              name: left_hip_yaw
+                              axis: z
+                              range: ${hip_yaw_range}
+                              motor_class: ${hip_yaw_mot}
+                            geometry:
+                              link_axis: -z
+                              link_l: ${upper_leg_link_length}
+                              link_mass_class: thigh
+                              link_rho: ${thigh_rho}
+                              # Distal taper chain (generation/tree_ops.py).
+                              taper: leg
+                              taper_depth: 1
+                              motor_axis: y
+                              motor_class: ${knee_mot}
+                              motor_for: knee
+                            children:
+                              - name: left_lower_leg_link
+                                type: basic
+                                pos: [0, 0, "${-upper_leg_link_length}"]
+                                joint:
+                                  name: left_leg_knee
+                                  axis: y
+                                  range: ${knee_range}
+                                  motor_class: ${knee_mot}
+                                geometry:
+                                  link_axis: -z
+                                  link_l: ${lower_leg_link_length}
+                                  link_mass_class: shank
+                                  link_rho: ${shank_rho}
+                                  taper: leg
+                                  taper_depth: 2
+                                  motor_axis: y
+                                  motor_class: ${ankle_pitch_mot}
+                                  motor_for: ankle_pitch
+                                children:
+                                  - name: left_ankle_link
+                                    type: basic
+                                    pos: [0, 0, "${-lower_leg_link_length}"]
+                                    joint:
+                                      name: left_ankle_pitch
+                                      axis: y
+                                      range: ${ankle_pitch_range}
+                                      motor_class: ${ankle_pitch_mot}
+                                    geometry:
+                                      link_axis: -z
+                                      link_l: ${ankle_link_length}
+                                      link_mass_class: foot
+                                      motor_axis: x
+                                      motor_class: ${ankle_roll_mot}
+                                      motor_for: ankle_roll
+                                      # Roll unit centred on its axis; sole
+                                      # clearance comes from the foot's riser.
+                                    children:
+                                      - name: left_foot_link
+                                        type: foot
+                                        pos: [0, 0, "${-ankle_link_length}"]
+                                        joint:
+                                          name: left_ankle_roll
+                                          axis: x
+                                          range: ${ankle_roll_range}
+                                          motor_class: ${ankle_roll_mot}
+                                        geometry:
+                                          foot_l: ${foot_length}
+                                          foot_w: ${foot_width}
+                                          foot_h: ${foot_h}
+                                          foot_plate_h: ${foot_plate_h}
+                                          foot_rho: ${foot_rho}
+                                          foot_offset_x: ${foot_offset_x}
+                                          # Riser from the roll axis to the sole
+                                          # plate (height: generation/spec_builder.py:
+                                          # _emit_foot_geoms), drawn at the shank's
+                                          # drawn radius.
+                                          riser_r: ${min(link_render_radius_scale * ankle_roll_motor_L / 2, ankle_roll_motor_r)}
+                                          color: ${foot_color}
+
+                  # ── Right leg (mirror of left) ────────────────────────────
+                  - name: right_upper_hip_link
+                    mirror_of: left_upper_hip_link
+                    mirror_axis: y

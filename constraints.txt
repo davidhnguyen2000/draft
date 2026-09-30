@@ -1,0 +1,34 @@
+# The versions the paper's numbers were produced with. Install with
+#
+#   pip install -e ".[editor,twins,figures,dev]" -c constraints.txt
+#
+# pyproject.toml states the ranges the code works with; this file pins one point
+# inside them so a fresh install matches the paper. The `rl` extra pins its own
+# stack in pyproject.toml, and mujoco and viser here agree with it. numpy is the
+# 2.x the twins were measured with; pin 4.x needs numpy>=2.
+
+# generator
+mujoco==3.8.0
+numpy==2.2.5
+scipy==1.15.3
+pyyaml==6.0.3
+trimesh==4.11.3
+mapbox-earcut==2.0.0
+rtree==1.4.1
+
+# editor
+viser==1.0.27  # 1.0.26 built the paper's plates; mjlab needs >=1.0.27
+websockets==15.0.1
+
+# twins: robot_descriptions fixes the commit each vendor description is fetched at
+robot_descriptions==3.1.0
+pin==4.0.0
+pycollada==0.9.3
+matplotlib==3.10.8
+
+# figures
+scienceplots==2.2.2
+mjviser==0.0.14  # 0.0.11 rendered the paper's plates; mjlab needs >=0.0.14
+
+# dev
+pytest==9.1.1

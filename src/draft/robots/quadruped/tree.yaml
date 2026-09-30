@@ -1,0 +1,257 @@
+# tree.yaml — quadruped kinematic tree (3-DOF per leg)
+#
+# Legs: fl/fr = front-left/right, rl/rr = rear-left/right.
+# Each leg: roll_motor_link (fixed housing) → roll_link (hip_roll)
+#           → pitch_link (hip_pitch) → upper_leg_link → lower_leg_link (knee)
+# FR mirrors FL on y; RL is explicit (abduction in -x); RR mirrors RL on y.
+# Motor classes per joint (hip_roll_mot, …) are set in parameters.yaml.
+
+name: torso_link
+type: root
+mesh_class: QuadrupedTorsoMesh
+color: ${torso_color}
+pos: [0, 0, "${upper_leg_link_length + lower_leg_link_length + foot_sphere_r}"]
+sites:
+  - name: imu
+    pos: [0, 0, 0]
+sensors:
+  - type: gyro
+    name: imu_ang_vel
+    site: imu
+  - type: velocimeter
+    name: imu_lin_vel
+    site: imu
+  - type: accelerometer
+    name: imu_lin_acc
+    site: imu
+  - type: subtreeangmom
+    name: root_angmom
+    body: torso_link
+
+children:
+
+  # ══════════════════════════════════════════════════════════════════
+  # FRONT-LEFT leg
+  # ══════════════════════════════════════════════════════════════════
+  # Fixed hip-roll actuator housing (`link_l: 0`, no member of its own). The
+  # body origin is the roll axis, `hip_roll_inset` inboard of the end wall;
+  # `motor_shift` moves the cylinder outboard by half its length.
+
+  - name: fl_roll_motor_link
+    type: basic
+    pos: ["${torso_lx / 2 - hip_roll_inset}", "${shoulder_width / 2}", 0]
+    joint: null
+    geometry:
+      link_l: 0
+      motor_axis: x
+      motor_class: ${hip_roll_mot}
+      motor_for: hip_roll
+      motor_shift: ["${hip_roll_motor_L / 2}", 0, 0]
+    children:
+
+      # hip_roll. The abduction link runs fore-aft along the roll motor's axis
+      # and carries the hip-pitch actuator (axis y); the next link runs laterally
+      # to the knee actuator.
+      - name: fl_roll_link
+        type: basic
+        pos: [0, 0, 0]
+        joint:
+          name: fl_hip_roll
+          axis: x
+          range: ${hip_roll_range}
+          motor_class: ${hip_roll_mot}
+        geometry:
+          link_axis: x
+          link_l: ${hip_abduction_link_length}
+          link_mass_class: hip_link
+          motor_axis: y
+          motor_class: ${hip_pitch_mot}
+          motor_for: hip_pitch
+        children:
+
+          # hip_pitch: the thigh link, hanging in -z; knee motor at bottom
+          - name: fl_pitch_link
+            type: basic
+            pos: ["${hip_abduction_link_length + hip_pitch_x_offset}", 0, 0]
+            joint:
+              name: fl_hip_pitch
+              axis: y
+              range: ${hip_pitch_range}
+              motor_class: ${hip_pitch_mot}
+            geometry:
+              link_axis: y
+              link_l: ${hip_roll_link_length}
+              link_mass_class: thigh
+              # Drawn at the thigh radius: coaxial with both actuators it joins,
+              # so drawn_radius has no L/2 bound here. Mass is unchanged.
+              link_render_r: ${upper_leg_link_render_r}
+              motor_axis: y
+              motor_class: ${knee_mot}
+              motor_for: knee
+            children:
+
+              - name: fl_upper_leg_link
+                type: basic
+                pos: [0, "${hip_roll_link_length - knee_motor_L / 2}", 0]
+                joint: null
+                geometry:
+                  link_axis: -z
+                  # Drawn at the radius calf and foot are keyed to (mass unchanged).
+                  link_render_r: ${upper_leg_link_render_r}
+                  link_l: ${upper_leg_link_length}
+                  link_mass_class: thigh
+                  link_rho: ${thigh_rho}
+                  # Distal taper chain (applied by radius when taper_mode is set).
+                  taper: leg
+                  taper_depth: 1
+                  taper_r_max: ${knee_motor_r}
+                  motor_axis: y
+                  motor_class: ${knee_mot}
+                  # Belt-driven knee: the actuator is charged on *_pitch_link; this
+                  # is the output pulley, drawn weightless (`motor_rho: 0`).
+                  motor_r: "${knee_motor_r * knee_pivot_scale}"
+                  motor_L: "${max(2 * upper_leg_link_render_r, knee_motor_L * knee_pivot_scale)}"
+                  motor_rho: 0
+                children:
+
+                  # knee: lower leg is a sphere_link (calf + foot sphere)
+                  - name: fl_lower_leg_link
+                    type: sphere
+                    pos: [0, 0, "${-upper_leg_link_length}"]
+                    joint:
+                      name: fl_knee
+                      axis: y
+                      range: ${knee_range}
+                      motor_class: ${knee_mot}
+                    geometry:
+                      link_axis: z
+                      link_l: ${lower_leg_link_length}
+                      link_mass_class: shank
+                      link_rho: ${shank_rho}
+                      taper: leg
+                      taper_depth: 2
+                      taper_r_max: ${knee_motor_r}
+                      # Structural radius solved from the shank trend (foot paid
+                      # first); drawn radius keyed to the thigh, density compensates.
+                      link_render_r: ${lower_leg_link_render_r}
+                      sphere_dir: -1
+                      sphere_r: ${foot_sphere_r}
+                      sphere_color: ${foot_color}
+                    sites:
+                      - name: fl_foot
+                        pos: [0, 0, "${-lower_leg_link_length}"]
+
+  # ── Front-right: mirror of fl on y ──────────────────────────────
+  - name: fr_roll_motor_link
+    mirror_of: fl_roll_motor_link
+    mirror_axis: y
+
+  # ══════════════════════════════════════════════════════════════════
+  # REAR-LEFT leg  (abduction link extends in -x)
+  # ══════════════════════════════════════════════════════════════════
+
+  # Rear hip-roll housing; see the FL note above.
+  - name: rl_roll_motor_link
+    type: basic
+    pos: ["${-(torso_lx / 2 - hip_roll_inset)}", "${shoulder_width / 2}", 0]
+    joint: null
+    geometry:
+      link_l: 0
+      motor_axis: x
+      motor_class: ${hip_roll_mot}
+      motor_for: hip_roll
+      motor_shift: ["${-hip_roll_motor_L / 2}", 0, 0]
+    children:
+
+      - name: rl_roll_link
+        type: basic
+        pos: [0, 0, 0]
+        joint:
+          name: rl_hip_roll
+          axis: x
+          range: ${hip_roll_range}
+          motor_class: ${hip_roll_mot}
+        geometry:
+          link_axis: -x
+          link_l: ${hip_abduction_link_length}
+          link_mass_class: hip_link
+          motor_axis: y
+          motor_class: ${hip_pitch_mot}
+          motor_for: hip_pitch
+        children:
+
+          # Fore-aft offset points to the rear on this leg.
+          - name: rl_pitch_link
+            type: basic
+            pos: ["${-(hip_abduction_link_length + hip_pitch_x_offset)}", 0, 0]
+            joint:
+              name: rl_hip_pitch
+              axis: y
+              range: ${hip_pitch_range}
+              motor_class: ${hip_pitch_mot}
+            geometry:
+              link_axis: y
+              link_l: ${hip_roll_link_length}
+              link_mass_class: thigh
+              # Drawn at the thigh radius: coaxial with both actuators it joins,
+              # so drawn_radius has no L/2 bound here. Mass is unchanged.
+              link_render_r: ${upper_leg_link_render_r}
+              motor_axis: y
+              motor_class: ${knee_mot}
+              motor_for: knee
+            children:
+
+              - name: rl_upper_leg_link
+                type: basic
+                pos: [0, "${hip_roll_link_length - knee_motor_L / 2}", 0]
+                joint: null
+                geometry:
+                  link_axis: -z
+                  # Drawn at the radius calf and foot are keyed to (mass unchanged).
+                  link_render_r: ${upper_leg_link_render_r}
+                  link_l: ${upper_leg_link_length}
+                  link_mass_class: thigh
+                  link_rho: ${thigh_rho}
+                  # Distal taper chain (applied by radius when taper_mode is set).
+                  taper: leg
+                  taper_depth: 1
+                  taper_r_max: ${knee_motor_r}
+                  motor_axis: y
+                  motor_class: ${knee_mot}
+                  # Belt-driven knee: the actuator is charged on *_pitch_link; this
+                  # is the output pulley, drawn weightless (`motor_rho: 0`).
+                  motor_r: "${knee_motor_r * knee_pivot_scale}"
+                  motor_L: "${max(2 * upper_leg_link_render_r, knee_motor_L * knee_pivot_scale)}"
+                  motor_rho: 0
+                children:
+
+                  - name: rl_lower_leg_link
+                    type: sphere
+                    pos: [0, 0, "${-upper_leg_link_length}"]
+                    joint:
+                      name: rl_knee
+                      axis: y
+                      range: ${knee_range}
+                      motor_class: ${knee_mot}
+                    geometry:
+                      link_axis: z
+                      link_l: ${lower_leg_link_length}
+                      link_mass_class: shank
+                      link_rho: ${shank_rho}
+                      taper: leg
+                      taper_depth: 2
+                      taper_r_max: ${knee_motor_r}
+                      # Structural radius solved from the shank trend (foot paid
+                      # first); drawn radius keyed to the thigh, density compensates.
+                      link_render_r: ${lower_leg_link_render_r}
+                      sphere_dir: -1
+                      sphere_r: ${foot_sphere_r}
+                      sphere_color: ${foot_color}
+                    sites:
+                      - name: rl_foot
+                        pos: [0, 0, "${-lower_leg_link_length}"]
+
+  # ── Rear-right: mirror of rl on y ───────────────────────────────
+  - name: rr_roll_motor_link
+    mirror_of: rl_roll_motor_link
+    mirror_axis: y

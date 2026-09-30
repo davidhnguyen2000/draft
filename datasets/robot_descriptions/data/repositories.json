@@ -1,0 +1,1149 @@
+{
+ "schema": "repositories/1",
+ "note": "where each surveyed description lives, captured from the robot_descriptions package \u2014 committed so the survey is auditable without re-resolving it; do not hand-edit",
+ "repositories": {
+  "BRUCE-OP": {
+   "url": "https://github.com/Westwood-Robotics/BRUCE-OP.git",
+   "commit": "c23c1c819343831b07cf139f0d152383175c2995"
+  },
+  "GalaxeaManipSim": {
+   "url": "https://github.com/OpenGalaxea/GalaxeaManipSim.git",
+   "commit": "abe7f5161eeaa150e6eaffdf443af5df7f23f356",
+   "cache_path": "galaxea_sim"
+  },
+  "GingerURDF": {
+   "url": "https://github.com/Rayckey/GingerURDF.git",
+   "commit": "6a1307cd0ee2b77c82f8839cdce3a2e2eed2bd8f",
+   "cache_path": "gingerurdf"
+  },
+  "LEAP_Hand_Sim": {
+   "url": "https://github.com/leap-hand/LEAP_Hand_Sim.git",
+   "commit": "150bc3d4b61fd6619193ba5a8ef209f3609ced89",
+   "cache_path": "LEAP_Hand_Sim"
+  },
+  "Piper_ros": {
+   "url": "https://github.com/agilexrobotics/Piper_ros.git",
+   "commit": "f2ec6a67e1f404bcb478529e89861ccdf43fa298",
+   "cache_path": "Piper_ros"
+  },
+  "SO-ARM100": {
+   "url": "https://github.com/TheRobotStudio/SO-ARM100.git",
+   "commit": "63eede5a636e548eb8f2854e558bd343c21db9f7",
+   "cache_path": "SO-ARM100"
+  },
+  "SO-ARM100-101-Parallel-Gripper": {
+   "url": "https://github.com/roboninecom/SO-ARM100-101-Parallel-Gripper.git",
+   "commit": "ed44013818de822369d0f0c9461ae0c20a3e6bb8",
+   "cache_path": "SO-ARM100-101-Parallel-Gripper"
+  },
+  "Universal_Robots_ROS2_Description": {
+   "url": "https://github.com/UniversalRobots/Universal_Robots_ROS2_Description.git",
+   "commit": "22f055da2fa7e2158254426107d1f257fd56aebb",
+   "cache_path": "ur_description"
+  },
+  "Wiki-GRx-Models": {
+   "url": "https://github.com/FFTAI/Wiki-GRx-Models.git",
+   "commit": "351245ac8fa4bf6f4b0c41556e1e6976a438bcef",
+   "cache_path": "Wiki-GRx-Models"
+  },
+  "Wiki-GRx-Models-FourierN1": {
+   "url": "https://github.com/FFTAI/Wiki-GRx-Models.git",
+   "commit": "f8e683f00d1d99deb882deb9dfce6030095b466a",
+   "cache_path": "Wiki-GRx-Models-FourierN1"
+  },
+  "ability-hand-api": {
+   "url": "https://github.com/psyonicinc/ability-hand-api.git",
+   "commit": "89407424edfc22faceaedcd7c3ea2b7947cbbb2c",
+   "cache_path": "ability_hand_api"
+  },
+  "aero-hand-open": {
+   "url": "https://github.com/TetherIA/aero-hand-open.git",
+   "commit": "ad7d4fc4078ceedfeefbf27aa5f058b622e18521",
+   "cache_path": "aero_hand_open"
+  },
+  "anymal_b_simple_description": {
+   "url": "https://github.com/ANYbotics/anymal_b_simple_description.git",
+   "commit": "988b5df22b84761bdf08111b1c2ccc883793f456",
+   "cache_path": "anymal_b_simple_description"
+  },
+  "anymal_c_simple_description": {
+   "url": "https://github.com/ANYbotics/anymal_c_simple_description.git",
+   "commit": "f160b8f7fed840c47a6febe8e2bc78b32bf43a68",
+   "cache_path": "anymal_c_simple_description"
+  },
+  "anymal_d_simple_description": {
+   "url": "https://github.com/ANYbotics/anymal_d_simple_description.git",
+   "commit": "6adc14720aab583613975e5a9d6d4fa3cfcdd081",
+   "cache_path": "anymal_d_simple_description"
+  },
+  "bambot": {
+   "url": "https://github.com/timqian/bambot.git",
+   "commit": "04d902653794f9f72eeabb09ec90a9af8e397c5b",
+   "cache_path": "bambot"
+  },
+  "baxter_common": {
+   "url": "https://github.com/RethinkRobotics/baxter_common.git",
+   "commit": "6c4b0f375fe4e356a3b12df26ef7c0d5e58df86e",
+   "cache_path": "baxter_common"
+  },
+  "berkeley_humanoid_description": {
+   "url": "https://github.com/HybridRobotics/berkeley_humanoid_description",
+   "commit": "d0d13d3f81d795480e25ed1910eaf83d5f0a1d0b",
+   "cache_path": "berkeley_humanoid_description"
+  },
+  "bhand_model": {
+   "url": "https://github.com/jhu-lcsr-attic/bhand_model.git",
+   "commit": "937f4186d6458bd682a7dae825fb6f4efe56ec69",
+   "cache_path": "bhand_model"
+  },
+  "booster_gym": {
+   "url": "https://github.com/BoosterRobotics/booster_gym.git",
+   "commit": "687a33d08b08875fe45dc8d91b54db83766df8b9",
+   "cache_path": "booster_gym"
+  },
+  "bullet3": {
+   "url": "https://github.com/bulletphysics/bullet3.git",
+   "commit": "7dee3436e747958e7088dfdcea0e4ae031ce619e",
+   "cache_path": "bullet3"
+  },
+  "bxi_robot_models": {
+   "url": "https://github.com/bxirobotics/robot_models.git",
+   "commit": "eabe24ce937f8e633077a163b883e92e8996c36e",
+   "cache_path": "bxi_robot_models"
+  },
+  "cassie_description": {
+   "url": "https://github.com/robot-descriptions/cassie_description",
+   "commit": "81a2d8bbd77201cc974afb127adda4e2857a6dbf",
+   "cache_path": "cassie_description"
+  },
+  "cassie_mj_description": {
+   "url": "https://github.com/rohanpsingh/cassie_mj_description.git",
+   "commit": "fcc3775453e4da6797cd4eacd3d8321d9906755a",
+   "cache_path": "cassie_mj_description"
+  },
+  "cookie_description": {
+   "url": "https://codeberg.org/upkie/cookie_description.git",
+   "commit": "564352e35a0aba0d5e239d4341b851231175dbdc",
+   "cache_path": "cookie_description"
+  },
+  "differentiable-robot-model": {
+   "url": "https://github.com/facebookresearch/differentiable-robot-model",
+   "commit": "d7bd1b3b8ef1d6dabe9b68474a622185c510e112",
+   "cache_path": "differentiable-robot-model"
+  },
+  "draco3_description": {
+   "url": "https://github.com/shbang91/draco3_description.git",
+   "commit": "5afd19733d7b3e9f1135ba93e0aad90ed1a24cc7",
+   "cache_path": "draco3_description"
+  },
+  "drake": {
+   "url": "https://github.com/RobotLocomotion/drake.git",
+   "commit": "7abea0556ede980a5077fe1a8cfbae59b57c7c27",
+   "cache_path": "drake"
+  },
+  "drake_models": {
+   "url": "https://github.com/RobotLocomotion/models.git",
+   "commit": "d0fe1a427a6bd39040ff3a77aaf6ddcc4d62a8fe",
+   "cache_path": "drake_models"
+  },
+  "eDO_description": {
+   "url": "https://github.com/ianathompson/eDO_description.git",
+   "commit": "17b3f92f834746106d6a4befaab8eeab3ac248e6",
+   "cache_path": "edo_sim"
+  },
+  "ergocub-software": {
+   "url": "https://github.com/icub-tech-iit/ergocub-software.git",
+   "commit": "v0.7.7",
+   "cache_path": "ergocub-software"
+  },
+  "example-robot-data": {
+   "url": "https://github.com/Gepetto/example-robot-data.git",
+   "commit": "d0d9098d752014aec3725b07766962acf06c5418",
+   "cache_path": "example-robot-data"
+  },
+  "fanuc_m710ic_description": {
+   "url": "https://github.com/robot-descriptions/fanuc_m710ic_description.git",
+   "commit": "d12af44559cd7e46f7afd513237f159f82f8402e",
+   "cache_path": "fanuc_m710ic_description"
+  },
+  "flexiv_description": {
+   "url": "https://github.com/flexivrobotics/flexiv_description.git",
+   "commit": "edb01274caf7eaf2ba722bbfdf2f23d717fee38e",
+   "cache_path": "flexiv_description"
+  },
+  "franka_description": {
+   "url": "https://github.com/frankarobotics/franka_description.git",
+   "commit": "72baf5bf4e88eaec27f0eb61be1b20a001abf2ab",
+   "cache_path": "franka_description"
+  },
+  "gb_robot_models": {
+   "url": "https://github.com/gbionics/gb-robot-models.git",
+   "commit": "ae990f38968c2ae29caee88851f9153168630b8f",
+   "cache_path": "gb_robot_models"
+  },
+  "gym-pybullet-drones": {
+   "url": "https://github.com/utiasDSL/gym-pybullet-drones.git",
+   "commit": "2c2470c2043eb4cf474d9af2681c9fa10f2d0e2f",
+   "cache_path": "gym-pybullet-drones"
+  },
+  "halodi-robot-models": {
+   "url": "https://github.com/robot-descriptions/halodi-robot-models.git",
+   "commit": "5d1d5eb3c15c9979f94b9611142158b9d80127ba",
+   "cache_path": "halodi-robot-models"
+  },
+  "hsrb_common": {
+   "url": "https://github.com/hsr-project/hsrb_common.git",
+   "commit": "5ad6946064b6031a2dd90be926e4d9b77f84d785",
+   "cache_path": "hsrb_common"
+  },
+  "i2rt": {
+   "url": "https://github.com/robot-descriptions/i2rt.git",
+   "commit": "7809b5b17227162d265f922e2e10598c0e214322",
+   "cache_path": "i2rt"
+  },
+  "icub-models": {
+   "url": "https://github.com/robotology/icub-models.git",
+   "commit": "v1.25.0",
+   "cache_path": "icub-models"
+  },
+  "jaxon_description": {
+   "url": "https://github.com/robot-descriptions/jaxon_description.git",
+   "commit": "4a0cb7a4a737864312f8d6e3f89823a741539bfc",
+   "cache_path": "jaxon_description"
+  },
+  "jvrc_description": {
+   "url": "https://github.com/jrl-umi3218/jvrc_description.git",
+   "commit": "9ff8efbc7043459a8f0892662bd030d8020fb682",
+   "cache_path": "jvrc_description"
+  },
+  "jvrc_mj_description": {
+   "url": "https://github.com/isri-aist/jvrc_mj_description.git",
+   "commit": "0f0ce7daefdd66c54e0909a6bf2c22154844f5f3",
+   "cache_path": "jvrc_mj_description"
+  },
+  "kinova-ros": {
+   "url": "https://github.com/Kinovarobotics/kinova-ros.git",
+   "commit": "924781d3dfe241b2b94b3c72a804b80d3658cf02",
+   "cache_path": "kinova-ros"
+  },
+  "kinova_mj_description": {
+   "url": "https://github.com/mathieu-celerier/kinova_mj_description.git",
+   "commit": "cee556b0a438e6904634a90826d4e8d2e005cd1f",
+   "cache_path": "kinova_mj_description"
+  },
+  "limxdynamics_robot-description": {
+   "url": "https://github.com/limxdynamics/robot-description.git",
+   "commit": "a097533372a08298d45af391cbdfc2fd2dc3da6f",
+   "cache_path": "robot_description"
+  },
+  "mini_cheetah_urdf": {
+   "url": "https://github.com/Derek-TH-Wang/mini_cheetah_urdf.git",
+   "commit": "1988bceb26e81f28594a16e7d5e6abe5cbb27ace",
+   "cache_path": "mini_cheetah_urdf"
+  },
+  "mujoco": {
+   "url": "https://github.com/google-deepmind/mujoco.git",
+   "commit": "ad0dc0de5e10a075a2c65be629e9a8d557d383a6",
+   "cache_path": "mujoco"
+  },
+  "mujoco_menagerie": {
+   "url": "https://github.com/deepmind/mujoco_menagerie.git",
+   "commit": "feadf76d42f8a2162426f7d226a3b539556b3bf5",
+   "cache_path": "mujoco_menagerie"
+  },
+  "nao_robot": {
+   "url": "https://github.com/ros-naoqi/nao_robot.git",
+   "commit": "67476469a1371b00b17538eb6ea336367ece7d44",
+   "cache_path": "nao_robot"
+  },
+  "nasa-urdf-robots": {
+   "url": "https://github.com/gkjohnson/nasa-urdf-robots.git",
+   "commit": "54cdeb1dbfb529b79ae3185a53e24fce26e1b74b",
+   "cache_path": "nasa-urdf-robots"
+  },
+  "onshape-to-robot-examples": {
+   "url": "https://github.com/Rhoban/onshape-to-robot-examples.git",
+   "commit": "911abb069c781e4c717c10643b975f55f7a64fe8",
+   "cache_path": "onshape-to-robot-examples"
+  },
+  "open_manipulator": {
+   "url": "https://github.com/ROBOTIS-GIT/open_manipulator.git",
+   "commit": "bc555a9c41ebd7493dc945ddabc43fc649681b62",
+   "cache_path": "open_manipulator"
+  },
+  "openarm_description": {
+   "url": "https://github.com/enactic/openarm_description.git",
+   "commit": "1daa95b71565a6696242013a42c4d3af689cbdb3",
+   "cache_path": "openarm_description"
+  },
+  "openarm_mujoco": {
+   "url": "https://github.com/enactic/openarm_mujoco.git",
+   "commit": "5c6e1b4c71cbe27c6a4b58c7f198f080449e1b9c",
+   "cache_path": "openarm_mujoco"
+  },
+  "pal_hey5": {
+   "url": "https://github.com/pal-robotics/pal_hey5.git",
+   "commit": "344de441fa3c378573dd7f6e04dc7ec4f8cb0cab",
+   "cache_path": "pal_hey5"
+  },
+  "pal_urdf_utils": {
+   "url": "https://github.com/pal-robotics/pal_urdf_utils.git",
+   "commit": "0c732ac5699f777754740bfec46cc618873766fe",
+   "cache_path": "pal_urdf_utils"
+  },
+  "pepper_description": {
+   "url": "https://github.com/jrl-umi3218/pepper_description.git",
+   "commit": "cd9715bb5df7ad57445d953db7b1924255305944",
+   "cache_path": "pepper_description"
+  },
+  "pmb2_robot": {
+   "url": "https://github.com/pal-robotics/pmb2_robot.git",
+   "commit": "e2c85c8a4564a16511fec4aa27f7362740bae170",
+   "cache_path": "pmb2_robot"
+  },
+  "poppy_ergo_jr_description": {
+   "url": "https://github.com/poppy-project/poppy_ergo_jr_description.git",
+   "commit": "7eb32bd385afa11dea5e6a6b6a4a86a0243aaa2b",
+   "cache_path": "poppy_ergo_jr_description"
+  },
+  "poppy_torso_description": {
+   "url": "https://github.com/poppy-project/poppy_torso_description.git",
+   "commit": "6beeec3d76fb72b7548cce7c73aad722f8884522",
+   "cache_path": "poppy_torso_description"
+  },
+  "rby1_description": {
+   "url": "https://github.com/uynitsuj/rby1_description.git",
+   "commit": "e4c07203aa0a0d1b6b3b39da105cb00a77e2bc72",
+   "cache_path": "rby1_description"
+  },
+  "reachy_description": {
+   "url": "https://github.com/aubrune/reachy_description.git",
+   "commit": "release-1.0.0",
+   "cache_path": "reachy_description"
+  },
+  "rhea_description": {
+   "url": "https://github.com/G-Levine/rhea_description.git",
+   "commit": "1dc0f1abcf51b5d8a8f7ff8a548399ff0df1414f",
+   "cache_path": "rhea_description"
+  },
+  "roboschool": {
+   "url": "https://github.com/openai/roboschool.git",
+   "commit": "1.0.49",
+   "cache_path": "roboschool"
+  },
+  "robot-assets": {
+   "url": "https://github.com/ankurhanda/robot-assets.git",
+   "commit": "12f1a3c89c9975194551afaed0dfae1e09fdb27c",
+   "cache_path": "robot-assets"
+  },
+  "robotiq_2f_85": {
+   "url": "https://github.com/nickswalker/robotiq-2f-85.git",
+   "commit": "319f7b94587c97f09e732a7b2ed7babbe0250b9e",
+   "cache_path": "robotiq-2f-85"
+  },
+  "robotiq_arg85_description": {
+   "url": "https://github.com/a-price/robotiq_arg85_description.git",
+   "commit": "a65190bdbb0666609fe7e8c3bb17341e09e81625",
+   "cache_path": "robotiq_arg85_description"
+  },
+  "romeo_robot": {
+   "url": "https://github.com/ros-aldebaran/romeo_robot.git",
+   "commit": "0.1.5",
+   "cache_path": "romeo_robot"
+  },
+  "ros2_kortex": {
+   "url": "https://github.com/Kinovarobotics/ros2_kortex.git",
+   "commit": "ca433b079d672100cb1d42ee27049da548c08e2c",
+   "cache_path": "ros2_kortex"
+  },
+  "rtmros_nextage": {
+   "url": "https://github.com/tork-a/rtmros_nextage.git",
+   "commit": "ac270fb969fa54abeb6863f9b388a9e20c1f14e0",
+   "cache_path": "rtmros_nextage"
+  },
+  "sigmaban_urdf": {
+   "url": "https://github.com/Rhoban/sigmaban_urdf.git",
+   "commit": "d5d023fd35800d00d7647000bce8602617a4960d",
+   "cache_path": "sigmaban_urdf"
+  },
+  "simple_humanoid_description": {
+   "url": "https://github.com/laas/simple_humanoid_description.git",
+   "commit": "4e859aed7df3c29954c9cca2a1ecb94069f7cfce",
+   "cache_path": "simple_humanoid_description"
+  },
+  "skydio_x2_description": {
+   "url": "https://github.com/lvjonok/skydio_x2_description.git",
+   "commit": "9a6a057a055babaf47119fac42c361fffc189128",
+   "cache_path": "skydio_x2_description"
+  },
+  "spryped": {
+   "url": "https://github.com/bbokser/spryped.git",
+   "commit": "f360a6b78667a4d97c86cad465ef8f4c9512462b",
+   "cache_path": "spryped"
+  },
+  "stretch4_urdf": {
+   "url": "https://github.com/hello-robot/stretch4_urdf.git",
+   "commit": "7b35e66a3d7e3863c7188e46e98c196dcdab2609",
+   "cache_path": "stretch4_urdf"
+  },
+  "stretch_description": {
+   "url": "https://github.com/robot-descriptions/stretch_description.git",
+   "commit": "4b838429fe4c5d9f2937efe698444bd68968f376",
+   "cache_path": "stretch_description"
+  },
+  "stretch_urdf": {
+   "url": "https://github.com/hello-robot/stretch_urdf.git",
+   "commit": "1b7cbbce808c25465017ce0a53a4173fcf97b11c",
+   "cache_path": "stretch_urdf"
+  },
+  "talos-data": {
+   "url": "https://github.com/stack-of-tasks/talos-data.git",
+   "commit": "77169405d6a48a5d3f3f75eb014209f375ff23b6",
+   "cache_path": "talos_data"
+  },
+  "tiago_robot": {
+   "url": "https://github.com/pal-robotics/tiago_robot.git",
+   "commit": "f1c33c92bdde7c1dd79f0c3e739e98a233dbd30b",
+   "cache_path": "tiago_robot"
+  },
+  "toddlerbot": {
+   "url": "https://github.com/hshi74/toddlerbot.git",
+   "commit": "067f9dc4f50143e36334877b9395b9c5c29ee30c",
+   "cache_path": "toddlerbot"
+  },
+  "unitree_mujoco": {
+   "url": "https://github.com/unitreerobotics/unitree_mujoco.git",
+   "commit": "f3300ff1bf0ab9efbea0162717353480d9b05d73",
+   "cache_path": "unitree_mujoco"
+  },
+  "unitree_ros": {
+   "url": "https://github.com/unitreerobotics/unitree_ros.git",
+   "commit": "267182b8521c8d6a631bab1fe63836873237a525",
+   "cache_path": "unitree_ros"
+  },
+  "upkie_description": {
+   "url": "https://github.com/upkie/upkie_description.git",
+   "commit": "19a91ce69cab6742c613cab104986e3f8a18d6a5",
+   "cache_path": "upkie_description"
+  },
+  "xarm_ros2": {
+   "url": "https://github.com/xArm-Developer/xarm_ros2.git",
+   "commit": "5bb832f72ca665f1236a9d8ed1c3a82f308db489",
+   "cache_path": "xarm_ros2"
+  }
+ },
+ "models": {
+  "a1_description": {
+   "urdf": "robots/a1_description/urdf/a1.urdf",
+   "repo": "unitree_ros"
+  },
+  "a1_mj_description": {
+   "mjcf": "data/a1/xml/a1.xml",
+   "urdf": "data/a1/urdf/a1.urdf",
+   "repo": "unitree_mujoco"
+  },
+  "ability_hand_description": {
+   "urdf": "URDF/ability_hand_left_large.urdf",
+   "repo": "ability-hand-api"
+  },
+  "ability_hand_mj_description": {
+   "mjcf": "python/ah_simulators/mujoco_xml/scene.xml",
+   "repo": "ability-hand-api"
+  },
+  "adam_lite_mj_description": {
+   "mjcf": "pndbotics_adam_lite/adam_lite.xml",
+   "repo": "mujoco_menagerie"
+  },
+  "aero_hand_open_description": {
+   "urdf": "ros2/src/aero_hand_open_description/urdf/aero_hand_open_left.urdf",
+   "repo": "aero-hand-open"
+  },
+  "aero_hand_open_mj_description": {
+   "mjcf": "tetheria_aero_hand_open/right_hand.xml",
+   "repo": "mujoco_menagerie"
+  },
+  "aliengo_description": {
+   "urdf": "robots/aliengo_description/urdf/aliengo.urdf",
+   "repo": "unitree_ros"
+  },
+  "aliengo_mj_description": {
+   "mjcf": "data/aliengo/xml/aliengo.xml",
+   "repo": "unitree_mujoco"
+  },
+  "allegro_hand_description": {
+   "urdf": "manipulation/models/allegro_hand_description/urdf/allegro_hand_description_left.urdf",
+   "repo": "drake"
+  },
+  "allegro_hand_mj_description": {
+   "mjcf": "wonik_allegro/right_hand.xml",
+   "repo": "mujoco_menagerie"
+  },
+  "aloha_mj_description": {
+   "mjcf": "aloha/scene.xml",
+   "repo": "mujoco_menagerie"
+  },
+  "anymal_b_description": {
+   "urdf": "urdf/anymal.urdf",
+   "repo": "anymal_b_simple_description"
+  },
+  "anymal_b_mj_description": {
+   "mjcf": "anybotics_anymal_b/anymal_b.xml",
+   "repo": "mujoco_menagerie"
+  },
+  "anymal_c_description": {
+   "urdf": "urdf/anymal.urdf",
+   "repo": "anymal_c_simple_description"
+  },
+  "anymal_c_mj_description": {
+   "mjcf": "anybotics_anymal_c/anymal_c.xml",
+   "repo": "mujoco_menagerie"
+  },
+  "anymal_d_description": {
+   "urdf": "urdf/anymal.urdf",
+   "repo": "anymal_d_simple_description"
+  },
+  "apollo_mj_description": {
+   "mjcf": "apptronik_apollo/apptronik_apollo.xml",
+   "repo": "mujoco_menagerie"
+  },
+  "arx_l5_mj_description": {
+   "mjcf": "arx_l5/arx_l5.xml",
+   "repo": "mujoco_menagerie"
+  },
+  "atlas_drc_description": {
+   "urdf": "examples/atlas/urdf/atlas_convex_hull.urdf",
+   "repo": "drake"
+  },
+  "atlas_v4_description": {
+   "urdf": "roboschool/models_robot/atlas_description/urdf/atlas_v4_with_multisense.urdf",
+   "repo": "roboschool"
+  },
+  "b1_description": {
+   "urdf": "robots/b1_description/xacro/b1.urdf",
+   "repo": "unitree_ros"
+  },
+  "b2_description": {
+   "urdf": "robots/b2_description/urdf/b2_description.urdf",
+   "repo": "unitree_ros"
+  },
+  "bambot_description": {
+   "urdf": "website/public/URDF/bambot_v0.urdf",
+   "repo": "bambot"
+  },
+  "barrett_hand_description": {
+   "urdf": "robots/bhand_model.URDF",
+   "repo": "bhand_model"
+  },
+  "baxter_description": {
+   "urdf": "baxter_description/urdf/baxter.urdf",
+   "repo": "baxter_common"
+  },
+  "berkeley_humanoid_description": {
+   "urdf": "urdf/robot.urdf",
+   "repo": "berkeley_humanoid_description"
+  },
+  "bolt_description": {
+   "urdf": "robots/bolt_description/robots/bolt.urdf",
+   "repo": "example-robot-data"
+  },
+  "booster_t1_description": {
+   "urdf": "resources/T1/T1_serial.urdf",
+   "repo": "booster_gym"
+  },
+  "booster_t1_mj_description": {
+   "mjcf": "booster_t1/t1.xml",
+   "repo": "mujoco_menagerie"
+  },
+  "bruce": {
+   "repo": "BRUCE-OP",
+   "sdf": "Simulation/models/bruce/model.sdf"
+  },
+  "cassie_description": {
+   "urdf": "urdf/cassie_v4.urdf",
+   "repo": "cassie_description"
+  },
+  "cassie_mj_description": {
+   "mjcf": "agility_cassie/cassie.xml",
+   "repo": "mujoco_menagerie"
+  },
+  "cf2_description": {
+   "urdf": "gym_pybullet_drones/assets/cf2p.urdf",
+   "repo": "gym-pybullet-drones"
+  },
+  "cf2_mj_description": {
+   "mjcf": "bitcraze_crazyflie_2/cf2.xml",
+   "repo": "mujoco_menagerie"
+  },
+  "cookie_description": {
+   "urdf": "urdf/cookie.urdf",
+   "repo": "cookie_description"
+  },
+  "double_pendulum_description": {
+   "urdf": "robots/double_pendulum_description/urdf/double_pendulum.urdf",
+   "repo": "example-robot-data"
+  },
+  "draco3_description": {
+   "urdf": "urdf/draco3.urdf",
+   "repo": "draco3_description"
+  },
+  "dynamixel_2r_mj_description": {
+   "mjcf": "dynamixel_2r/dynamixel_2r.xml",
+   "repo": "mujoco_menagerie"
+  },
+  "edo_description": {
+   "urdf": "robots/edo_sim.urdf",
+   "repo": "eDO_description"
+  },
+  "elf2_description": {
+   "urdf": "elf2_dof25/urdf/elf2_dof25.urdf",
+   "repo": "bxi_robot_models"
+  },
+  "elf2_mj_description": {
+   "mjcf": "elf2_dof25/xml/scene.xml",
+   "repo": "bxi_robot_models"
+  },
+  "ergocub_description": {
+   "urdf": "urdf/ergoCub/robots/ergoCubSN002/model.urdf",
+   "repo": "ergocub-software"
+  },
+  "eve_r3_description": {
+   "repo": "halodi-robot-models"
+  },
+  "fanuc_m710ic_description": {
+   "urdf": "urdf/m710ic70.urdf",
+   "repo": "fanuc_m710ic_description"
+  },
+  "fer_description": {
+   "repo": "franka_description"
+  },
+  "fetch_description": {
+   "urdf": "roboschool/models_robot/fetch_description/robots/fetch.urdf",
+   "repo": "roboschool"
+  },
+  "finger_edu_description": {
+   "urdf": "robots/finger_edu_description/robots/finger_edu.urdf",
+   "repo": "example-robot-data"
+  },
+  "fr3_description": {
+   "repo": "franka_description"
+  },
+  "fr3_mj_description": {
+   "mjcf": "franka_fr3/fr3.xml",
+   "repo": "mujoco_menagerie"
+  },
+  "fr3_v2_1_description": {
+   "repo": "franka_description"
+  },
+  "fr3_v2_description": {
+   "repo": "franka_description"
+  },
+  "fr3_v2_mj_description": {
+   "mjcf": "franka_fr3_v2/fr3v2.xml",
+   "repo": "mujoco_menagerie"
+  },
+  "g1_description": {
+   "urdf": "robots/g1_description/g1_29dof.urdf",
+   "repo": "unitree_ros"
+  },
+  "g1_mj_description": {
+   "mjcf": "unitree_g1/g1.xml",
+   "repo": "mujoco_menagerie"
+  },
+  "gen2_description": {
+   "urdf": "robots/kinova_description/robots/kinova.urdf",
+   "repo": "example-robot-data"
+  },
+  "gen3_description": {
+   "repo": "ros2_kortex"
+  },
+  "gen3_lite_description": {
+   "repo": "ros2_kortex"
+  },
+  "gen3_mj_description": {
+   "mjcf": "kinova_gen3/gen3.xml",
+   "repo": "mujoco_menagerie"
+  },
+  "gene01_description": {
+   "urdf": "share/gb_robot_models/robots/gene01_0/model.urdf",
+   "repo": "gb_robot_models"
+  },
+  "ginger_description": {
+   "urdf": "urdf/gingerurdf.urdf",
+   "repo": "GingerURDF"
+  },
+  "go1_description": {
+   "urdf": "robots/go1_description/urdf/go1.urdf",
+   "repo": "unitree_ros"
+  },
+  "go1_mj_description": {
+   "mjcf": "unitree_go1/go1.xml",
+   "repo": "mujoco_menagerie"
+  },
+  "go2_description": {
+   "urdf": "robots/go2_description/urdf/go2_description.urdf",
+   "repo": "unitree_ros"
+  },
+  "go2_mj_description": {
+   "mjcf": "unitree_go2/go2.xml",
+   "repo": "mujoco_menagerie"
+  },
+  "gr1_description": {
+   "urdf": "GRX/GR1/GR1T1/urdf/GR1T1_nohand.urdf",
+   "repo": "Wiki-GRx-Models"
+  },
+  "h1_2_description": {
+   "urdf": "robots/h1_2_description/h1_2.urdf",
+   "repo": "unitree_ros"
+  },
+  "h1_2_mj_description": {
+   "mjcf": "robots/h1_2_description/h1_2.xml",
+   "repo": "unitree_ros"
+  },
+  "h1_description": {
+   "urdf": "robots/h1_description/urdf/h1.urdf",
+   "repo": "unitree_ros"
+  },
+  "h1_mj_description": {
+   "mjcf": "unitree_h1/h1.xml",
+   "repo": "mujoco_menagerie"
+  },
+  "hsrb_description": {
+   "repo": "hsrb_common"
+  },
+  "hsrc_description": {
+   "repo": "hsrb_common"
+  },
+  "hyq_description": {
+   "urdf": "robots/hyq_description/robots/hyq_no_sensors.urdf",
+   "repo": "example-robot-data"
+  },
+  "icub_description": {
+   "urdf": "iCub/robots/iCubGazeboV2_5/model.urdf",
+   "repo": "icub-models"
+  },
+  "iiwa14_description": {
+   "urdf": "manipulation/models/iiwa_description/urdf/iiwa14_primitive_collision.urdf",
+   "repo": "drake"
+  },
+  "iiwa14_mj_description": {
+   "mjcf": "kuka_iiwa_14/iiwa14.xml",
+   "repo": "mujoco_menagerie"
+  },
+  "iiwa7_description": {
+   "urdf": "diff_robot_data/kuka_iiwa/urdf/iiwa7.urdf",
+   "repo": "differentiable-robot-model"
+  },
+  "j2n4s300_description": {
+   "repo": "kinova-ros"
+  },
+  "j2n6s200_description": {
+   "repo": "kinova-ros"
+  },
+  "j2n6s300_description": {
+   "repo": "kinova-ros"
+  },
+  "j2n7s300_description": {
+   "repo": "kinova-ros"
+  },
+  "j2s6s200_description": {
+   "repo": "kinova-ros"
+  },
+  "j2s6s300_description": {
+   "repo": "kinova-ros"
+  },
+  "j2s7s300_description": {
+   "repo": "kinova-ros"
+  },
+  "jaxon_description": {
+   "urdf": "urdf/jaxon_jvrc.urdf",
+   "repo": "jaxon_description"
+  },
+  "jvrc_description": {
+   "urdf": "urdf/jvrc1.urdf",
+   "repo": "jvrc_description"
+  },
+  "jvrc_mj_description": {
+   "mjcf": "xml/jvrc1.xml",
+   "repo": "jvrc_mj_description"
+  },
+  "laikago_description": {
+   "mjcf": "data/laikago/xml/laikago.xml",
+   "urdf": "data/laikago/urdf/laikago.urdf",
+   "repo": "unitree_mujoco"
+  },
+  "leap_hand_mj_description": {
+   "mjcf": "leap_hand/right_hand.xml",
+   "repo": "mujoco_menagerie"
+  },
+  "leap_hand_v1_description": {
+   "urdf": "assets/leap_hand/robot.urdf",
+   "repo": "LEAP_Hand_Sim"
+  },
+  "low_cost_robot_arm_mj_description": {
+   "mjcf": "low_cost_robot_arm/low_cost_robot_arm.xml",
+   "repo": "mujoco_menagerie"
+  },
+  "mini_cheetah_description": {
+   "urdf": "urdf/mini_cheetah.urdf",
+   "repo": "mini_cheetah_urdf"
+  },
+  "minitaur_description": {
+   "urdf": "data/quadruped/minitaur.urdf",
+   "repo": "bullet3"
+  },
+  "mujoco_humanoid_mj_description": {
+   "mjcf": "model/humanoid/humanoid.xml",
+   "repo": "mujoco"
+  },
+  "n1_description": {
+   "urdf": "N1/urdf/N1_raw.urdf",
+   "repo": "Wiki-GRx-Models-FourierN1"
+  },
+  "n1_mj_description": {
+   "mjcf": "fourier_n1/n1.xml",
+   "repo": "mujoco_menagerie"
+  },
+  "nextage_description": {
+   "urdf": "nextage_description/urdf/NextageOpen.urdf",
+   "repo": "rtmros_nextage"
+  },
+  "omx_f_description": {
+   "urdf": "open_manipulator_description/urdf/omx_f/omx_f.urdf",
+   "repo": "open_manipulator"
+  },
+  "omx_l_description": {
+   "urdf": "open_manipulator_description/urdf/omx_l/omx_l.urdf",
+   "repo": "open_manipulator"
+  },
+  "omy_3m_description": {
+   "urdf": "open_manipulator_description/urdf/omy_3m/omy_3m.urdf",
+   "repo": "open_manipulator"
+  },
+  "omy_f3m_description": {
+   "urdf": "open_manipulator_description/urdf/omy_f3m/omy_f3m.urdf",
+   "repo": "open_manipulator"
+  },
+  "omy_l100_description": {
+   "urdf": "open_manipulator_description/urdf/omy_l100/omy_l100.urdf",
+   "repo": "open_manipulator"
+  },
+  "op3_mj_description": {
+   "mjcf": "robotis_op3/op3.xml",
+   "repo": "mujoco_menagerie"
+  },
+  "open_manipulator_x_description": {
+   "urdf": "open_manipulator_description/urdf/open_manipulator_x/open_manipulator_x.urdf",
+   "repo": "open_manipulator"
+  },
+  "openarm_v1_mj_description": {
+   "mjcf": "v1/openarm_bimanual.xml",
+   "repo": "openarm_mujoco"
+  },
+  "openarm_v2_mj_description": {
+   "mjcf": "v2/openarm_bimanual.xml",
+   "repo": "openarm_mujoco"
+  },
+  "panda_description": {
+   "urdf": "robots/panda_description/urdf/panda.urdf",
+   "repo": "example-robot-data"
+  },
+  "panda_mj_description": {
+   "mjcf": "franka_emika_panda/panda.xml",
+   "repo": "mujoco_menagerie"
+  },
+  "pepper_description": {
+   "urdf": "urdf/pepper.urdf",
+   "repo": "pepper_description"
+  },
+  "piper_description": {
+   "urdf": "src/piper_description/urdf/piper_description.urdf",
+   "repo": "Piper_ros"
+  },
+  "piper_mj_description": {
+   "mjcf": "agilex_piper/piper.xml",
+   "repo": "mujoco_menagerie"
+  },
+  "poppy_ergo_jr_description": {
+   "urdf": "urdf/poppy_ergo_jr.urdf",
+   "repo": "poppy_ergo_jr_description"
+  },
+  "poppy_torso_description": {
+   "urdf": "urdf/Poppy_Torso.URDF",
+   "repo": "poppy_torso_description"
+  },
+  "pr2_description": {
+   "urdf": "urdfs/robots/pr2/pr2.urdf",
+   "repo": "robot-assets"
+  },
+  "r2_description": {
+   "urdf": "r2_description/robots/r2c_sim_full_control.urdf.urdf",
+   "repo": "nasa-urdf-robots"
+  },
+  "rby1_description": {
+   "urdf": "models/rby1a/urdf/model.urdf",
+   "repo": "rby1_description"
+  },
+  "rby1_mj_description": {
+   "mjcf": "models/rby1a/mujoco/model.xml",
+   "repo": "rby1_description"
+  },
+  "reachy_description": {
+   "urdf": "reachy.URDF",
+   "repo": "reachy_description"
+  },
+  "rhea_description": {
+   "urdf": "urdf/rhea.urdf",
+   "repo": "rhea_description"
+  },
+  "rizon4_description": {
+   "repo": "flexiv_description"
+  },
+  "rizon4_mj_description": {
+   "mjcf": "flexiv_rizon4/flexiv_rizon4.xml",
+   "repo": "mujoco_menagerie"
+  },
+  "robotiq_2f85_description": {
+   "urdf": "robots/robotiq_arg85_description.URDF",
+   "repo": "robotiq_arg85_description"
+  },
+  "robotiq_2f85_mj_description": {
+   "mjcf": "robotiq_2f85/2f85.xml",
+   "repo": "mujoco_menagerie"
+  },
+  "robotiq_2f85_v4_description": {
+   "repo": "robotiq_2f_85"
+  },
+  "robotiq_2f85_v4_mj_description": {
+   "mjcf": "robotiq_2f85_v4/2f85.xml",
+   "repo": "mujoco_menagerie"
+  },
+  "romeo_description": {
+   "urdf": "romeo_description/urdf/romeo_generated_urdf/romeo.urdf",
+   "repo": "romeo_robot"
+  },
+  "rsk_description": {
+   "urdf": "rsk_urdf/robot.urdf",
+   "repo": "onshape-to-robot-examples"
+  },
+  "rsk_mj_description": {
+   "mjcf": "robot_soccer_kit/robot_soccer_kit.xml",
+   "repo": "mujoco_menagerie"
+  },
+  "sawyer_mj_description": {
+   "mjcf": "rethink_robotics_sawyer/sawyer.xml",
+   "repo": "mujoco_menagerie"
+  },
+  "shadow_dexee_mj_description": {
+   "mjcf": "shadow_dexee/shadow_dexee.xml",
+   "repo": "mujoco_menagerie"
+  },
+  "shadow_hand_mj_description": {
+   "mjcf": "shadow_hand/left_hand.xml",
+   "repo": "mujoco_menagerie"
+  },
+  "sigmaban_description": {
+   "urdf": "robot.urdf",
+   "repo": "sigmaban_urdf"
+  },
+  "simple_humanoid_description": {
+   "urdf": "urdf/simple_humanoid.urdf",
+   "repo": "simple_humanoid_description"
+  },
+  "skydio_x2_description": {
+   "urdf": "urdf/skydio_x2.urdf",
+   "repo": "skydio_x2_description"
+  },
+  "skydio_x2_mj_description": {
+   "mjcf": "skydio_x2/x2.xml",
+   "repo": "mujoco_menagerie"
+  },
+  "so_arm100_description": {
+   "urdf": "Simulation/SO100/so100.urdf",
+   "repo": "SO-ARM100"
+  },
+  "so_arm100_mj_description": {
+   "mjcf": "trs_so_arm100/so_arm100.xml",
+   "repo": "mujoco_menagerie"
+  },
+  "so_arm101_description": {
+   "urdf": "Simulation/SO101/so101_new_calib.urdf",
+   "repo": "SO-ARM100"
+  },
+  "so_arm101_mj_description": {
+   "mjcf": "Simulation/SO101/so101_new_calib.xml",
+   "repo": "SO-ARM100"
+  },
+  "so_arm101_parallel_gripper_description": {
+   "repo": "SO-ARM100-101-Parallel-Gripper"
+  },
+  "solo_description": {
+   "urdf": "robots/solo_description/robots/solo12.urdf",
+   "repo": "example-robot-data"
+  },
+  "spot_mj_description": {
+   "mjcf": "boston_dynamics_spot/spot.xml",
+   "repo": "mujoco_menagerie"
+  },
+  "spryped_description": {
+   "urdf": "spryped_urdf_rev06/urdf/spryped_urdf_rev06.urdf",
+   "repo": "spryped"
+  },
+  "stretch_3_mj_description": {
+   "mjcf": "hello_robot_stretch_3/stretch.xml",
+   "repo": "mujoco_menagerie"
+  },
+  "stretch_4_description": {
+   "repo": "stretch4_urdf"
+  },
+  "stretch_description": {
+   "urdf": "urdf/stretch.urdf",
+   "repo": "stretch_description"
+  },
+  "stretch_mj_description": {
+   "mjcf": "hello_robot_stretch/stretch.xml",
+   "repo": "mujoco_menagerie"
+  },
+  "stretch_se3_description": {
+   "repo": "stretch_urdf"
+  },
+  "talos_description": {
+   "urdf": "urdf/talos_full.urdf",
+   "repo": "talos-data"
+  },
+  "talos_mj_description": {
+   "mjcf": "pal_talos/talos_position.xml",
+   "repo": "mujoco_menagerie"
+  },
+  "tiago++_mj_description": {
+   "mjcf": "pal_tiago_dual/tiago_dual_position.xml",
+   "repo": "mujoco_menagerie"
+  },
+  "tiago_description": {
+   "urdf": "robots/tiago_description/robots/tiago.urdf",
+   "repo": "example-robot-data"
+  },
+  "tiago_official_description": {
+   "repo": "pmb2_robot"
+  },
+  "toddlerbot_2xc_mj_description": {
+   "mjcf": "toddlerbot_2xc/toddlerbot_2xc.xml",
+   "repo": "mujoco_menagerie"
+  },
+  "toddlerbot_2xm_mj_description": {
+   "mjcf": "toddlerbot_2xm/toddlerbot_2xm.xml",
+   "repo": "mujoco_menagerie"
+  },
+  "toddlerbot_description": {
+   "urdf": "toddlerbot/descriptions/toddlerbot_2xc/toddlerbot_2xc.urdf",
+   "repo": "toddlerbot"
+  },
+  "trifinger_edu_description": {
+   "urdf": "diff_robot_data/trifinger_edu_description/trifinger_edu.urdf",
+   "repo": "differentiable-robot-model"
+  },
+  "upkie_description": {
+   "urdf": "urdf/upkie.urdf",
+   "repo": "upkie_description"
+  },
+  "ur10_official_description": {
+   "repo": "Universal_Robots_ROS2_Description"
+  },
+  "ur10e_description": {
+   "repo": "Universal_Robots_ROS2_Description"
+  },
+  "ur10e_mj_description": {
+   "mjcf": "universal_robots_ur10e/ur10e.xml",
+   "repo": "mujoco_menagerie"
+  },
+  "ur12e_description": {
+   "repo": "Universal_Robots_ROS2_Description"
+  },
+  "ur15_description": {
+   "repo": "Universal_Robots_ROS2_Description"
+  },
+  "ur16e_description": {
+   "repo": "Universal_Robots_ROS2_Description"
+  },
+  "ur18_description": {
+   "repo": "Universal_Robots_ROS2_Description"
+  },
+  "ur20_description": {
+   "repo": "Universal_Robots_ROS2_Description"
+  },
+  "ur30_description": {
+   "repo": "Universal_Robots_ROS2_Description"
+  },
+  "ur3_official_description": {
+   "repo": "Universal_Robots_ROS2_Description"
+  },
+  "ur3e_description": {
+   "repo": "Universal_Robots_ROS2_Description"
+  },
+  "ur5_official_description": {
+   "repo": "Universal_Robots_ROS2_Description"
+  },
+  "ur5e_description": {
+   "repo": "Universal_Robots_ROS2_Description"
+  },
+  "ur5e_mj_description": {
+   "mjcf": "universal_robots_ur5e/ur5e.xml",
+   "repo": "mujoco_menagerie"
+  },
+  "ur7e_description": {
+   "repo": "Universal_Robots_ROS2_Description"
+  },
+  "ur8long_description": {
+   "repo": "Universal_Robots_ROS2_Description"
+  },
+  "valkyrie_description": {
+   "urdf": "val_description/model/robots/valkyrie_sim.urdf",
+   "repo": "nasa-urdf-robots"
+  },
+  "viper_mj_description": {
+   "mjcf": "trossen_vx300s/vx300s.xml",
+   "repo": "mujoco_menagerie"
+  },
+  "widow_mj_description": {
+   "mjcf": "trossen_wx250s/wx250s.xml",
+   "repo": "mujoco_menagerie"
+  },
+  "wl_p311d_description": {
+   "urdf": "wheellegged/WL_P311D/urdf/robot.urdf",
+   "repo": "limxdynamics_robot-description"
+  },
+  "wl_p311e_description": {
+   "urdf": "wheellegged/WL_P311E/urdf/robot.urdf",
+   "repo": "limxdynamics_robot-description"
+  },
+  "xarm6_description": {
+   "repo": "xarm_ros2"
+  },
+  "xarm7_description": {
+   "repo": "xarm_ros2"
+  },
+  "xarm7_mj_description": {
+   "mjcf": "ufactory_xarm7/xarm7.xml",
+   "repo": "mujoco_menagerie"
+  },
+  "yam_description": {
+   "urdf": "i2rt/robot_models/yam/yam.urdf",
+   "repo": "i2rt"
+  },
+  "yam_mj_description": {
+   "mjcf": "i2rt_yam/yam.xml",
+   "repo": "mujoco_menagerie"
+  },
+  "yumi_description": {
+   "urdf": "urdfs/robots/yumi/yumi.urdf",
+   "repo": "robot-assets"
+  },
+  "z1_description": {
+   "urdf": "robots/z1_description/xacro/z1.urdf",
+   "repo": "unitree_ros"
+  },
+  "z1_mj_description": {
+   "mjcf": "unitree_z1/z1.xml",
+   "repo": "mujoco_menagerie"
+  }
+ }
+}

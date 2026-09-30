@@ -1,0 +1,330 @@
+{
+  "inertia_trend": {
+    "form": "J_rotor = k_areal_kg_m2 * r^4   (r in metres)",
+    "k_areal_kg_m2": 27.1526,
+    "r2": 0.872,
+    "gmfe_insample": 1.43,
+    "form_mass": "J_rotor/J0 = (m_motor/m0)^inertia_mass_exp",
+    "inertia_mass_exp": 1.4989,
+    "radius_exp_measured": 4.016,
+    "radius_exp_physics": 4.0,
+    "active_fraction_mean": 0.0961,
+    "active_fraction_arithmetic": 0.1173,
+    "active_fraction_sd": 0.0813,
+    "active_fraction_gmfe": 1.652,
+    "active_fraction_by_category": {
+      "Harmonic": {
+        "active_fraction_mean": 0.0656,
+        "active_fraction_arithmetic": 0.0717,
+        "active_fraction_sd": 0.0454,
+        "gmfe": 1.29,
+        "radius_exp_measured": 4.13,
+        "n": 45
+      },
+      "MidGear": {
+        "active_fraction_mean": 0.1394,
+        "active_fraction_arithmetic": 0.1656,
+        "active_fraction_sd": 0.0885,
+        "gmfe": 1.669,
+        "radius_exp_measured": 3.96,
+        "n": 17
+      },
+      "QDD": {
+        "active_fraction_mean": 0.1461,
+        "active_fraction_arithmetic": 0.1646,
+        "active_fraction_sd": 0.0796,
+        "gmfe": 1.53,
+        "radius_exp_measured": 3.69,
+        "n": 26
+      }
+    },
+    "active_fraction_previous": 0.088,
+    "n_published": 88,
+    "n_excluded_geared_inrunner": 3,
+    "n_catalogued": 114,
+    "reflected": "armature at the output = N^2 * J_rotor",
+    "note": "Fit on every vendor document that publishes the number: CubeMars, MyActuator, HEBI, ZeroErr, RobStride (output-side, divided by N^2). The r^4 exponent is required by rigid-body physics and confirmed within each category; what the data sets is the areal constant k. The active-fraction envelope form it replaced is kept below.",
+    "length_term_dropped": {
+      "form_geometric": "J_rotor = active_fraction * 0.5*rho*pi*r^4*L",
+      "identity": "= active_fraction * 0.5 * m_package * r^2",
+      "r2": 0.797,
+      "gmfe_insample": 1.652,
+      "length_exp_free": 0.405,
+      "length_exp_free_stderr": 0.148,
+      "resid_corr_log_gear": -0.665,
+      "resid_corr_log_gear_areal": 0.157,
+      "note": "The superseded law. Package length is mostly gearbox and a gearbox does not spin at rotor speed, so this form over-charges high-reduction modules; its residual correlates with log N where the adopted form's does not. Kept so the comparison in the paper can be reproduced from this file."
+    }
+  },
+  "mass_trend": {
+    "form": "mass/m0 = (tau/tau0)^tau_exp",
+    "form_absolute": "mass_kg = coef * tau_Nm^tau_exp",
+    "coef": 0.065255,
+    "N_median": 39.0,
+    "tau_exp": 0.6662,
+    "tau_exp_stderr": 0.0218,
+    "gear_exp": 0.0,
+    "r2": 0.902,
+    "n": 103,
+    "note": "Torque alone, over the 103 geared rows. The gear term was dropped, not omitted: fitted it is -0.0215 +- 0.0342, within one standard error of zero, worth 7% of mass across the whole catalogue and indistinguishable from nothing under paired LOO. Keeping it cost 0.0003 of R^2 and charged the generator for a variable the data does not resolve.",
+    "gear_term_dropped": {
+      "coef": 0.066971,
+      "tau_exp": 0.6777,
+      "gear_exp": -0.0215,
+      "tau_exp_stderr": 0.0286,
+      "gear_exp_stderr": 0.0342,
+      "r2": 0.903,
+      "note": "The superseded two-variable fit, kept so the comparison in the paper can be reproduced from this file."
+    }
+  },
+  "geometry_from_mass": {
+    "driver": "relative_mass",
+    "radius_exp": 0.2495,
+    "length_exp": 0.3775,
+    "density_exp": 0.1235,
+    "volume_exp": 0.8765,
+    "aspect_exp": 0.1281,
+    "note": "The generator consumes this as VOLUME plus SHAPE, not as r and L: V/V0 = (m/m0)^volume_exp with density_exp = 1 - volume_exp its exact complement, and the slenderness q = L/D left free (see aspect_trend). r = (V/(2*pi*q))^(1/3), L = 2*q*r reproduces the r(m)/L(m) fits identically at the default q."
+  },
+  "geometry_trend": {
+    "form": "tau/N = 2*pi*sigma_eff*r^2*L,  sigma_eff = sigma0*tau^s*N^-k",
+    "volume_form": "pi*r^2*L = tau^(1-s) * N^(k-1) / (2*sigma0)",
+    "shape_form": "L/D = q_coef * tau^q_tau_exp * N^q_gear_exp",
+    "driver": "peak_torque_and_gear_ratio",
+    "sigma0_Pa": 11973.9,
+    "s_torque_exp": 0.3003,
+    "s_stderr": 0.0311,
+    "k_gear_exp": 0.8326,
+    "k_stderr": 0.0372,
+    "r2": 0.843,
+    "gmfe_insample": 1.287,
+    "n": 103,
+    "r2_volume": 0.871,
+    "volume_tau_exp": 0.6997,
+    "volume_gear_exp": -0.1674,
+    "volume_coef_m3": 4.17574e-05,
+    "q_coef": 0.4011,
+    "q_tau_exp": -0.0976,
+    "q_tau_stderr": 0.0211,
+    "q_gear_exp": 0.3157,
+    "q_gear_stderr": 0.0252,
+    "q_r2": 0.639,
+    "q_gmfe_insample": 1.187,
+    "note": "s > 0 says the effective shear stress RISES with machine size \u2014 a bigger motor cools better, carries more back-iron and runs more poles. k > 0 says the rotor's share of the package FALLS as the reduction grows, which is the gearbox crowding it out; it is why a harmonic module and a QDD cannot share one constant. Neither is a fudge: both are what is left over once r^2*L is imposed, and both come with a standard error. Absolute check: the package shear stress divided by the independently measured active fraction (from published rotor inertias) puts a QDD's airgap at ~13 kPa, which is the textbook figure for an air-cooled BLDC."
+  },
+  "aspect_trend": {
+    "definition": "q = L/D = L/(2r), the actuator's slenderness",
+    "driver": "relative_mass",
+    "coef": 0.7506,
+    "exp": 0.1281,
+    "r2": 0.085,
+    "n": 114,
+    "median": 0.852,
+    "p10": 0.408,
+    "p90": 1.116,
+    "min": 0.282,
+    "max": 1.685,
+    "sigma_log": 0.412,
+    "by_category": {
+      "QDD": {
+        "median": 0.544,
+        "p10": 0.393,
+        "p90": 0.808,
+        "n": 33
+      },
+      "MidGear": {
+        "median": 0.792,
+        "p10": 0.327,
+        "p90": 1.107,
+        "n": 33
+      },
+      "Harmonic": {
+        "median": 1.047,
+        "p10": 0.852,
+        "p90": 1.141,
+        "n": 48
+      }
+    },
+    "vs_gear": {
+      "coef": 0.3461,
+      "exp": 0.2407,
+      "r2": 0.562,
+      "n": 103
+    },
+    "note": "Identical by construction to L(m)/2r(m), so the default reproduces the old geometry exactly. At fixed volume the rotor inertia goes as q^(-2/3): a slimmer, longer actuator of the same mass has LESS reflected inertia."
+  },
+  "provenance": {
+    "dataset": "src/draft/trends/data/actuator_catalog.json",
+    "n": 114,
+    "n_geared": 103,
+    "categories": {
+      "QDD": 33,
+      "MidGear": 33,
+      "Harmonic": 48
+    }
+  },
+  "geometry": {
+    "driver": "relative_peak_torque",
+    "radius_exp": 0.159,
+    "length_exp": 0.2406,
+    "density_exp": 0.0787,
+    "mass_exp": 0.6374,
+    "density0_kg_m3": 2482.4
+  },
+  "gear": {
+    "driver": "relative_gear_ratio",
+    "torque_density_exp": 0.2692,
+    "speed_exp": -0.9382
+  },
+  "density_stats_kg_m3": {
+    "median": 2482.4,
+    "mean": 2369.1,
+    "p10": 1667.6,
+    "p90": 3059.8
+  },
+  "raw_fits": {
+    "mass_vs_tau": {
+      "exp": 0.6374,
+      "coef": 0.0749,
+      "r2": 0.884,
+      "n": 114
+    },
+    "mass_vs_power": {
+      "exp": 0.4844,
+      "coef": 0.0957,
+      "r2": 0.331,
+      "n": 114
+    },
+    "radius_vs_mass": {
+      "exp": 0.2495,
+      "coef": 45.4083,
+      "r2": 0.539,
+      "n": 114
+    },
+    "length_vs_mass": {
+      "exp": 0.3775,
+      "coef": 68.1637,
+      "r2": 0.75,
+      "n": 114
+    },
+    "radius_vs_tau": {
+      "exp": 0.1434,
+      "coef": 25.3346,
+      "r2": 0.387,
+      "n": 114
+    },
+    "length_vs_tau": {
+      "exp": 0.253,
+      "coef": 24.37,
+      "r2": 0.732,
+      "n": 114
+    },
+    "radius_vs_power": {
+      "exp": 0.1325,
+      "coef": 23.9016,
+      "r2": 0.214,
+      "n": 114
+    },
+    "length_vs_power": {
+      "exp": 0.1481,
+      "coef": 33.2308,
+      "r2": 0.163,
+      "n": 114
+    },
+    "volume_vs_mass": {
+      "exp": 0.8765,
+      "coef": 441.5442,
+      "r2": 0.877,
+      "n": 114
+    },
+    "aspect_vs_mass": {
+      "exp": 0.1281,
+      "coef": 0.7506,
+      "r2": 0.085,
+      "n": 114
+    },
+    "aspect_vs_gear": {
+      "exp": 0.2407,
+      "coef": 0.3461,
+      "r2": 0.562,
+      "n": 103
+    },
+    "torquedens_vs_gear": {
+      "exp": 0.2692,
+      "coef": 24.291,
+      "r2": 0.318,
+      "n": 103
+    },
+    "powerdens_vs_gear": {
+      "exp": -0.6737,
+      "coef": 1415.5193,
+      "r2": 0.743,
+      "n": 103
+    },
+    "speed_vs_gear": {
+      "exp": -0.9382,
+      "coef": 228.4531,
+      "r2": 0.904,
+      "n": 103
+    }
+  },
+  "frontier": {
+    "QDD": {
+      "torque_density_Nm_per_kg": {
+        "max": 84.5,
+        "p90": 64.0,
+        "argmax": "RS04"
+      },
+      "power_density_W_per_kg": {
+        "max": 728.5,
+        "p90": 531.7,
+        "argmax": "RS06"
+      },
+      "n": 33
+    },
+    "MidGear": {
+      "torque_density_Nm_per_kg": {
+        "max": 159.0,
+        "p90": 117.4,
+        "argmax": "AKH70-48 V1.0 KV41"
+      },
+      "power_density_W_per_kg": {
+        "max": 871.3,
+        "p90": 361.7,
+        "argmax": "IM6014"
+      },
+      "n": 33
+    },
+    "Harmonic": {
+      "torque_density_Nm_per_kg": {
+        "max": 141.7,
+        "p90": 128.6,
+        "argmax": "eRob110H-160"
+      },
+      "power_density_W_per_kg": {
+        "max": 132.0,
+        "p90": 96.3,
+        "argmax": "eRob110H-50"
+      },
+      "n": 48
+    },
+    "ALL": {
+      "torque_density_Nm_per_kg": {
+        "max": 159.0,
+        "p90": 121.1,
+        "argmax": "AKH70-48 V1.0 KV41"
+      },
+      "power_density_W_per_kg": {
+        "max": 871.3,
+        "p90": 419.4,
+        "argmax": "IM6014"
+      },
+      "n": 114
+    }
+  },
+  "heuristic_envelope_mm": {
+    "r_lo_P_cbrt": 8.0,
+    "r_hi_P_cbrt": 15.0,
+    "note": "r[mm] in 8..15 * P[W]^(1/3); harmonic ~2x length"
+  }
+}

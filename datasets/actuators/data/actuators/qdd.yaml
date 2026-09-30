@@ -1,0 +1,578 @@
+
+# QDD actuators — 33 rows
+#
+# Quasi-direct drive: low reduction, the rotor is most of the package.
+#
+# One row = one catalogued part, and everything known about it lives HERE —
+# there is no second table to keep in step. See README.md (this directory)
+# for the field reference.
+#
+# Required: name, vendor, tau_peak_Nm, mass_kg, and exactly one of
+# no_load_rpm / omega_NL_rad_s. Everything else may be null.
+
+actuators:
+  - name: AK80-6
+    vendor: CubeMars/T-Motor
+    source: https://www.cubemars.com/product/ak80-6-kv100-robotic-actuator.html
+    tau_peak_Nm: 12
+    mass_kg: 0.485
+    no_load_rpm: 720
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 6
+    OD_mm: 98
+    L_mm: 38.5
+    rotor_inertia:
+      value: 607
+      unit: g.cm2
+      kind: rotor
+      source: cubemars.com AK80-6 KV100
+    notes: 6:1 planetary
+    checked: '2026-08-26'
+
+  - name: AK80-9 V3
+    vendor: CubeMars
+    source: https://www.cubemars.com/product/ak80-9-v3-0-robotic-actuator.html
+    tau_peak_Nm: 22
+    mass_kg: 0.485
+    no_load_rpm: 450
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 9
+    OD_mm: 98
+    L_mm: 38.5
+    rotor_inertia:
+      value: 1118.3238
+      unit: g.cm2
+      kind: rotor
+      source: cubemars.com AK80-9 V3.0
+    notes: 9:1 planetary
+    checked: '2026-08-26'
+
+  - name: AK10-9 V2
+    vendor: CubeMars
+    source: https://www.cubemars.com/product/ak10-9-v2-0-kv100-robotic-actuator.html
+    tau_peak_Nm: 48
+    mass_kg: 0.96
+    no_load_rpm: 297
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 9
+    OD_mm: 98
+    L_mm: 61.7
+    rotor_inertia:
+      value: 1002
+      unit: g.cm2
+      kind: rotor
+      source: cubemars.com AK10-9 V2.0 KV100
+    notes: 9:1 planetary
+    checked: '2026-08-26'
+
+  - name: AK10-9 V3
+    vendor: CubeMars
+    source: https://www.cubemars.com/product/ak10-9-v3-0-kv60-robotic-actuator.html
+    tau_peak_Nm: 53
+    mass_kg: 0.96
+    no_load_rpm: 235
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 9
+    OD_mm: 98
+    L_mm: 61.7
+    rotor_inertia:
+      value: 1002
+      unit: g.cm2
+      kind: rotor
+      source: cubemars.com AK10-9 V3.0 KV60
+    notes: 9:1 V3
+    checked: '2026-08-26'
+
+  - name: AK60-6
+    vendor: CubeMars
+    source: https://www.cubemars.com/product/ak60-6-v3-0-kv80-robotic-actuator.html
+    tau_peak_Nm: 9
+    mass_kg: 0.37
+    no_load_rpm: 640
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 6
+    OD_mm: 79
+    L_mm: 43
+    rotor_inertia:
+      value: 243.5
+      unit: g.cm2
+      kind: rotor
+      source: cubemars.com AK60-6 V3.0 KV80
+    notes: 6:1 planetary
+    checked: '2026-08-26'
+
+  - name: AK70-10
+    vendor: CubeMars
+    source: https://www.cubemars.com/product/ak70-10-kv100-robotic-actuator.html
+    tau_peak_Nm: 24
+    mass_kg: 0.521
+    no_load_rpm: 310
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 10
+    OD_mm: 89
+    L_mm: 50.25
+    rotor_inertia:
+      value: 753.4788
+      unit: g.cm2
+      kind: rotor
+      source: cubemars.com AK70-10 KV100
+    notes: 10:1 planetary
+    checked: '2026-08-26'
+
+  - name: AK45-10
+    vendor: CubeMars
+    source: https://www.cubemars.com/product/AK45-10-robotic-actuatuor.html
+    tau_peak_Nm: 7
+    mass_kg: 0.26
+    no_load_rpm: 170
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 10
+    OD_mm: 53
+    L_mm: 43
+    rotor_inertia:
+      value: 157.33
+      unit: g.cm2
+      kind: rotor
+      source: cubemars.com AK45-10 KV75
+    notes: 10:1 planetary
+    checked: '2026-08-26'
+
+  - name: AK40-10
+    vendor: CubeMars
+    source: https://www.cubemars.com/product/ak40-10-robotic-actuator.html
+    tau_peak_Nm: 4.1
+    mass_kg: 0.2
+    no_load_rpm: 435
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 10
+    OD_mm: 53
+    L_mm: 37
+    rotor_inertia:
+      value: 97.35
+      unit: g.cm2
+      kind: rotor
+      source: cubemars.com AK40-10 KV170
+    notes: 10:1 planetary
+    checked: '2026-08-26'
+
+  - name: AK80-8 KV60
+    vendor: CubeMars
+    source: https://www.cubemars.com/product/ak80-8-kv60-robotic-actuator.html
+    tau_peak_Nm: 25
+    mass_kg: 0.57
+    no_load_rpm: 360
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 8
+    OD_mm: 98
+    L_mm: 43.9
+    rotor_inertia:
+      value: 1232.6191
+      unit: g.cm2
+      kind: rotor
+      source: cubemars.com AK80-8 KV60
+    notes: 8:1, dual encoder, 98x44mm
+    checked: '2026-08-26'
+
+  - name: AKA10-9 KV60
+    vendor: CubeMars
+    source: https://www.cubemars.com/product/aka10-9-kv60-robotic-actuator.html
+    tau_peak_Nm: 53
+    mass_kg: 1.06
+    no_load_rpm: 240
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 9
+    OD_mm: 100
+    L_mm: 70
+    rotor_inertia:
+      value: 1002
+      unit: g.cm2
+      kind: rotor
+      source: cubemars.com AKA10-9 KV60
+    notes: 9:1, reinforced radial load, 100x70mm
+    checked: '2026-08-26'
+
+  - name: AKA60-6 KV80
+    vendor: CubeMars
+    source: https://www.cubemars.com/product/aka60-6-kv80-robotic-actuator.html
+    tau_peak_Nm: 9
+    mass_kg: 0.46
+    no_load_rpm: 550
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 6
+    OD_mm: 80
+    L_mm: 51.2
+    rotor_inertia:
+      value: 331.91
+      unit: g.cm2
+      kind: rotor
+      source: cubemars.com AKA60-6 KV80
+    notes: 6:1, 48V spec, 80x51mm
+    checked: '2026-08-26'
+
+  - name: AKE60-8 KV80
+    vendor: CubeMars
+    source: https://www.cubemars.com/goods-1173-AKE60-8.html
+    tau_peak_Nm: 12.5
+    mass_kg: 0.26
+    no_load_rpm: 240
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 8
+    OD_mm: 69
+    L_mm: 25
+    rotor_inertia:
+      value: 647.39
+      unit: g.cm2
+      kind: rotor
+      source: cubemars.com AKE60-8 KV80
+    notes: 8:1, ultra-flat 69x25mm
+    checked: '2026-08-26'
+
+  - name: CyberGear MS01
+    vendor: Xiaomi
+    source: https://github.com/belovictor/cybergear-docs/blob/main/instructionmanual/instructionmanual.md
+    tau_peak_Nm: 12
+    mass_kg: 0.317
+    no_load_rpm: 240
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 7.75
+    OD_mm: 80.5
+    L_mm: 36.5
+    rotor_inertia: null       # TODO not in the text of the vendor page
+    notes: 7.75:1 planetary, 80.5x36.5mm, 24V. Source is a verbatim mirror of Xiaomi's own CyberGear micromotor instruction manual; every field here appears in it - peak 12 N.m, 317 +/-3 g, constant-torque max speed 240 rpm +/-10%, 7.75:1, phi80.5 x 36.5 mm. The check predates the citation only because the row had none; no value moved.
+    checked: '2026-08-26'
+
+  - name: GO-M8010-6
+    vendor: Unitree
+    source: https://techshare.co.jp/faq/wp-content/uploads/2023/12/GO-M8010-6_Motor_Data_User_Manual_V1.0.pdf
+    tau_peak_Nm: 23.7
+    mass_kg: 0.42
+    no_load_rpm: 270
+    omega_NL_rad_s: null
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 6.33
+    OD_mm: 92
+    L_mm: 42
+    rotor_inertia: null       # TODO not in the text of the vendor page
+    notes: 6.33:1, Go1 quadruped
+    checked: '2026-08-26'
+
+  - name: Unitree A1
+    vendor: Unitree
+    source: https://www.unitree.com/a1/motor/
+    tau_peak_Nm: 33.5
+    mass_kg: 0.605
+    omega_NL_rad_s: 21
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 6
+    OD_mm: 78
+    L_mm: 62
+    rotor_inertia: null       # TODO not in the text of the vendor page
+    notes: ~6:1, A1 quadruped, 78x62mm. Unitree's own motor page publishes max instantaneous torque 33.5 N.m, max joint speed 21 rad/s and 605 g - the three fields this row is fitted on. It does NOT publish the reduction or the envelope, so gear, OD_mm and L_mm stay uncited.
+    checked: '2026-08-27'
+
+  - name: MIT Mini Cheetah (U8)
+    vendor: MIT Humanoid
+    source: https://dspace.mit.edu/handle/1721.1/118671
+    tau_peak_Nm: 17
+    mass_kg: 0.48
+    omega_NL_rad_s: 40
+    P_peak_W: 250
+    gear: 6
+    OD_mm: 96
+    L_mm: 40
+    rotor_inertia:
+      value: 0.0023
+      unit: kg.m2
+      kind: output
+      source: Katz 2018 MIT SM thesis, actuator specification table
+    notes: 6:1, 96x40mm, 40 rad/s @24V; continuous torque 6.9 Nm. The ONLY row where branch 1 of the peak-power rule fires - Katz publishes +250/-680 W mechanical, and -680 W is the REGENERATIVE limit, so 250 W is the figure; the tau*w/4 envelope would say 170 W. Thesis states "Output Inertia", hence the output kind on the rotor block. Mass is NOT in the thesis actuator table - source still open.
+    checked: '2026-08-26'
+
+  - name: MIT U10
+    vendor: MIT Humanoid
+    source: https://ieeexplore.ieee.org/document/10375199/
+    tau_peak_Nm: 34
+    mass_kg: 0.66
+    omega_NL_rad_s: 48
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 6
+    OD_mm: 101
+    L_mm: 38
+    rotor_inertia:
+      value: 0.00017
+      unit: kg.m2
+      kind: rotor
+      source: SaLoutos et al., Design and Development of the MIT Humanoid (Humanoids 2023), actuator table
+    notes: 6:1, 101x38mm, max speed quoted at 60V
+    checked: '2026-08-26'
+
+  - name: MIT U12
+    vendor: MIT Humanoid
+    source: https://ieeexplore.ieee.org/document/10375199/
+    tau_peak_Nm: 72
+    mass_kg: 1.1
+    omega_NL_rad_s: 40
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 6
+    OD_mm: 126
+    L_mm: 46
+    rotor_inertia:
+      value: 0.00055
+      unit: kg.m2
+      kind: rotor
+      source: SaLoutos et al., Design and Development of the MIT Humanoid (Humanoids 2023), actuator table
+    notes: 6:1, 126x46mm, max speed quoted at 60V
+    checked: '2026-08-26'
+
+  - name: RMD-X8-P9-25-C-N
+    vendor: MyActuator
+    source: https://www.myactuator.com/_files/archives/cab28a_85824a1893de4b058080c363664a1c9f.zip?dn=X8-25%20%20240814.zip
+    tau_peak_Nm: 25
+    mass_kg: 0.71
+    no_load_rpm: 110
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 9
+    OD_mm: 98
+    L_mm: 51
+    rotor_inertia:
+      value: 30.6
+      unit: kg.cm2
+      kind: output
+    notes: 'Was ''RMD-X8 Pro (1:9)''. MyActuator''s own X8-25 product package (product-parameter sheet, previous name ''RMD-X8-Pro 1:9 V2'') gives gear 9:1 and peak torque 25 N.m, both already right, but weight 710 g not 860; its drawing sums to 51 mm overall on phi98, not 55. no_load_rpm 160 is not on that sheet (it prints rated speed 110) but is exactly the 30 rpm/V motor at 48 V through 9:1, the same motor constant the 1:6 sheet publishes. The sheet''s ''Inertia 30.6 kg.cm2'' is left out: it is neither rotor- nor output-side but rotor x N (30.6/9 = 3.4 kg.cm2, the rotor inertia the 1:6 manual publishes) - the same x N convention the X10-40 sheet uses.'
+    checked: '2026-08-27'
+
+  - name: GIM8115-6
+    vendor: SteadyWin
+    source: https://steadywin-motor.com/products/document-download
+    tau_peak_Nm: 38
+    mass_kg: 0.705
+    no_load_rpm: 218
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 6
+    OD_mm: 96
+    L_mm: 48.5
+    rotor_inertia: null       # TODO not in the text of the vendor page
+    notes: 6:1, 48 V winding. Peak torque 38 N.m confirmed; everything else corrected against SteadyWin's table - 218 rpm not 300, 705 g not 790, phi96 x 48.5 not 92 x 75. Read from SteadyWin's own 'Planetary Reduction Motor Selection Table.xlsx', linked from the Document Download page. Mass and envelope are the WITH-DRIVER figures, matching this dataset's whole-shipped-unit convention; speed is 'Max Speed after reduction'.
+    checked: '2026-08-27'
+
+  - name: GIM8108-8
+    vendor: SteadyWin
+    source: https://steadywin-motor.com/products/document-download
+    tau_peak_Nm: 22
+    mass_kg: 0.396
+    no_load_rpm: 320
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 8
+    OD_mm: 92
+    L_mm: 55
+    rotor_inertia: null       # TODO not in the text of the vendor page
+    notes: 8:1, 48 V winding. Peak torque 22 N.m, 320 rpm and phi92 x 55 all confirmed; only the mass was wrong (396 g, not 500). Read from SteadyWin's own 'Planetary Reduction Motor Selection Table.xlsx', linked from the Document Download page. Mass and envelope are the WITH-DRIVER figures, matching this dataset's whole-shipped-unit convention; speed is 'Max Speed after reduction'.
+    checked: '2026-08-27'
+
+  - name: GIM6010-8
+    vendor: SteadyWin
+    source: https://github.com/MakerBotics/GIM6010-8-Joint-Robot-Motor-/blob/master/SteadyWin%20GIM6010-8.pdf
+    tau_peak_Nm: 11
+    mass_kg: 0.388
+    no_load_rpm: 420
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 8
+    OD_mm: 80
+    L_mm: 40
+    rotor_inertia: null       # TODO not in the text of the vendor page
+    notes: '8:1'
+    checked: '2026-08-27'
+
+  - name: GIM3510-8
+    vendor: SteadyWin
+    source: https://steadywin-motor.com/products/document-download
+    tau_peak_Nm: 6.28
+    mass_kg: 0.2596
+    no_load_rpm: 588
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 8
+    OD_mm: 46
+    L_mm: 51.5
+    rotor_inertia: null       # TODO not in the text of the vendor page
+    notes: '8:1, 24 V. Torque and speed were nearly right (6.28 N.m, 588 rpm) but the body was not: SteadyWin''s table gives 259.6 g and phi46 x 51.5, against the 150 g and phi35 x 40 this row carried - roughly the bare-motor figures for a smaller part. The gear ratio was missing and is 8:1. Read from SteadyWin''s own ''Planetary Reduction Motor Selection Table.xlsx'', linked from the Document Download page. Mass and envelope are the WITH-DRIVER figures, matching this dataset''s whole-shipped-unit convention; speed is ''Max Speed after reduction''.'
+    checked: '2026-08-27'
+
+  - name: RS05
+    vendor: RobStride
+    source: https://github.com/RobStride/Product_Information
+    tau_peak_Nm: 5.5
+    mass_kg: 0.191
+    no_load_rpm: 480
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 7.75
+    OD_mm: 46
+    L_mm: 44
+    rotor_inertia:
+      value: 0.0007
+      unit: kg.m2
+      kind: output
+      source: RobStride RS series spec PDF (RS05)
+    notes: 7.75:1, square 46mm
+    checked: '2026-08-26'
+
+  - name: RS00
+    vendor: RobStride
+    source: https://github.com/RobStride/Product_Information
+    tau_peak_Nm: 14
+    mass_kg: 0.31
+    no_load_rpm: 315
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 10
+    OD_mm: 57
+    L_mm: 51
+    rotor_inertia:
+      value: 0.001
+      unit: kg.m2
+      kind: output
+      source: RobStride RS series spec PDF (RS00)
+    notes: 10:1, square 57mm
+    checked: '2026-08-26'
+
+  - name: RS01
+    vendor: RobStride
+    source: https://github.com/RobStride/Product_Information
+    tau_peak_Nm: 17
+    mass_kg: 0.38
+    no_load_rpm: 275
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 7.75
+    OD_mm: 79
+    L_mm: 45.5
+    rotor_inertia:
+      value: 0.0042
+      unit: kg.m2
+      kind: output
+      source: RobStride RS series spec PDF (RS01)
+    notes: 7.75:1, single encoder, square 79mm
+    checked: '2026-08-27'
+
+  - name: RS02
+    vendor: RobStride
+    source: https://github.com/RobStride/Product_Information
+    tau_peak_Nm: 17
+    mass_kg: 0.405
+    no_load_rpm: 360
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 7.75
+    OD_mm: 79
+    L_mm: 45.5
+    rotor_inertia:
+      value: 0.0042
+      unit: kg.m2
+      kind: output
+      source: RobStride RS series spec PDF (RS02)
+    notes: 7.75:1, dual encoder, square 79mm
+    checked: '2026-08-27'
+
+  - name: RS06
+    vendor: RobStride
+    source: https://github.com/RobStride/Product_Information
+    tau_peak_Nm: 36
+    mass_kg: 0.621
+    no_load_rpm: 480
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 9
+    OD_mm: 88
+    L_mm: 49
+    rotor_inertia:
+      value: 0.012
+      unit: kg.m2
+      kind: output
+      source: RobStride RS series spec PDF (RS06)
+    notes: 9:1, square 88mm; high-KV motor, wide τ-ω curve
+    checked: '2026-08-27'
+
+  - name: RS03
+    vendor: RobStride
+    source: https://github.com/RobStride/Product_Information
+    tau_peak_Nm: 60
+    mass_kg: 0.88
+    no_load_rpm: 195
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 9
+    OD_mm: 106
+    L_mm: 56
+    rotor_inertia:
+      value: 0.02
+      unit: kg.m2
+      kind: output
+      source: RobStride RS series spec PDF (RS03)
+    notes: 9:1, square 106mm
+    checked: '2026-08-27'
+
+  - name: RS04
+    vendor: RobStride
+    source: https://github.com/RobStride/Product_Information
+    tau_peak_Nm: 120
+    mass_kg: 1.42
+    no_load_rpm: 200
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 9
+    OD_mm: 120
+    L_mm: 56
+    rotor_inertia:
+      value: 0.04
+      unit: kg.m2
+      kind: output
+      source: RobStride RS series spec PDF (RS04)
+    notes: 9:1, square 120mm; 700W rated output
+    checked: '2026-08-27'
+
+  - name: RMD-X6-P8-8-C
+    vendor: MyActuator
+    source: https://static1.squarespace.com/static/65098da04c5aa04f8f5ed336/t/687e92d71f42602362a7738c/1753125602005/MyActuator+2025+product+manual.pdf
+    tau_peak_Nm: 8
+    mass_kg: 0.49
+    no_load_rpm: 387
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 8
+    OD_mm: 80
+    L_mm: 48
+    rotor_inertia:
+      value: 0.61
+      unit: kg.cm2
+      kind: rotor
+      source: MyActuator 2025 catalog p11 (X6-8)
+    notes: X6-8; rated 135 W at 8:1. Catalog p11. Envelope from that page's installation drawing.
+    checked: '2026-08-27'
+
+  - name: RMD-X8-P9-32-R
+    vendor: MyActuator
+    source: https://static1.squarespace.com/static/65098da04c5aa04f8f5ed336/t/687e92d71f42602362a7738c/1753125602005/MyActuator+2025+product+manual.pdf
+    tau_peak_Nm: 32
+    mass_kg: 0.55
+    no_load_rpm: 277
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 9
+    OD_mm: 96
+    L_mm: 41.2
+    rotor_inertia:
+      value: 1.43
+      unit: kg.cm2
+      kind: rotor
+      source: MyActuator 2025 catalog p13 (X8-32)
+    notes: X8-32; rated 204 W at 9:1. Catalog p13. Envelope from that page's installation drawing. Single encoder, RS485, 24 V.
+    checked: '2026-08-27'
+
+  - name: RMD-X8-P9-50-C
+    vendor: MyActuator
+    source: https://static1.squarespace.com/static/65098da04c5aa04f8f5ed336/t/687e92d71f42602362a7738c/1753125602005/MyActuator+2025+product+manual.pdf
+    tau_peak_Nm: 50
+    mass_kg: 0.72
+    no_load_rpm: 137
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 9
+    OD_mm: 98
+    L_mm: 51
+    rotor_inertia:
+      value: 0.87
+      unit: kg.cm2
+      kind: rotor
+      source: MyActuator 2025 catalog p14 (X8-50)
+    notes: X8-50; rated 125 W at 9:1. Catalog p14. Envelope from that page's installation drawing.
+    checked: '2026-08-27'

@@ -1,0 +1,38 @@
+# Per-run config for the flat quadruped task. Keys override the defaults in
+# runner_cfg.py; omit a key (or set it null) to keep the default.
+
+task: quadruped
+run_name: quadruped_flat
+
+# ── Task inputs (forwarded to make_env_cfg via env_kwargs) ────────────────────
+# The paper's cheetah; build it with `python scripts/generate_quadrupeds.py --only
+# cheetah`. To train another design, point this at its generated XML.
+env_kwargs:
+  robot_xml: generated/cheetah/quadruped.xml
+
+# ── Hyperparameter overrides (RunnerCfg field names) ──────────────────────────
+# Examples — uncomment to use:
+# n_envs: 4096
+# max_iterations: 10000
+# learning_rate: 0.001
+# entropy_coef: 0.01
+# num_steps_per_env: 24
+# save_interval: 50
+# seed: 0
+# logger: wandb
+# wandb_project: quadruped_locomotion
+
+# ── Reward weight overrides (by reward term name) ────────────────────────────
+# reward_overrides:
+#   track_linear_velocity: 1.0
+#   track_angular_velocity: 1.0
+#   upright: 1.0
+#   air_time: 0.4
+#   action_rate_l2: -0.05
+#   upper_leg_contact: -1.0
+#   base_height: 0.4
+
+# ── Play-mode overrides ───────────────────────────────────────────────────────
+# play_n_envs: 1
+# checkpoint: null
+# viewer: viser

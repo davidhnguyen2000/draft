@@ -1,0 +1,26 @@
+{
+ "machines": {
+  "bear": {
+   "xml": "generated/bear/quadruped.xml",
+   "fingerprint": "88ea69eacb5ce59458b83e65578593b2413b1863a046f99499e1f39966804f61"
+  },
+  "cheetah": {
+   "xml": "generated/cheetah/quadruped.xml",
+   "fingerprint": "6667ff2d4407d7c781b7f55f4ecb341c3429f0310977854c32f533ade2e10642"
+  },
+  "giraffe": {
+   "xml": "generated/giraffe/quadruped.xml",
+   "fingerprint": "5e94bb6472405c712a7c0375b74c711336449581c885aa4fe1f428f69a6ef828"
+  }
+ },
+ "inputs": {
+  "src/draft/robots/quadruped/parameters.yaml": "37256f757194d5c60446d0a9cff9074d36f9262e3d7f79bb89b20185cd09a07d",
+  "src/draft/robots/quadruped/tree.yaml": "2f677239d5ff01d1ca4296c2e85795c9fb2f4dccd56df2d4980af60f52dae539",
+  "src/draft/trends/data/link_trends.json": "bee0e3796f5c442e81ec77cc8576aefc7190b95651f569b3a84142846ff12b91",
+  "src/draft/trends/data/actuator_trends.json": "6833f6b2cf5905884dd97e2a4f61d89a14e06f08d9504af2690e88f0b0e0002a",
+  "src/draft/trends/data/actuator_catalog.json": "efe21e9c1f25e626b3ec1b935475683a399029e846a26a657c6807f83a6afccc",
+  "experiments/quadruped_variants/bear.yaml": "2d6fc98696a9189a4f0b5c3953259933f822d4c0a1cbc183111f19b451d14a9a",
+  "experiments/quadruped_variants/cheetah.yaml": "66559cad18f299547619b7225e2aa4f2d9af0dde8c3b0e73dac94775e541b497",
+  "experiments/quadruped_variants/giraffe.yaml": "50aefe4c0bdd31b501574f390aa5539e6b3a14211a10cf1ac8f56454edec290a"
+ }
+}

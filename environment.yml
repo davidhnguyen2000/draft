@@ -1,0 +1,13 @@
+# Conda supplies only the interpreter; dependencies live in pyproject.toml.
+#
+#   conda env create -f environment.yml
+#   conda activate draft
+#   pip install -e ".[editor,twins,figures,dev]" -c constraints.txt
+#
+# The `rl` extra (mjlab, torch) needs CUDA. See docs/contributing.md.
+name: draft
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip

@@ -1,0 +1,33 @@
+# mesh.yaml — humanoid torso.
+#
+# Five cross-sections stacked along Z, bottom to top:
+#   1. narrow waist stub — the tapered pelvis motor housing
+#   2. full waist        — the torso-roll + torso-pitch motor band
+#   3. shoulder bottom   — underside of the shoulder-pitch units
+#   4. shoulder top      — topside of the same
+#   5. tapered cap       — visual taper above the shoulder motors
+#
+# `<joint>_motor_r`/`_L` are the trend-derived envelope of that joint's motor
+# class, so changing a class reshapes the torso.
+
+name:          torso
+axis:          z
+density_param: torso_rho
+chamfer:       0.15
+
+layers:
+  # Waist stub: 0.75 of the band above, raised by `torso_mesh_standoff` off the
+  # waist actuator; `cx` shifts it under the torso-pitch unit.
+  - pos: "${-(torso_length - lower_core_link_length - pelvis_link_length) + torso_mesh_standoff}"
+    lx:  "${(torso_roll_motor_L + torso_roll_motor_r + upper_core_link_length) * 0.75}"
+    ly:  "${torso_roll_motor_r * 2 * 1.25 * 0.75}"
+    cx:  "${-(torso_roll_motor_L + torso_roll_motor_r + upper_core_link_length) / 2 + torso_pitch_motor_r}"
+
+  - pos: "${-(torso_length - lower_core_link_length - pelvis_link_length) + torso_mesh_standoff + shoulder_pitch_motor_r * 0.5}"
+    lx:  "${torso_roll_motor_L + torso_roll_motor_r + upper_core_link_length}"
+    ly:  "${torso_roll_motor_r * 2 * 1.25}"
+    cx:  "${-(torso_roll_motor_L + torso_roll_motor_r + upper_core_link_length) / 2 + torso_pitch_motor_r}"
+
+  - {pos: "${-shoulder_pitch_motor_r}",       lx: "${shoulder_depth}",        ly: "${shoulder_width}"}
+  - {pos: "${ shoulder_pitch_motor_r}",       lx: "${shoulder_depth}",        ly: "${shoulder_width}"}
+  - {pos: "${torso_cap_z}",                    lx: "${shoulder_depth * 0.75}", ly: "${shoulder_width * 0.75}"}

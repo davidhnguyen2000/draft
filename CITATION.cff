@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+title: "Draft: A Parametric Design Tool for Robot Exploration"
+message: "If you use this software or its datasets, please cite the paper."
+type: software
+authors:
+  - family-names: Nguyen
+    given-names: David
+    affiliation: "Department of Mechanical Engineering, Massachusetts Institute of Technology"
+  - family-names: Coelho
+    given-names: Marcelo
+    affiliation: "Department of Architecture, Massachusetts Institute of Technology"
+  - family-names: Kim
+    given-names: Sangbae
+    affiliation: "Department of Mechanical Engineering, Massachusetts Institute of Technology"
+license: MIT
+abstract: >-
+  Draft is a parametric generation tool for design and controller exploration
+  using medium-fidelity robot models, without CAD. A generalized engine compiles
+  any parametric robot tree into a simulation-ready MJCF model. The free
+  parameters of a design are grounded in trends fitted to a survey of 114
+  actuators and 49 published robot descriptions, validated end to end by
+  rebuilding four off-the-shelf platforms to 1.10x geometric mean fold error in
+  total mass.
+keywords:
+  - robotics
+  - robot design
+  - co-design
+  - MuJoCo
+  - MJCF
+  - actuator scaling
+  - legged robots

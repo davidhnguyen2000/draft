@@ -1,0 +1,16 @@
+# Task registry: task name -> sub-package (relative to draft.tasks).
+# Each package exposes make_env_cfg(**kwargs) and make_runner_cfg(), and has a
+# config.yaml of default per-run overrides.
+#
+# push/terrain/velocity each add one curriculum to the flat "quadruped" base
+# env on the same obs/action space, so they warm-start from the flat policy.
+
+tasks:
+  quadruped:
+    package: quadruped
+  quadruped_push:
+    package: quadruped/push
+  quadruped_terrain:
+    package: quadruped/terrain
+  quadruped_velocity:
+    package: quadruped/velocity

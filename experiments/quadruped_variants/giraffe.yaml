@@ -1,0 +1,50 @@
+# giraffe design variant: overrides on src/draft/robots/quadruped/parameters.yaml.
+# Generate: python scripts/generate_quadrupeds.py --only giraffe
+#
+# Giraffe: the long-leg corner (Harmonic strain-wave actuators).
+
+hip_roll_link_length: 0.18
+upper_leg_link_length: 0.69
+lower_leg_link_length: 0.61
+# Every joint uses the L-class actuator.
+hip_roll_mot: L
+hip_pitch_mot: L
+knee_mot: L
+# Drawn limb radius as a fraction of the actuator face (generation/tree_ops.py:
+# drawn_radius). Render-only: density is rescaled so link mass is unchanged.
+link_render_radius_scale: 1.0
+torso_lx: 0.64
+torso_ly: 0.34
+torso_lz: 0.33
+shoulder_width: 0.24
+motor_rho: 2700.0
+torso_rho: 200.0
+
+# Harmonic actuators from the catalogue; rated numbers restated per class.
+L_motor: "eRob110H-80"            # ZeroErr, SHG 25-80, 110 x 115.2 mm, 2.88 kg
+L_motor_effort: 332.0
+L_motor_velocity: 3.93
+L_motor_gear: 80.0
+M_motor: "eRob90H-80"             # ZeroErr, SHG 20-80
+M_motor_effort: 165.0
+M_motor_velocity: 3.93
+M_motor_gear: 80.0
+S_motor: "eRob80H-80"             # ZeroErr, SHG 17-80, 1.19 kg
+S_motor_effort: 113.0
+S_motor_velocity: 3.93
+S_motor_gear: 80.0
+
+# Asserted, not fitted: no trend covers gearbox losses (docs/robot-format.md).
+L_motor_friction: 0.294
+M_motor_friction: 0.146
+S_motor_friction: 0.100
+L_motor_damping: 0.0420
+M_motor_damping: 0.0209
+S_motor_damping: 0.0143
+
+# Colour follows the actuator family (Harmonic), as in scripts/figures/paper_style.py CAT.
+link_color: 0.453 0.720 0.514 1.000
+motor_color: 0.173 0.343 0.212 1.000
+mot_detail_color: 0.107 0.211 0.131 1.000
+torso_color: 0.333 0.659 0.408 1.000
+foot_color: 0.302 0.302 0.302 1.000

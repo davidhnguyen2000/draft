@@ -1,0 +1,863 @@
+# Harmonic actuators — 19 rows
+#
+# Strain-wave gearing, 50:1 and up.
+#
+# One row = one catalogued part, and everything known about it lives HERE —
+# there is no second table to keep in step. See README.md (this directory)
+# for the field reference.
+#
+# Required: name, vendor, tau_peak_Nm, mass_kg, and exactly one of
+# no_load_rpm / omega_NL_rad_s. Everything else may be null.
+
+actuators:
+  - name: eRob 80F
+    vendor: ZeroErr
+    source: https://www.zeroerr.com/rotary_actuators/erob80f
+    tau_peak_Nm: 71
+    mass_kg: 0.89
+    no_load_rpm: 30
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 100
+    OD_mm: 80
+    L_mm: 57.5
+    rotor_inertia:
+      value: 29818
+      unit: g.mm2
+      kind: rotor
+      source: zeroerr.com eRob 80F, Strain Wave Gear input side inertia
+    notes: SHD 17 gearset. ZeroErr's own product page confirms max torque 71 N.m, 0.89 kg and phi80 x 57.5 exactly as this row had them - it is absent from manual V3.36, not from the catalogue. Ratios offered are 50 and 100; the 71 N.m is the 100:1 figure, so gear and speed are paired at 100:1 / 30 rpm rather than the 60 rpm that belongs to 50:1. Input-side inertia 29818 gmm2. Motor power 126 W.
+    checked: '2026-08-27'
+
+  - name: eRob 70T
+    vendor: ZeroErr
+    source: https://www.zeroerr.com/rotary_actuators/erob70t
+    tau_peak_Nm: 70
+    mass_kg: 1.24
+    no_load_rpm: 30
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 100
+    OD_mm: 73
+    L_mm: 99
+    rotor_inertia:
+      value: 50996
+      unit: g.mm2
+      kind: rotor
+      source: zeroerr.com eRob 70T, Strain Wave Gear input side inertia
+    notes: 'SHG 14 gearset, 100 W. ZeroErr''s page confirms 1.24 kg and phi73 x 99. Its torque table is the same one eRob70H has - max momentary 46/61/70/70 N.m at 50/80/100/120 - so the 70 N.m this row carried is the 100:1 (or 120:1) figure and is now paired with that ratio''s 30 rpm instead of 50:1''s 60 rpm. Input inertia 50996 gmm2 is eRob70H''s with-brake value: the T is the same drivetrain in a heavier housing.'
+    checked: '2026-08-27'
+
+  - name: eRob 80T
+    vendor: ZeroErr
+    source: https://www.zeroerr.com/rotary_actuators/erob80t
+    tau_peak_Nm: 143
+    mass_kg: 1.94
+    no_load_rpm: 30
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 100
+    OD_mm: 85
+    L_mm: 111.8
+    rotor_inertia:
+      value: 70637
+      unit: g.mm2
+      kind: rotor
+      source: zeroerr.com eRob 80T, Strain Wave Gear input side inertia
+    notes: SHG 17 gearset, 146 W. ZeroErr's page gives max torque 143 N.m, not the 112 this row had - 112 is the 120:1 momentary figure, 143 the 100:1 one. Mass 1.94 kg and phi85 x 111.8 confirmed. Same torque table as eRob80H; input inertia 70637 gmm2 is eRob80H's with-brake value.
+    checked: '2026-08-27'
+
+  - name: eRob 90T
+    vendor: ZeroErr
+    source: https://www.zeroerr.com/rotary_actuators/erob90t
+    tau_peak_Nm: 191
+    mass_kg: 2.6
+    no_load_rpm: 30
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 100
+    OD_mm: 96
+    L_mm: 123.8
+    rotor_inertia:
+      value: 147025
+      unit: g.mm2
+      kind: rotor
+      source: zeroerr.com eRob 90T, Strain Wave Gear input side inertia
+    notes: SHG 20 gearset, 300 W. ZeroErr's page confirms 191 N.m, 2.6 kg and phi96 x 123.8. Same torque table as eRob90H (peak start/stop 73/96/107/113, rated 33/44/52/52), so 191 N.m is the 100:1 momentary figure and is now paired with 30 rpm rather than 50:1's 60 rpm. Input inertia 147025 gmm2 is eRob90H's with-brake value.
+    checked: '2026-08-27'
+
+  - name: H25-45
+    vendor: HEBI Robotics
+    source: https://docs.hebi.us/hardware.html
+    tau_peak_Nm: 90
+    mass_kg: 2.9
+    no_load_rpm: 100
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 51
+    OD_mm: 126
+    L_mm: 114
+    rotor_inertia:
+      value: 2500
+      unit: g.cm2
+      kind: rotor
+      source: docs.hebi.us 'Rotor Inertia @ Motor' (H25)
+    notes: harmonic
+    checked: '2026-08-27'
+
+  - name: H25-90
+    vendor: HEBI Robotics
+    source: https://docs.hebi.us/hardware.html
+    tau_peak_Nm: 180
+    mass_kg: 2.9
+    no_load_rpm: 50
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 101
+    OD_mm: 126
+    L_mm: 114
+    rotor_inertia:
+      value: 2500
+      unit: g.cm2
+      kind: rotor
+      source: docs.hebi.us 'Rotor Inertia @ Motor' (H25)
+    notes: harmonic
+    checked: '2026-08-27'
+
+  - name: H25-140
+    vendor: HEBI Robotics
+    source: https://docs.hebi.us/hardware.html
+    tau_peak_Nm: 280
+    mass_kg: 2.9
+    no_load_rpm: 30
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 161
+    OD_mm: 126
+    L_mm: 114
+    rotor_inertia:
+      value: 2500
+      unit: g.cm2
+      kind: rotor
+      source: docs.hebi.us 'Rotor Inertia @ Motor' (H25)
+    notes: harmonic
+    checked: '2026-08-27'
+
+  - name: MJA-H11
+    vendor: Techsoft
+    source: https://techsoft-robots.com/en/product/joint-module/mja-h
+    tau_peak_Nm: 11.5
+    mass_kg: 0.31
+    no_load_rpm: 30
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 101
+    OD_mm: 57.5
+    L_mm: 65
+    rotor_inertia: null       # TODO not in the text of the vendor page
+    notes: Was 'MJA-H 57mm'. Techsoft's own MJA-H page names it MJA-H11 and gives peak 11.5 N.m (this row had 15), rated 6.2, 0.31 kg, phi57.5 x 65 (this row had 60), 101:1, 30 rpm, 115 W. Harmonic reducer with integrated driver and dual encoders.
+    checked: '2026-08-27'
+
+  - name: MJA-H17S
+    vendor: Techsoft
+    source: https://techsoft-robots.com/en/product/joint-module/mja-h
+    tau_peak_Nm: 80
+    mass_kg: 0.75
+    no_load_rpm: 30
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 100
+    OD_mm: 76
+    L_mm: 78.5
+    rotor_inertia: null       # TODO not in the text of the vendor page
+    notes: 'Was ''MJA-H 76mm''. Techsoft names it MJA-H17S: peak 80 N.m (this row had 63), rated 25, 0.75 kg, phi76 x 78.5, 100:1, 30 rpm, 100 W.'
+    checked: '2026-08-27'
+
+  - name: MJA-H17T
+    vendor: Techsoft
+    source: https://techsoft-robots.com/en/product/joint-module/mja-h
+    tau_peak_Nm: 80
+    mass_kg: 0.81
+    no_load_rpm: 25
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 120
+    OD_mm: 76
+    L_mm: 85.5
+    rotor_inertia: null       # TODO not in the text of the vendor page
+    notes: 'Was ''MJA-H 76mm-48''. Techsoft names it MJA-H17T: peak 80 N.m, rated 48, 0.81 kg, phi76 x 85.5, 120:1, 25 rpm, 180 W. The ''48'' in the old name was the RATED torque and the 120 N.m this row carried as peak torque was the reduction ratio - both fields were reading the wrong column.'
+    checked: '2026-08-27'
+
+  - name: EPS-RH-11-80-C-N-D
+    vendor: MyActuator
+    source: https://static1.squarespace.com/static/65098da04c5aa04f8f5ed336/t/687e92d71f42602362a7738c/1753125602005/MyActuator+2025+product+manual.pdf
+    tau_peak_Nm: 21
+    mass_kg: 0.38
+    no_load_rpm: 40
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 80
+    OD_mm: 52
+    L_mm: 73
+    rotor_inertia:
+      value: 0.29
+      unit: kg.m2
+      kind: output
+      source: MyActuator 2025 catalog p19 (RH-11), 'Inertia' row N (without brake)
+    notes: 'RH-11; rated 13 W. Catalog p19, without-brake variant. The catalog offers 50:1 as well; the 80:1 is the one it lists a part number for. Inertia is OUTPUT-side: on RH-20 and RH-25 the 50:1/100:1 pair scales as N^2 (0.21->0.87, 0.51->1.94), which a motor-side value could not do, and kg.m2 at this mass is impossible before the gearbox. Single ratio, so no N^2 pair here. Sold again as EPS-HM-50-05-80-C (catalog p27) with identical numbers - one part, two series names; only this row is carried, so the fits do not count it twice.'
+    checked: '2026-08-27'
+
+  - name: EPS-RH-14-100-E-N-D
+    vendor: MyActuator
+    source: https://static1.squarespace.com/static/65098da04c5aa04f8f5ed336/t/687e92d71f42602362a7738c/1753125602005/MyActuator+2025+product+manual.pdf
+    tau_peak_Nm: 28
+    mass_kg: 0.78
+    no_load_rpm: 30
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 100
+    OD_mm: 70
+    L_mm: 81.7
+    rotor_inertia:
+      value: 0.29
+      unit: kg.m2
+      kind: output
+      source: MyActuator 2025 catalog p20 (RH-14), 'Inertia' row N (without brake)
+    notes: 'RH-14; rated 28 W. Catalog p20, without-brake variant. The catalog offers 50:1 as well; the 100:1 is the one it lists a part number for. Inertia is OUTPUT-side: on RH-20 and RH-25 the 50:1/100:1 pair scales as N^2 (0.21->0.87, 0.51->1.94), which a motor-side value could not do, and kg.m2 at this mass is impossible before the gearbox.'
+    checked: '2026-08-27'
+
+  - name: EPS-RH-17-Lite-100-C-N-D
+    vendor: MyActuator
+    source: https://static1.squarespace.com/static/65098da04c5aa04f8f5ed336/t/687e92d71f42602362a7738c/1753125602005/MyActuator+2025+product+manual.pdf
+    tau_peak_Nm: 65
+    mass_kg: 0.8
+    no_load_rpm: 25
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 100
+    OD_mm: 70
+    L_mm: 77
+    rotor_inertia:
+      value: 0.32
+      unit: kg.m2
+      kind: output
+      source: MyActuator 2025 catalog p21 (RH-17 Lite), 'Inertia' row N (without brake)
+    notes: 'RH-17 Lite; rated 55 W. Catalog p21, without-brake variant. The catalog offers 50:1 as well; the 100:1 is the one it lists a part number for. Inertia is OUTPUT-side: on RH-20 and RH-25 the 50:1/100:1 pair scales as N^2 (0.21->0.87, 0.51->1.94), which a motor-side value could not do, and kg.m2 at this mass is impossible before the gearbox. Sold again as EPS-HM-70-26-100-C (catalog p29) with identical numbers; only this row is carried. L is the 82 mm overall, not the 77 mm body.'
+    checked: '2026-08-27'
+
+  - name: EPS-RH-17-100-E-N-D
+    vendor: MyActuator
+    source: https://static1.squarespace.com/static/65098da04c5aa04f8f5ed336/t/687e92d71f42602362a7738c/1753125602005/MyActuator+2025+product+manual.pdf
+    tau_peak_Nm: 54
+    mass_kg: 1.11
+    no_load_rpm: 30
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 100
+    OD_mm: 80
+    L_mm: 90.2
+    rotor_inertia:
+      value: 0.52
+      unit: kg.m2
+      kind: output
+      source: MyActuator 2025 catalog p22 (RH-17), 'Inertia' row N (without brake)
+    notes: 'RH-17; rated 91 W. Catalog p22, without-brake variant. The catalog offers 50:1 as well; the 100:1 is the one it lists a part number for. Inertia is OUTPUT-side: on RH-20 and RH-25 the 50:1/100:1 pair scales as N^2 (0.21->0.87, 0.51->1.94), which a motor-side value could not do, and kg.m2 at this mass is impossible before the gearbox.'
+    checked: '2026-08-27'
+
+  - name: EPS-RH-20-100-E-N-D
+    vendor: MyActuator
+    source: https://static1.squarespace.com/static/65098da04c5aa04f8f5ed336/t/687e92d71f42602362a7738c/1753125602005/MyActuator+2025+product+manual.pdf
+    tau_peak_Nm: 80
+    mass_kg: 1.45
+    no_load_rpm: 30
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 100
+    OD_mm: 90
+    L_mm: 82.9
+    rotor_inertia:
+      value: 0.87
+      unit: kg.m2
+      kind: output
+      source: MyActuator 2025 catalog p23 (RH-20), 'Inertia' row N (without brake)
+    notes: 'RH-20; rated 130 W. Catalog p23, without-brake variant. The catalog offers 50:1 as well; the 100:1 is the one it lists a part number for. Inertia is OUTPUT-side: on RH-20 and RH-25 the 50:1/100:1 pair scales as N^2 (0.21->0.87, 0.51->1.94), which a motor-side value could not do, and kg.m2 at this mass is impossible before the gearbox.'
+    checked: '2026-08-27'
+
+  - name: EPS-RH-25-100-E-N-D
+    vendor: MyActuator
+    source: https://static1.squarespace.com/static/65098da04c5aa04f8f5ed336/t/687e92d71f42602362a7738c/1753125602005/MyActuator+2025+product+manual.pdf
+    tau_peak_Nm: 157
+    mass_kg: 2.42
+    no_load_rpm: 30
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 100
+    OD_mm: 110
+    L_mm: 89.5
+    rotor_inertia:
+      value: 1.94
+      unit: kg.m2
+      kind: output
+      source: MyActuator 2025 catalog p24 (RH-25), 'Inertia' row N (without brake)
+    notes: 'RH-25; rated 282 W. Catalog p24, without-brake variant. The catalog offers 50:1 as well; the 100:1 is the one it lists a part number for. Inertia is OUTPUT-side: on RH-20 and RH-25 the 50:1/100:1 pair scales as N^2 (0.21->0.87, 0.51->1.94), which a motor-side value could not do, and kg.m2 at this mass is impossible before the gearbox.'
+    checked: '2026-08-27'
+
+  - name: EPS-RH-32-100-E-N-D
+    vendor: MyActuator
+    source: https://static1.squarespace.com/static/65098da04c5aa04f8f5ed336/t/687e92d71f42602362a7738c/1753125602005/MyActuator+2025+product+manual.pdf
+    tau_peak_Nm: 229
+    mass_kg: 4.32
+    no_load_rpm: 20
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 100
+    OD_mm: 142
+    L_mm: 108.4
+    rotor_inertia:
+      value: 6.86
+      unit: kg.m2
+      kind: output
+      source: MyActuator 2025 catalog p25 (RH-32), 'Inertia' row N (without brake)
+    notes: 'RH-32; rated 282 W. Catalog p25, without-brake variant. The catalog offers 50:1 as well; the 100:1 is the one it lists a part number for. Inertia is OUTPUT-side: on RH-20 and RH-25 the 50:1/100:1 pair scales as N^2 (0.21->0.87, 0.51->1.94), which a motor-side value could not do, and kg.m2 at this mass is impossible before the gearbox.'
+    checked: '2026-08-27'
+
+  - name: EPS-HM-60-15-100-C
+    vendor: MyActuator
+    source: https://static1.squarespace.com/static/65098da04c5aa04f8f5ed336/t/687e92d71f42602362a7738c/1753125602005/MyActuator+2025+product+manual.pdf
+    tau_peak_Nm: 37
+    mass_kg: 0.65
+    no_load_rpm: 25
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 100
+    OD_mm: 60
+    L_mm: 64
+    rotor_inertia:
+      value: 0.1
+      unit: kg.m2
+      kind: output
+      source: MyActuator 2025 catalog p28 (HM-60), 'Inertia' row
+    notes: HM-60; harmonic mini, rated 55 W. Catalog p28. The only EPS-HM size with no EPS-RH twin (HM-50 and HM-70 repeat RH-11 and RH-17 Lite). Its 0.1 kg.m2 is BELOW RH-11's 0.29 despite being a larger unit, which no rotor scaling explains - suspect the catalog cell, and treat this inertia as unconfirmed.
+    checked: '2026-08-27'
+
+  - name: eRob70F-50
+    vendor: ZeroErr
+    source: https://www.hannovermesse.de/apollo/hannover_messe_2024/obs/Binary/A1338527/eRob_Rotary_Actuator_User_Manual_V3.36_compressed.pdf
+    tau_peak_Nm: 23
+    mass_kg: 0.77
+    no_load_rpm: 60
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 50
+    OD_mm: 70
+    L_mm: 60.4
+    rotor_inertia:
+      value: 43656
+      unit: g.mm2
+      kind: rotor
+      source: eRob manual V3.36 Table 2-1 (eRob70F), 'SWG Input Side Inertia', without brake
+    notes: 'SHD 14-50 strain wave gear. Manual V3.36 Table 2-1 (sec 2.2, p5/110). tau_peak_Nm is the Permissible Maximum MOMENTARY Torque; the same line also gives peak start/stop 12, permissible max with average load 4.8, and rated 3.7 N.m. Torque motor rated power 75 W (RATED, not a mechanical peak, so P_peak_W stays null). no_load_rpm is the Maximum Output Rotational Speed: across this module GR x RPM is constant, so the column is the motor''s own speed limit geared down. Mass and envelope are the WITHOUT-brake unit; with brake it is 0.83 kg, 70x67.7 mm, input inertia 46885 g.mm2. Output-side inertia 54030 g.mm2, output-side mass 0.13 kg.'
+    checked: '2026-08-27'
+
+  - name: eRob70F-80
+    vendor: ZeroErr
+    source: https://www.hannovermesse.de/apollo/hannover_messe_2024/obs/Binary/A1338527/eRob_Rotary_Actuator_User_Manual_V3.36_compressed.pdf
+    tau_peak_Nm: 35
+    mass_kg: 0.77
+    no_load_rpm: 37.5
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 80
+    OD_mm: 70
+    L_mm: 60.4
+    rotor_inertia:
+      value: 43656
+      unit: g.mm2
+      kind: rotor
+      source: eRob manual V3.36 Table 2-1 (eRob70F), 'SWG Input Side Inertia', without brake
+    notes: 'SHD 14-80 strain wave gear. Manual V3.36 Table 2-1 (sec 2.2, p5/110). tau_peak_Nm is the Permissible Maximum MOMENTARY Torque; the same line also gives peak start/stop 16, permissible max with average load 7.7, and rated 5.4 N.m. Torque motor rated power 75 W (RATED, not a mechanical peak, so P_peak_W stays null). no_load_rpm is the Maximum Output Rotational Speed: across this module GR x RPM is constant, so the column is the motor''s own speed limit geared down. Mass and envelope are the WITHOUT-brake unit; with brake it is 0.83 kg, 70x67.7 mm, input inertia 46885 g.mm2. Output-side inertia 54030 g.mm2, output-side mass 0.13 kg.'
+    checked: '2026-08-27'
+
+  - name: eRob70F-100
+    vendor: ZeroErr
+    source: https://www.hannovermesse.de/apollo/hannover_messe_2024/obs/Binary/A1338527/eRob_Rotary_Actuator_User_Manual_V3.36_compressed.pdf
+    tau_peak_Nm: 35
+    mass_kg: 0.77
+    no_load_rpm: 30
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 100
+    OD_mm: 70
+    L_mm: 60.4
+    rotor_inertia:
+      value: 43656
+      unit: g.mm2
+      kind: rotor
+      source: eRob manual V3.36 Table 2-1 (eRob70F), 'SWG Input Side Inertia', without brake
+    notes: 'SHD 14-100 strain wave gear. Manual V3.36 Table 2-1 (sec 2.2, p5/110). tau_peak_Nm is the Permissible Maximum MOMENTARY Torque; the same line also gives peak start/stop 19, permissible max with average load 7.7, and rated 5.4 N.m. Torque motor rated power 75 W (RATED, not a mechanical peak, so P_peak_W stays null). no_load_rpm is the Maximum Output Rotational Speed: across this module GR x RPM is constant, so the column is the motor''s own speed limit geared down. Mass and envelope are the WITHOUT-brake unit; with brake it is 0.83 kg, 70x67.7 mm, input inertia 46885 g.mm2. Output-side inertia 54030 g.mm2, output-side mass 0.13 kg.'
+    checked: '2026-08-27'
+
+  - name: eRob70H-50
+    vendor: ZeroErr
+    source: https://www.hannovermesse.de/apollo/hannover_messe_2024/obs/Binary/A1338527/eRob_Rotary_Actuator_User_Manual_V3.36_compressed.pdf
+    tau_peak_Nm: 46
+    mass_kg: 0.87
+    no_load_rpm: 60
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 50
+    OD_mm: 70
+    L_mm: 75.3
+    rotor_inertia:
+      value: 47767
+      unit: g.mm2
+      kind: rotor
+      source: eRob manual V3.36 Table 2-1 (eRob70H), 'SWG Input Side Inertia', without brake
+    notes: 'SHG 14-50 strain wave gear. Manual V3.36 Table 2-1 (sec 2.2, p5/110). tau_peak_Nm is the Permissible Maximum MOMENTARY Torque; the same line also gives peak start/stop 23, permissible max with average load 9, and rated 7 N.m. Torque motor rated power 100 W (RATED, not a mechanical peak, so P_peak_W stays null). no_load_rpm is the Maximum Output Rotational Speed: across this module GR x RPM is constant, so the column is the motor''s own speed limit geared down. Mass and envelope are the WITHOUT-brake unit; with brake it is 0.93 kg, 70x75.3 mm, input inertia 50996 g.mm2. Output-side inertia 69717 g.mm2, output-side mass 0.17 kg.'
+    checked: '2026-08-27'
+
+  - name: eRob70H-80
+    vendor: ZeroErr
+    source: https://www.hannovermesse.de/apollo/hannover_messe_2024/obs/Binary/A1338527/eRob_Rotary_Actuator_User_Manual_V3.36_compressed.pdf
+    tau_peak_Nm: 61
+    mass_kg: 0.87
+    no_load_rpm: 37.5
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 80
+    OD_mm: 70
+    L_mm: 75.3
+    rotor_inertia:
+      value: 47767
+      unit: g.mm2
+      kind: rotor
+      source: eRob manual V3.36 Table 2-1 (eRob70H), 'SWG Input Side Inertia', without brake
+    notes: 'SHG 14-80 strain wave gear. Manual V3.36 Table 2-1 (sec 2.2, p5/110). tau_peak_Nm is the Permissible Maximum MOMENTARY Torque; the same line also gives peak start/stop 30, permissible max with average load 14, and rated 10 N.m. Torque motor rated power 100 W (RATED, not a mechanical peak, so P_peak_W stays null). no_load_rpm is the Maximum Output Rotational Speed: across this module GR x RPM is constant, so the column is the motor''s own speed limit geared down. Mass and envelope are the WITHOUT-brake unit; with brake it is 0.93 kg, 70x75.3 mm, input inertia 50996 g.mm2. Output-side inertia 69717 g.mm2, output-side mass 0.17 kg.'
+    checked: '2026-08-27'
+
+  - name: eRob70H-100
+    vendor: ZeroErr
+    source: https://www.hannovermesse.de/apollo/hannover_messe_2024/obs/Binary/A1338527/eRob_Rotary_Actuator_User_Manual_V3.36_compressed.pdf
+    tau_peak_Nm: 70
+    mass_kg: 0.87
+    no_load_rpm: 30
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 100
+    OD_mm: 70
+    L_mm: 75.3
+    rotor_inertia:
+      value: 47767
+      unit: g.mm2
+      kind: rotor
+      source: eRob manual V3.36 Table 2-1 (eRob70H), 'SWG Input Side Inertia', without brake
+    notes: 'SHG 14-100 strain wave gear. Manual V3.36 Table 2-1 (sec 2.2, p5/110). tau_peak_Nm is the Permissible Maximum MOMENTARY Torque; the same line also gives peak start/stop 36, permissible max with average load 14, and rated 10 N.m. Torque motor rated power 100 W (RATED, not a mechanical peak, so P_peak_W stays null). no_load_rpm is the Maximum Output Rotational Speed: across this module GR x RPM is constant, so the column is the motor''s own speed limit geared down. Mass and envelope are the WITHOUT-brake unit; with brake it is 0.93 kg, 70x75.3 mm, input inertia 50996 g.mm2. Output-side inertia 69717 g.mm2, output-side mass 0.17 kg.'
+    checked: '2026-08-27'
+
+  - name: eRob70H-120
+    vendor: ZeroErr
+    source: https://www.hannovermesse.de/apollo/hannover_messe_2024/obs/Binary/A1338527/eRob_Rotary_Actuator_User_Manual_V3.36_compressed.pdf
+    tau_peak_Nm: 70
+    mass_kg: 0.87
+    no_load_rpm: 25
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 120
+    OD_mm: 70
+    L_mm: 75.3
+    rotor_inertia:
+      value: 47767
+      unit: g.mm2
+      kind: rotor
+      source: eRob manual V3.36 Table 2-1 (eRob70H), 'SWG Input Side Inertia', without brake
+    notes: 'SHG 14-120 strain wave gear. Manual V3.36 Table 2-1 (sec 2.2, p5/110). tau_peak_Nm is the Permissible Maximum MOMENTARY Torque; the same line also gives peak start/stop 36, permissible max with average load 14, and rated 10 N.m. Torque motor rated power 100 W (RATED, not a mechanical peak, so P_peak_W stays null). no_load_rpm is the Maximum Output Rotational Speed: across this module GR x RPM is constant, so the column is the motor''s own speed limit geared down. Mass and envelope are the WITHOUT-brake unit; with brake it is 0.93 kg, 70x75.3 mm, input inertia 50996 g.mm2. Output-side inertia 69717 g.mm2, output-side mass 0.17 kg.'
+    checked: '2026-08-27'
+
+  - name: eRob80H-50
+    vendor: ZeroErr
+    source: https://www.hannovermesse.de/apollo/hannover_messe_2024/obs/Binary/A1338527/eRob_Rotary_Actuator_User_Manual_V3.36_compressed.pdf
+    tau_peak_Nm: 91
+    mass_kg: 1.19
+    no_load_rpm: 60
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 50
+    OD_mm: 80
+    L_mm: 84.2
+    rotor_inertia:
+      value: 67408
+      unit: g.mm2
+      kind: rotor
+      source: eRob manual V3.36 Table 2-1 (eRob80H), 'SWG Input Side Inertia', without brake
+    notes: 'SHG 17-50 strain wave gear. Manual V3.36 Table 2-1 (sec 2.2, p5/110). tau_peak_Nm is the Permissible Maximum MOMENTARY Torque; the same line also gives peak start/stop 44, permissible max with average load 34, and rated 21 N.m. Torque motor rated power 146 W (RATED, not a mechanical peak, so P_peak_W stays null). no_load_rpm is the Maximum Output Rotational Speed: across this module GR x RPM is constant, so the column is the motor''s own speed limit geared down. Mass and envelope are the WITHOUT-brake unit; with brake it is 1.25 kg, 80x84.2 mm, input inertia 70637 g.mm2. Output-side inertia 150085 g.mm2, output-side mass 0.25 kg.'
+    checked: '2026-08-27'
+
+  - name: eRob80H-80
+    vendor: ZeroErr
+    source: https://www.hannovermesse.de/apollo/hannover_messe_2024/obs/Binary/A1338527/eRob_Rotary_Actuator_User_Manual_V3.36_compressed.pdf
+    tau_peak_Nm: 113
+    mass_kg: 1.19
+    no_load_rpm: 37.5
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 80
+    OD_mm: 80
+    L_mm: 84.2
+    rotor_inertia:
+      value: 67408
+      unit: g.mm2
+      kind: rotor
+      source: eRob manual V3.36 Table 2-1 (eRob80H), 'SWG Input Side Inertia', without brake
+    notes: 'SHG 17-80 strain wave gear. Manual V3.36 Table 2-1 (sec 2.2, p5/110). tau_peak_Nm is the Permissible Maximum MOMENTARY Torque; the same line also gives peak start/stop 56, permissible max with average load 35, and rated 29 N.m. Torque motor rated power 146 W (RATED, not a mechanical peak, so P_peak_W stays null). no_load_rpm is the Maximum Output Rotational Speed: across this module GR x RPM is constant, so the column is the motor''s own speed limit geared down. Mass and envelope are the WITHOUT-brake unit; with brake it is 1.25 kg, 80x84.2 mm, input inertia 70637 g.mm2. Output-side inertia 150085 g.mm2, output-side mass 0.25 kg.'
+    checked: '2026-08-27'
+
+  - name: eRob80H-100
+    vendor: ZeroErr
+    source: https://www.hannovermesse.de/apollo/hannover_messe_2024/obs/Binary/A1338527/eRob_Rotary_Actuator_User_Manual_V3.36_compressed.pdf
+    tau_peak_Nm: 143
+    mass_kg: 1.19
+    no_load_rpm: 30
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 100
+    OD_mm: 80
+    L_mm: 84.2
+    rotor_inertia:
+      value: 67408
+      unit: g.mm2
+      kind: rotor
+      source: eRob manual V3.36 Table 2-1 (eRob80H), 'SWG Input Side Inertia', without brake
+    notes: 'SHG 17-100 strain wave gear. Manual V3.36 Table 2-1 (sec 2.2, p5/110). tau_peak_Nm is the Permissible Maximum MOMENTARY Torque; the same line also gives peak start/stop 70, permissible max with average load 51, and rated 31 N.m. Torque motor rated power 146 W (RATED, not a mechanical peak, so P_peak_W stays null). no_load_rpm is the Maximum Output Rotational Speed: across this module GR x RPM is constant, so the column is the motor''s own speed limit geared down. Mass and envelope are the WITHOUT-brake unit; with brake it is 1.25 kg, 80x84.2 mm, input inertia 70637 g.mm2. Output-side inertia 150085 g.mm2, output-side mass 0.25 kg.'
+    checked: '2026-08-27'
+
+  - name: eRob80H-120
+    vendor: ZeroErr
+    source: https://www.hannovermesse.de/apollo/hannover_messe_2024/obs/Binary/A1338527/eRob_Rotary_Actuator_User_Manual_V3.36_compressed.pdf
+    tau_peak_Nm: 112
+    mass_kg: 1.19
+    no_load_rpm: 25
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 120
+    OD_mm: 80
+    L_mm: 84.2
+    rotor_inertia:
+      value: 67408
+      unit: g.mm2
+      kind: rotor
+      source: eRob manual V3.36 Table 2-1 (eRob80H), 'SWG Input Side Inertia', without brake
+    notes: 'SHG 17-120 strain wave gear. Manual V3.36 Table 2-1 (sec 2.2, p5/110). tau_peak_Nm is the Permissible Maximum MOMENTARY Torque; the same line also gives peak start/stop 70, permissible max with average load 51, and rated 31 N.m. Torque motor rated power 146 W (RATED, not a mechanical peak, so P_peak_W stays null). no_load_rpm is the Maximum Output Rotational Speed: across this module GR x RPM is constant, so the column is the motor''s own speed limit geared down. Mass and envelope are the WITHOUT-brake unit; with brake it is 1.25 kg, 80x84.2 mm, input inertia 70637 g.mm2. Output-side inertia 150085 g.mm2, output-side mass 0.25 kg.'
+    checked: '2026-08-27'
+
+  - name: eRob90H-50
+    vendor: ZeroErr
+    source: https://www.hannovermesse.de/apollo/hannover_messe_2024/obs/Binary/A1338527/eRob_Rotary_Actuator_User_Manual_V3.36_compressed.pdf
+    tau_peak_Nm: 127
+    mass_kg: 1.75
+    no_load_rpm: 60
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 50
+    OD_mm: 90
+    L_mm: 98.9
+    rotor_inertia:
+      value: 139057
+      unit: g.mm2
+      kind: rotor
+      source: eRob manual V3.36 Table 2-1 (eRob90H), 'SWG Input Side Inertia', without brake
+    notes: 'SHG 20-50 strain wave gear. Manual V3.36 Table 2-1 (sec 2.2, p5/110). tau_peak_Nm is the Permissible Maximum MOMENTARY Torque; the same line also gives peak start/stop 73, permissible max with average load 44, and rated 33 N.m. Torque motor rated power 300 W (RATED, not a mechanical peak, so P_peak_W stays null). no_load_rpm is the Maximum Output Rotational Speed: across this module GR x RPM is constant, so the column is the motor''s own speed limit geared down. Mass and envelope are the WITHOUT-brake unit; with brake it is 1.87 kg, 90x98.9 mm, input inertia 147025 g.mm2. Output-side inertia 297466 g.mm2, output-side mass 0.36 kg.'
+    checked: '2026-08-27'
+
+  - name: eRob90H-80
+    vendor: ZeroErr
+    source: https://www.hannovermesse.de/apollo/hannover_messe_2024/obs/Binary/A1338527/eRob_Rotary_Actuator_User_Manual_V3.36_compressed.pdf
+    tau_peak_Nm: 165
+    mass_kg: 1.75
+    no_load_rpm: 37.5
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 80
+    OD_mm: 90
+    L_mm: 98.9
+    rotor_inertia:
+      value: 139057
+      unit: g.mm2
+      kind: rotor
+      source: eRob manual V3.36 Table 2-1 (eRob90H), 'SWG Input Side Inertia', without brake
+    notes: 'SHG 20-80 strain wave gear. Manual V3.36 Table 2-1 (sec 2.2, p5/110). tau_peak_Nm is the Permissible Maximum MOMENTARY Torque; the same line also gives peak start/stop 96, permissible max with average load 61, and rated 44 N.m. Torque motor rated power 300 W (RATED, not a mechanical peak, so P_peak_W stays null). no_load_rpm is the Maximum Output Rotational Speed: across this module GR x RPM is constant, so the column is the motor''s own speed limit geared down. Mass and envelope are the WITHOUT-brake unit; with brake it is 1.87 kg, 90x98.9 mm, input inertia 147025 g.mm2. Output-side inertia 297466 g.mm2, output-side mass 0.36 kg.'
+    checked: '2026-08-27'
+
+  - name: eRob90H-100
+    vendor: ZeroErr
+    source: https://www.hannovermesse.de/apollo/hannover_messe_2024/obs/Binary/A1338527/eRob_Rotary_Actuator_User_Manual_V3.36_compressed.pdf
+    tau_peak_Nm: 191
+    mass_kg: 1.75
+    no_load_rpm: 30
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 100
+    OD_mm: 90
+    L_mm: 98.9
+    rotor_inertia:
+      value: 139057
+      unit: g.mm2
+      kind: rotor
+      source: eRob manual V3.36 Table 2-1 (eRob90H), 'SWG Input Side Inertia', without brake
+    notes: 'SHG 20-100 strain wave gear. Manual V3.36 Table 2-1 (sec 2.2, p5/110). tau_peak_Nm is the Permissible Maximum MOMENTARY Torque; the same line also gives peak start/stop 107, permissible max with average load 64, and rated 52 N.m. Torque motor rated power 300 W (RATED, not a mechanical peak, so P_peak_W stays null). no_load_rpm is the Maximum Output Rotational Speed: across this module GR x RPM is constant, so the column is the motor''s own speed limit geared down. Mass and envelope are the WITHOUT-brake unit; with brake it is 1.87 kg, 90x98.9 mm, input inertia 147025 g.mm2. Output-side inertia 297466 g.mm2, output-side mass 0.36 kg.'
+    checked: '2026-08-27'
+
+  - name: eRob90H-120
+    vendor: ZeroErr
+    source: https://www.hannovermesse.de/apollo/hannover_messe_2024/obs/Binary/A1338527/eRob_Rotary_Actuator_User_Manual_V3.36_compressed.pdf
+    tau_peak_Nm: 191
+    mass_kg: 1.75
+    no_load_rpm: 25
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 120
+    OD_mm: 90
+    L_mm: 98.9
+    rotor_inertia:
+      value: 139057
+      unit: g.mm2
+      kind: rotor
+      source: eRob manual V3.36 Table 2-1 (eRob90H), 'SWG Input Side Inertia', without brake
+    notes: 'SHG 20-120 strain wave gear. Manual V3.36 Table 2-1 (sec 2.2, p5/110). tau_peak_Nm is the Permissible Maximum MOMENTARY Torque; the same line also gives peak start/stop 113, permissible max with average load 64, and rated 52 N.m. Torque motor rated power 300 W (RATED, not a mechanical peak, so P_peak_W stays null). no_load_rpm is the Maximum Output Rotational Speed: across this module GR x RPM is constant, so the column is the motor''s own speed limit geared down. Mass and envelope are the WITHOUT-brake unit; with brake it is 1.87 kg, 90x98.9 mm, input inertia 147025 g.mm2. Output-side inertia 297466 g.mm2, output-side mass 0.36 kg.'
+    checked: '2026-08-27'
+
+  - name: eRob110H-50
+    vendor: ZeroErr
+    source: https://www.hannovermesse.de/apollo/hannover_messe_2024/obs/Binary/A1338527/eRob_Rotary_Actuator_User_Manual_V3.36_compressed.pdf
+    tau_peak_Nm: 242
+    mass_kg: 2.88
+    no_load_rpm: 60
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 50
+    OD_mm: 110
+    L_mm: 115.2
+    rotor_inertia:
+      value: 277434
+      unit: g.mm2
+      kind: rotor
+      source: eRob manual V3.36 Table 2-1 (eRob110H), 'SWG Input Side Inertia', without brake
+    notes: 'SHG 25-50 strain wave gear. Manual V3.36 Table 2-1 (sec 2.2, p5/110). tau_peak_Nm is the Permissible Maximum MOMENTARY Torque; the same line also gives peak start/stop 127, permissible max with average load 72, and rated 51 N.m. Torque motor rated power 750 W (RATED, not a mechanical peak, so P_peak_W stays null). no_load_rpm is the Maximum Output Rotational Speed: across this module GR x RPM is constant, so the column is the motor''s own speed limit geared down. Mass and envelope are the WITHOUT-brake unit; with brake it is 3.06 kg, 110x115.2 mm, input inertia 285402 g.mm2. Output-side inertia 715482 g.mm2, output-side mass 0.58 kg.'
+    checked: '2026-08-27'
+
+  - name: eRob110H-80
+    vendor: ZeroErr
+    source: https://www.hannovermesse.de/apollo/hannover_messe_2024/obs/Binary/A1338527/eRob_Rotary_Actuator_User_Manual_V3.36_compressed.pdf
+    tau_peak_Nm: 332
+    mass_kg: 2.88
+    no_load_rpm: 37.5
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 80
+    OD_mm: 110
+    L_mm: 115.2
+    rotor_inertia:
+      value: 277434
+      unit: g.mm2
+      kind: rotor
+      source: eRob manual V3.36 Table 2-1 (eRob110H), 'SWG Input Side Inertia', without brake
+    notes: 'SHG 25-80 strain wave gear. Manual V3.36 Table 2-1 (sec 2.2, p5/110). tau_peak_Nm is the Permissible Maximum MOMENTARY Torque; the same line also gives peak start/stop 178, permissible max with average load 113, and rated 82 N.m. Torque motor rated power 750 W (RATED, not a mechanical peak, so P_peak_W stays null). no_load_rpm is the Maximum Output Rotational Speed: across this module GR x RPM is constant, so the column is the motor''s own speed limit geared down. Mass and envelope are the WITHOUT-brake unit; with brake it is 3.06 kg, 110x115.2 mm, input inertia 285402 g.mm2. Output-side inertia 715482 g.mm2, output-side mass 0.58 kg.'
+    checked: '2026-08-27'
+
+  - name: eRob110H-100
+    vendor: ZeroErr
+    source: https://www.hannovermesse.de/apollo/hannover_messe_2024/obs/Binary/A1338527/eRob_Rotary_Actuator_User_Manual_V3.36_compressed.pdf
+    tau_peak_Nm: 369
+    mass_kg: 2.88
+    no_load_rpm: 30
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 100
+    OD_mm: 110
+    L_mm: 115.2
+    rotor_inertia:
+      value: 277434
+      unit: g.mm2
+      kind: rotor
+      source: eRob manual V3.36 Table 2-1 (eRob110H), 'SWG Input Side Inertia', without brake
+    notes: 'SHG 25-100 strain wave gear. Manual V3.36 Table 2-1 (sec 2.2, p5/110). tau_peak_Nm is the Permissible Maximum MOMENTARY Torque; the same line also gives peak start/stop 204, permissible max with average load 140, and rated 87 N.m. Torque motor rated power 750 W (RATED, not a mechanical peak, so P_peak_W stays null). no_load_rpm is the Maximum Output Rotational Speed: across this module GR x RPM is constant, so the column is the motor''s own speed limit geared down. Mass and envelope are the WITHOUT-brake unit; with brake it is 3.06 kg, 110x115.2 mm, input inertia 285402 g.mm2. Output-side inertia 715482 g.mm2, output-side mass 0.58 kg.'
+    checked: '2026-08-27'
+
+  - name: eRob110H-120
+    vendor: ZeroErr
+    source: https://www.hannovermesse.de/apollo/hannover_messe_2024/obs/Binary/A1338527/eRob_Rotary_Actuator_User_Manual_V3.36_compressed.pdf
+    tau_peak_Nm: 395
+    mass_kg: 2.88
+    no_load_rpm: 25
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 120
+    OD_mm: 110
+    L_mm: 115.2
+    rotor_inertia:
+      value: 277434
+      unit: g.mm2
+      kind: rotor
+      source: eRob manual V3.36 Table 2-1 (eRob110H), 'SWG Input Side Inertia', without brake
+    notes: 'SHG 25-120 strain wave gear. Manual V3.36 Table 2-1 (sec 2.2, p5/110). tau_peak_Nm is the Permissible Maximum MOMENTARY Torque; the same line also gives peak start/stop 217, permissible max with average load 140, and rated 87 N.m. Torque motor rated power 750 W (RATED, not a mechanical peak, so P_peak_W stays null). no_load_rpm is the Maximum Output Rotational Speed: across this module GR x RPM is constant, so the column is the motor''s own speed limit geared down. Mass and envelope are the WITHOUT-brake unit; with brake it is 3.06 kg, 110x115.2 mm, input inertia 285402 g.mm2. Output-side inertia 715482 g.mm2, output-side mass 0.58 kg.'
+    checked: '2026-08-27'
+
+  - name: eRob110H-160
+    vendor: ZeroErr
+    source: https://www.hannovermesse.de/apollo/hannover_messe_2024/obs/Binary/A1338527/eRob_Rotary_Actuator_User_Manual_V3.36_compressed.pdf
+    tau_peak_Nm: 408
+    mass_kg: 2.88
+    no_load_rpm: 18.75
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 160
+    OD_mm: 110
+    L_mm: 115.2
+    rotor_inertia:
+      value: 277434
+      unit: g.mm2
+      kind: rotor
+      source: eRob manual V3.36 Table 2-1 (eRob110H), 'SWG Input Side Inertia', without brake
+    notes: 'SHG 25-160 strain wave gear. Manual V3.36 Table 2-1 (sec 2.2, p5/110). tau_peak_Nm is the Permissible Maximum MOMENTARY Torque; the same line also gives peak start/stop 229, permissible max with average load 140, and rated 87 N.m. Torque motor rated power 750 W (RATED, not a mechanical peak, so P_peak_W stays null). no_load_rpm is the Maximum Output Rotational Speed: across this module GR x RPM is constant, so the column is the motor''s own speed limit geared down. Mass and envelope are the WITHOUT-brake unit; with brake it is 3.06 kg, 110x115.2 mm, input inertia 285402 g.mm2. Output-side inertia 715482 g.mm2, output-side mass 0.58 kg.'
+    checked: '2026-08-27'
+
+  - name: eRob142H-50
+    vendor: ZeroErr
+    source: https://www.hannovermesse.de/apollo/hannover_messe_2024/obs/Binary/A1338527/eRob_Rotary_Actuator_User_Manual_V3.36_compressed.pdf
+    tau_peak_Nm: 497
+    mass_kg: 6.49
+    no_load_rpm: 40
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 50
+    OD_mm: 142
+    L_mm: 133.9
+    rotor_inertia:
+      value: 1244894
+      unit: g.mm2
+      kind: rotor
+      source: eRob manual V3.36 Table 2-1 (eRob142H), 'SWG Input Side Inertia', without brake
+    notes: 'SHG 32-50 strain wave gear. Manual V3.36 Table 2-1 (sec 2.2, p5/110). tau_peak_Nm is the Permissible Maximum MOMENTARY Torque; the same line also gives peak start/stop 281, permissible max with average load 140, and rated 99 N.m. Torque motor rated power 1000 W (RATED, not a mechanical peak, so P_peak_W stays null). no_load_rpm is the Maximum Output Rotational Speed: across this module GR x RPM is constant, so the column is the motor''s own speed limit geared down. Mass and envelope are the WITHOUT-brake unit; with brake it is 6.7 kg, 142x133.9 mm, input inertia 1273287 g.mm2. Output-side inertia 2589596 g.mm2, output-side mass 1.21 kg.'
+    checked: '2026-08-27'
+
+  - name: eRob142H-80
+    vendor: ZeroErr
+    source: https://www.hannovermesse.de/apollo/hannover_messe_2024/obs/Binary/A1338527/eRob_Rotary_Actuator_User_Manual_V3.36_compressed.pdf
+    tau_peak_Nm: 738
+    mass_kg: 6.49
+    no_load_rpm: 25
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 80
+    OD_mm: 142
+    L_mm: 133.9
+    rotor_inertia:
+      value: 1244894
+      unit: g.mm2
+      kind: rotor
+      source: eRob manual V3.36 Table 2-1 (eRob142H), 'SWG Input Side Inertia', without brake
+    notes: 'SHG 32-80 strain wave gear. Manual V3.36 Table 2-1 (sec 2.2, p5/110). tau_peak_Nm is the Permissible Maximum MOMENTARY Torque; the same line also gives peak start/stop 395, permissible max with average load 217, and rated 153 N.m. Torque motor rated power 1000 W (RATED, not a mechanical peak, so P_peak_W stays null). no_load_rpm is the Maximum Output Rotational Speed: across this module GR x RPM is constant, so the column is the motor''s own speed limit geared down. Mass and envelope are the WITHOUT-brake unit; with brake it is 6.7 kg, 142x133.9 mm, input inertia 1273287 g.mm2. Output-side inertia 2589596 g.mm2, output-side mass 1.21 kg.'
+    checked: '2026-08-27'
+
+  - name: eRob142H-100
+    vendor: ZeroErr
+    source: https://www.hannovermesse.de/apollo/hannover_messe_2024/obs/Binary/A1338527/eRob_Rotary_Actuator_User_Manual_V3.36_compressed.pdf
+    tau_peak_Nm: 841
+    mass_kg: 6.49
+    no_load_rpm: 20
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 100
+    OD_mm: 142
+    L_mm: 133.9
+    rotor_inertia:
+      value: 1244894
+      unit: g.mm2
+      kind: rotor
+      source: eRob manual V3.36 Table 2-1 (eRob142H), 'SWG Input Side Inertia', without brake
+    notes: 'SHG 32-100 strain wave gear. Manual V3.36 Table 2-1 (sec 2.2, p5/110). tau_peak_Nm is the Permissible Maximum MOMENTARY Torque; the same line also gives peak start/stop 433, permissible max with average load 281, and rated 178 N.m. Torque motor rated power 1000 W (RATED, not a mechanical peak, so P_peak_W stays null). no_load_rpm is the Maximum Output Rotational Speed: across this module GR x RPM is constant, so the column is the motor''s own speed limit geared down. Mass and envelope are the WITHOUT-brake unit; with brake it is 6.7 kg, 142x133.9 mm, input inertia 1273287 g.mm2. Output-side inertia 2589596 g.mm2, output-side mass 1.21 kg.'
+    checked: '2026-08-27'
+
+  - name: eRob142H-120
+    vendor: ZeroErr
+    source: https://www.hannovermesse.de/apollo/hannover_messe_2024/obs/Binary/A1338527/eRob_Rotary_Actuator_User_Manual_V3.36_compressed.pdf
+    tau_peak_Nm: 892
+    mass_kg: 6.49
+    no_load_rpm: 16.7
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 120
+    OD_mm: 142
+    L_mm: 133.9
+    rotor_inertia:
+      value: 1244894
+      unit: g.mm2
+      kind: rotor
+      source: eRob manual V3.36 Table 2-1 (eRob142H), 'SWG Input Side Inertia', without brake
+    notes: 'SHG 32-120 strain wave gear. Manual V3.36 Table 2-1 (sec 2.2, p5/110). tau_peak_Nm is the Permissible Maximum MOMENTARY Torque; the same line also gives peak start/stop 459, permissible max with average load 281, and rated 178 N.m. Torque motor rated power 1000 W (RATED, not a mechanical peak, so P_peak_W stays null). no_load_rpm is the Maximum Output Rotational Speed: across this module GR x RPM is constant, so the column is the motor''s own speed limit geared down. Mass and envelope are the WITHOUT-brake unit; with brake it is 6.7 kg, 142x133.9 mm, input inertia 1273287 g.mm2. Output-side inertia 2589596 g.mm2, output-side mass 1.21 kg.'
+    checked: '2026-08-27'
+
+  - name: eRob142H-160
+    vendor: ZeroErr
+    source: https://www.hannovermesse.de/apollo/hannover_messe_2024/obs/Binary/A1338527/eRob_Rotary_Actuator_User_Manual_V3.36_compressed.pdf
+    tau_peak_Nm: 892
+    mass_kg: 6.49
+    no_load_rpm: 12.5
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 160
+    OD_mm: 142
+    L_mm: 133.9
+    rotor_inertia:
+      value: 1244894
+      unit: g.mm2
+      kind: rotor
+      source: eRob manual V3.36 Table 2-1 (eRob142H), 'SWG Input Side Inertia', without brake
+    notes: 'SHG 32-160 strain wave gear. Manual V3.36 Table 2-1 (sec 2.2, p5/110). tau_peak_Nm is the Permissible Maximum MOMENTARY Torque; the same line also gives peak start/stop 484, permissible max with average load 281, and rated 178 N.m. Torque motor rated power 1000 W (RATED, not a mechanical peak, so P_peak_W stays null). no_load_rpm is the Maximum Output Rotational Speed: across this module GR x RPM is constant, so the column is the motor''s own speed limit geared down. Mass and envelope are the WITHOUT-brake unit; with brake it is 6.7 kg, 142x133.9 mm, input inertia 1273287 g.mm2. Output-side inertia 2589596 g.mm2, output-side mass 1.21 kg.'
+    checked: '2026-08-27'
+
+  - name: eRob170H-50
+    vendor: ZeroErr
+    source: https://www.hannovermesse.de/apollo/hannover_messe_2024/obs/Binary/A1338527/eRob_Rotary_Actuator_User_Manual_V3.36_compressed.pdf
+    tau_peak_Nm: 686
+    mass_kg: 9.29
+    no_load_rpm: 40
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 50
+    OD_mm: 170
+    L_mm: 144.9
+    rotor_inertia:
+      value: 1517148
+      unit: g.mm2
+      kind: rotor
+      source: eRob manual V3.36 Table 2-1 (eRob170H), 'SWG Input Side Inertia', without brake
+    notes: 'SHF 40-50 strain wave gear. Manual V3.36 Table 2-1 (sec 2.2, p5/110). tau_peak_Nm is the Permissible Maximum MOMENTARY Torque; the same line also gives peak start/stop 402, permissible max with average load 196, and rated 137 N.m. Torque motor rated power 1000 W (RATED, not a mechanical peak, so P_peak_W stays null). no_load_rpm is the Maximum Output Rotational Speed: across this module GR x RPM is constant, so the column is the motor''s own speed limit geared down. Mass and envelope are the WITHOUT-brake unit; with brake it is 9.5 kg, 170x144.9 mm, input inertia 1545541 g.mm2. Output-side inertia 6679752 g.mm2, output-side mass 2.02 kg.'
+    checked: '2026-08-27'
+
+  - name: eRob170H-80
+    vendor: ZeroErr
+    source: https://www.hannovermesse.de/apollo/hannover_messe_2024/obs/Binary/A1338527/eRob_Rotary_Actuator_User_Manual_V3.36_compressed.pdf
+    tau_peak_Nm: 980
+    mass_kg: 9.29
+    no_load_rpm: 25
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 80
+    OD_mm: 170
+    L_mm: 144.9
+    rotor_inertia:
+      value: 1517148
+      unit: g.mm2
+      kind: rotor
+      source: eRob manual V3.36 Table 2-1 (eRob170H), 'SWG Input Side Inertia', without brake
+    notes: 'SHF 40-80 strain wave gear. Manual V3.36 Table 2-1 (sec 2.2, p5/110). tau_peak_Nm is the Permissible Maximum MOMENTARY Torque; the same line also gives peak start/stop 519, permissible max with average load 284, and rated 206 N.m. Torque motor rated power 1000 W (RATED, not a mechanical peak, so P_peak_W stays null). no_load_rpm is the Maximum Output Rotational Speed: across this module GR x RPM is constant, so the column is the motor''s own speed limit geared down. Mass and envelope are the WITHOUT-brake unit; with brake it is 9.5 kg, 170x144.9 mm, input inertia 1545541 g.mm2. Output-side inertia 6679752 g.mm2, output-side mass 2.02 kg.'
+    checked: '2026-08-27'
+
+  - name: eRob170H-100
+    vendor: ZeroErr
+    source: https://www.hannovermesse.de/apollo/hannover_messe_2024/obs/Binary/A1338527/eRob_Rotary_Actuator_User_Manual_V3.36_compressed.pdf
+    tau_peak_Nm: 1080
+    mass_kg: 9.29
+    no_load_rpm: 20
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 100
+    OD_mm: 170
+    L_mm: 144.9
+    rotor_inertia:
+      value: 1517148
+      unit: g.mm2
+      kind: rotor
+      source: eRob manual V3.36 Table 2-1 (eRob170H), 'SWG Input Side Inertia', without brake
+    notes: 'SHF 40-100 strain wave gear. Manual V3.36 Table 2-1 (sec 2.2, p5/110). tau_peak_Nm is the Permissible Maximum MOMENTARY Torque; the same line also gives peak start/stop 568, permissible max with average load 372, and rated 265 N.m. Torque motor rated power 1000 W (RATED, not a mechanical peak, so P_peak_W stays null). no_load_rpm is the Maximum Output Rotational Speed: across this module GR x RPM is constant, so the column is the motor''s own speed limit geared down. Mass and envelope are the WITHOUT-brake unit; with brake it is 9.5 kg, 170x144.9 mm, input inertia 1545541 g.mm2. Output-side inertia 6679752 g.mm2, output-side mass 2.02 kg.'
+    checked: '2026-08-27'
+
+  - name: eRob170H-120
+    vendor: ZeroErr
+    source: https://www.hannovermesse.de/apollo/hannover_messe_2024/obs/Binary/A1338527/eRob_Rotary_Actuator_User_Manual_V3.36_compressed.pdf
+    tau_peak_Nm: 1180
+    mass_kg: 9.29
+    no_load_rpm: 16.7
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 120
+    OD_mm: 170
+    L_mm: 144.9
+    rotor_inertia:
+      value: 1517148
+      unit: g.mm2
+      kind: rotor
+      source: eRob manual V3.36 Table 2-1 (eRob170H), 'SWG Input Side Inertia', without brake
+    notes: 'SHF 40-120 strain wave gear. Manual V3.36 Table 2-1 (sec 2.2, p5/110). tau_peak_Nm is the Permissible Maximum MOMENTARY Torque; the same line also gives peak start/stop 617, permissible max with average load 451, and rated 294 N.m. Torque motor rated power 1000 W (RATED, not a mechanical peak, so P_peak_W stays null). no_load_rpm is the Maximum Output Rotational Speed: across this module GR x RPM is constant, so the column is the motor''s own speed limit geared down. Mass and envelope are the WITHOUT-brake unit; with brake it is 9.5 kg, 170x144.9 mm, input inertia 1545541 g.mm2. Output-side inertia 6679752 g.mm2, output-side mass 2.02 kg.'
+    checked: '2026-08-27'
+
+  - name: eRob170H-160
+    vendor: ZeroErr
+    source: https://www.hannovermesse.de/apollo/hannover_messe_2024/obs/Binary/A1338527/eRob_Rotary_Actuator_User_Manual_V3.36_compressed.pdf
+    tau_peak_Nm: 1180
+    mass_kg: 9.29
+    no_load_rpm: 12.5
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 160
+    OD_mm: 170
+    L_mm: 144.9
+    rotor_inertia:
+      value: 1517148
+      unit: g.mm2
+      kind: rotor
+      source: eRob manual V3.36 Table 2-1 (eRob170H), 'SWG Input Side Inertia', without brake
+    notes: 'SHF 40-160 strain wave gear. Manual V3.36 Table 2-1 (sec 2.2, p5/110). tau_peak_Nm is the Permissible Maximum MOMENTARY Torque; the same line also gives peak start/stop 647, permissible max with average load 451, and rated 294 N.m. Torque motor rated power 1000 W (RATED, not a mechanical peak, so P_peak_W stays null). no_load_rpm is the Maximum Output Rotational Speed: across this module GR x RPM is constant, so the column is the motor''s own speed limit geared down. Mass and envelope are the WITHOUT-brake unit; with brake it is 9.5 kg, 170x144.9 mm, input inertia 1545541 g.mm2. Output-side inertia 6679752 g.mm2, output-side mass 2.02 kg.'
+    checked: '2026-08-27'

@@ -1,0 +1,22 @@
+# mesh.yaml — quadruped body.
+#
+# A chamfered box swept front-to-back (two cross-sections).
+
+name:          torso
+axis:          x
+density_param: torso_rho
+# Default only; each layer uses `${torso_chamfer}`.
+chamfer:       0.35
+
+# Sweep is along X, so a section's `lx` is world Y and `ly` world Z. Each is the
+# stated trunk size or, if larger and `torso_mesh_cover` is 1, enough to cover
+# the hip-roll actuators (see parameters.yaml).
+layers:
+  - {pos: "${-torso_lx / 2}",
+     lx:  "${max(torso_ly, torso_mesh_cover * (shoulder_width + 2 * (hip_roll_motor_r + torso_mesh_standoff)))}",
+     ly:  "${max(torso_lz, torso_mesh_cover * 2 * (hip_roll_motor_r + torso_mesh_standoff))}",
+     chamfer: "${torso_chamfer}"}
+  - {pos: "${ torso_lx / 2}",
+     lx:  "${max(torso_ly, torso_mesh_cover * (shoulder_width + 2 * (hip_roll_motor_r + torso_mesh_standoff)))}",
+     ly:  "${max(torso_lz, torso_mesh_cover * 2 * (hip_roll_motor_r + torso_mesh_standoff))}",
+     chamfer: "${torso_chamfer}"}

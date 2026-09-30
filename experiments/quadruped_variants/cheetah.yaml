@@ -1,0 +1,50 @@
+# cheetah design variant: overrides on src/draft/robots/quadruped/parameters.yaml.
+# Generate: python scripts/generate_quadrupeds.py --only cheetah
+#
+# Cheetah: the small, light, fast corner (QDD actuators).
+
+hip_roll_link_length: 0.10
+upper_leg_link_length: 0.25
+lower_leg_link_length: 0.23
+# Every joint uses the L-class actuator.
+hip_roll_mot: L
+hip_pitch_mot: L
+knee_mot: L
+# Drawn limb radius as a fraction of the actuator face (generation/tree_ops.py:
+# drawn_radius). Render-only: density is rescaled so link mass is unchanged.
+link_render_radius_scale: 1.0
+torso_lx: 0.52
+torso_ly: 0.20
+torso_lz: 0.18
+shoulder_width: 0.16
+motor_rho: 2700.0
+torso_rho: 120.0
+
+# QDD actuators from the catalogue; rated numbers restated per class.
+L_motor: "MIT U12"                # 6:1, 126 x 46 mm, 1.10 kg
+L_motor_effort: 72.0
+L_motor_velocity: 40.0
+L_motor_gear: 6.0
+M_motor: "AK10-9 V2"              # CubeMars, 9:1 planetary
+M_motor_effort: 48.0
+M_motor_velocity: 31.1
+M_motor_gear: 9.0
+S_motor: "RS01"                   # RobStride, 7.75:1
+S_motor_effort: 17.0
+S_motor_velocity: 28.8
+S_motor_gear: 7.75
+
+# Asserted, not fitted: no trend covers gearbox losses (docs/robot-format.md).
+L_motor_friction: 0.127
+M_motor_friction: 0.085
+S_motor_friction: 0.030
+L_motor_damping: 0.0127
+M_motor_damping: 0.0085
+S_motor_damping: 0.0030
+
+# Colour follows the actuator family (QDD), as in scripts/figures/paper_style.py CAT.
+link_color: 0.424 0.547 0.746 1.000
+motor_color: 0.155 0.232 0.359 1.000
+mot_detail_color: 0.095 0.143 0.221 1.000
+torso_color: 0.298 0.447 0.690 1.000
+foot_color: 0.302 0.302 0.302 1.000

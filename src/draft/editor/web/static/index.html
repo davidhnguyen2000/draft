@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Draft — robot editor</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body data-palette="#2a78d6,#eb6834,#1baf7a,#eda100,#e87ba4,#008300,#4a3aa7,#e34948">
+
+<header class="bar">
+  <div class="bar-row">
+    <nav id="robots" class="segmented" aria-label="Robot type"></nav>
+    <label class="field inline">
+      <span>Folder</span>
+      <select id="folder"></select>
+    </label>
+    <button id="refresh" class="btn ghost" title="Rescan generated/">↺</button>
+    <span class="spacer"></span>
+    <button id="embed" class="btn ghost" aria-pressed="true"
+            title="Show or hide the 3D pane">3D</button>
+    <a id="viser" class="btn ghost" target="_blank" rel="noopener"
+       title="Open the 3D scene in its own tab">Open ↗</a>
+  </div>
+  <div class="bar-row">
+    <button id="generate" class="btn primary">Generate</button>
+    <button id="new" class="btn">New from defaults</button>
+    <button id="reset" class="btn">Reset fields</button>
+    <button id="save" class="btn">Save…</button>
+    <span class="spacer"></span>
+    <output id="status" class="status">Connecting…</output>
+  </div>
+</header>
+
+<div id="shell" class="shell">
+  <div id="viewer" class="viewer">
+    <iframe id="viewer-frame" title="3D model" referrerpolicy="no-referrer"></iframe>
+  </div>
+  <main id="board" class="board"></main>
+</div>
+
+<p id="unsupported" class="notice" hidden></p>
+
+<template id="tpl-card">
+  <section class="card">
+    <h2></h2>
+    <div class="card-body"></div>
+  </section>
+</template>
+
+<script src="/app.js"></script>
+</body>
+</html>

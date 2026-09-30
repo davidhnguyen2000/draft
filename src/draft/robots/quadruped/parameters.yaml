@@ -1,0 +1,113 @@
+# Motor-class inputs. Radius, length, density and armature are derived from
+# (effort, gear) by the fitted actuator trends (src/draft/trends/).
+L_motor_gear: 5.0
+M_motor_gear: 5.0
+S_motor_gear: 6.0
+# The L class below is beyond the catalogued actuator frontier (hypothetical).
+# This opt-in records that as a warning in feasibility_report.yaml instead of raising.
+allow_hypothetical: true
+# L class: uprated beyond current compact actuators (see allow_hypothetical).
+L_motor_effort: 150.0
+L_motor_velocity: 50.0
+M_motor_effort: 34.0
+M_motor_velocity: 48.0
+S_motor_effort: 18.0
+S_motor_velocity: 41.0
+L_motor_friction: 0.1
+M_motor_friction: 0.08
+S_motor_friction: 0.05
+L_motor_damping: 0.01
+M_motor_damping: 0.008
+S_motor_damping: 0.005
+# Keys only: the values are replaced by the quadruped population's measured
+# densities. The key declares the segment; radii are solved from the class trend.
+thigh_rho: 370.7
+shank_rho: 637.1
+motor_rho: 2700.0   # fallback only; each class gets a trend-solved density
+# Roles whose actuator may be drawn inside the root mesh; any other raises
+# FeasibilityViolation. The hip-roll unit sits inside the trunk by construction.
+structure_overlap_allowed:
+  - hip_roll
+  # The abduction members start at the roll axis, inside the trunk; named by
+  # geom because their body's role is hip_pitch.
+  - fl_roll_link_link
+  - fr_roll_link_link
+  - rl_roll_link_link
+  - rr_roll_link_link
+# The knee pulley geoms depict the knee actuator already counted at the hip
+# (belt drive), so they are exempt from the actuator-packing check.
+packing_exempt_geoms:
+  - fl_upper_leg_link_motor
+  - fr_upper_leg_link_motor
+  - rl_upper_leg_link_motor
+  - rr_upper_leg_link_motor
+# Trunk density is derived from the quadruped population (LinkTrends.trunk_density),
+# and the design is audited against the measured quadrupeds (docs/robot-dataset.md).
+# Distal taper (generation/tree_ops.py:apply_distal_taper) is audited, not applied:
+# taper_mode: radius
+
+mass_composition_reference: quadruped
+# Allometry size metric: thigh + shank (a quadruped's z-span is not predictive).
+size_metric_expr: ${upper_leg_link_length + lower_leg_link_length}
+torso_rho: 150.0
+# Structural member radii and densities are derived from `link_mass_class`
+# (tree.yaml). The DRAWN radius is this fraction of the tightest face of the
+# adjoining actuators (generation/tree_ops.py:drawn_radius); render-only, since
+# the emitted density is rescaled so mass is unchanged.
+link_render_radius_scale: 0.70
+# Leg drawn radii are keyed to the thigh's, so calf and foot never exceed it.
+upper_leg_link_render_r: ${min(knee_motor_L / 2, knee_motor_r) * link_render_radius_scale}
+lower_leg_link_render_r: ${upper_leg_link_render_r * lower_leg_render_scale}
+lower_leg_render_scale: 0.8   # calf DRAWN radius, as a fraction of the thigh's
+foot_sphere_scale: 1.5        # foot radius, as a multiple of the calf's
+# Knee pulley (belt drive; `motor_rho: 0`, so render-only): radius as a fraction
+# of the knee motor's, floored so it stays wider than the drawn thigh.
+knee_pivot_scale: ${max(0.63, 1.06 * upper_leg_link_render_r / knee_motor_r)}
+
+torso_lx: 0.25
+torso_ly: 0.22
+torso_lz: 0.11
+# Corner cut as a fraction of the section's shorter side
+# (generation/mounting.py:rect_outline). Twins fit theirs to the vendor shell.
+torso_chamfer: 0.35
+shoulder_width: 0.12
+
+# Bolt-flange overlap of a member into its actuator (generation/tree_ops.py:link_span);
+# also the trunk mesh's clearance over the hip-roll actuators it contains.
+link_motor_penetration: 0.005
+torso_mesh_standoff: ${link_motor_penetration}
+# 1: draw the trunk at least large enough to contain the hip-roll actuators
+# (mesh.yaml); 0: use the stated torso_ly/torso_lz as-is.
+torso_mesh_cover: 1.0
+# Fore-aft abduction link along the roll motor's axis, carrying the hip-pitch
+# actuator. Derived from the two actuators it separates.
+hip_abduction_link_length: ${hip_roll_motor_L + 1.1 * hip_pitch_motor_r}
+# How far inboard of the torso end wall the hip-roll axis sits; the hip-pitch
+# axis lands at `torso_lx/2 - hip_roll_inset + hip_abduction_link_length`.
+# Zero here (a non-zero inset needs a longer torso_lx); the twins state their own.
+hip_roll_inset: 0.0
+# Extra fore-aft hip-pitch offset.
+hip_pitch_x_offset: 0.0
+# Lateral link from the hip-pitch axis to the knee actuator; the smallest value
+# that keeps those actuators apart under the packing gate, plus ~2 mm margin.
+hip_roll_link_length: 0.132
+upper_leg_link_length: 0.22
+lower_leg_link_length: 0.22
+# Foot sphere tracks the drawn calf radius; its mass comes out of the shank
+# trend's mass first.
+foot_sphere_r: ${lower_leg_link_render_r * foot_sphere_scale}
+hip_roll_mot: L
+hip_pitch_mot: L
+knee_mot: L
+# Joint ranges (rad). Mirroring does not change joint ranges, so every knee
+# shares the one-sided range below.
+hip_roll_range: [-0.8, 0.8]
+hip_pitch_range: [-2.5, 2.5]
+knee_range: [-2.8, 0.0]
+# Lumped colors: all link cylinders, all motors, all motor details
+link_color: 0.294 0.447 0.686 1.0
+motor_color: 0.161 0.243 0.376 1.0
+mot_detail_color: 0.067 0.102 0.161 1.0
+# Per-instance tunable colors
+torso_color: 0.294 0.447 0.686 1.0
+foot_color: 0.180 0.275 0.427 1.0

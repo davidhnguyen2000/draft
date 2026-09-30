@@ -1,0 +1,8 @@
+{
+ "schema": "active-flags/1",
+ "dataset": "datasets/actuators/data/actuators/*.yaml",
+ "key": "name",
+ "updated": "2026-08-27",
+ "note": "Rows listed under 'inactive' stay in actuators.json but are skipped by 03_catalogue_stats.py, so they reach no fit, audit or plot. Empty means every catalogued actuator is in use. Hand-edits are fine; give each entry a reason. See docs/actuator-dataset.md.",
+ "inactive": {}
+}

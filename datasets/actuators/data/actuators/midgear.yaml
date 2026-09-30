@@ -1,0 +1,601 @@
+# MidGear actuators — 33 rows
+#
+# Planetary reductions from roughly 8:1 to 64:1.
+#
+# One row = one catalogued part, and everything known about it lives HERE —
+# there is no second table to keep in step. See README.md (this directory)
+# for the field reference.
+#
+# Required: name, vendor, tau_peak_Nm, mass_kg, and exactly one of
+# no_load_rpm / omega_NL_rad_s. Everything else may be null.
+
+actuators:
+  - name: AK80-64
+    vendor: CubeMars
+    source: https://www.cubemars.com/product/ak80-64-kv80-robotic-actuator.html
+    tau_peak_Nm: 120
+    mass_kg: 1.4
+    no_load_rpm: 56
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 64
+    OD_mm: 98
+    L_mm: 61.9
+    rotor_inertia:
+      value: 564.5
+      unit: g.cm2
+      kind: rotor
+      source: cubemars.com AK80-64 KV80
+    notes: 64:1 planetary
+    checked: '2026-08-27'
+
+  - name: AK45-36
+    vendor: CubeMars
+    source: https://www.cubemars.com/product/AK45-36.html
+    tau_peak_Nm: 24
+    mass_kg: 0.34
+    no_load_rpm: 50
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 36
+    OD_mm: 55
+    L_mm: 54
+    rotor_inertia:
+      value: 181.9
+      unit: g.cm2
+      kind: rotor
+      source: cubemars.com AK45-36 KV80
+    notes: 36:1 planetary
+    checked: '2026-08-27'
+
+  - name: AKE90-8
+    vendor: CubeMars
+    source: https://www.cubemars.com/goods-1176-AKE90-8.html
+    tau_peak_Nm: 85
+    mass_kg: 0.7
+    no_load_rpm: 170
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 8
+    OD_mm: 108
+    L_mm: 44
+    rotor_inertia:
+      value: 3377.08
+      unit: g.cm2
+      kind: rotor
+      source: cubemars.com AKE90-8 KV35
+    notes: AKE exoskeleton
+    checked: '2026-08-27'
+
+  - name: AK60-39 V3.0 KV80
+    vendor: CubeMars
+    source: https://www.cubemars.com/product/ak60-39-v3-0-kv80-robotic-actuator.html
+    tau_peak_Nm: 72
+    mass_kg: 0.75
+    no_load_rpm: 98
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 39
+    OD_mm: 79
+    L_mm: 67
+    rotor_inertia:
+      value: 305
+      unit: g.cm2
+      kind: rotor
+      source: cubemars.com AK60-39 V3.0 KV80
+    notes: 39:1 two-stage planetary, 79x67mm
+    checked: '2026-08-27'
+
+  - name: AKH70-48 V1.0 KV41
+    vendor: CubeMars
+    source: https://www.cubemars.com/product/akh70-48-v-1-0-kv41-hollow-shaft-planetary-actuator.html
+    tau_peak_Nm: 222
+    mass_kg: 1.396
+    no_load_rpm: 35
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 48
+    OD_mm: 90
+    L_mm: 81.5
+    rotor_inertia:
+      value: 1170
+      unit: g.cm2
+      kind: rotor
+      source: cubemars.com AKH70-48 V1.0 KV41
+    notes: 48:1 hollow shaft, 90x81.5mm
+    checked: '2026-08-27'
+
+  - name: AKH70-16 V1.0 KV41
+    vendor: CubeMars
+    source: https://www.cubemars.com/product/akh70-16-v-1-0-kv41-hollow-shaft-planetary-actuator.html
+    tau_peak_Nm: 78
+    mass_kg: 0.879
+    no_load_rpm: 105
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 16
+    OD_mm: 90
+    L_mm: 60.5
+    rotor_inertia:
+      value: 1170
+      unit: g.cm2
+      kind: rotor
+      source: cubemars.com AKH70-16 V1.0 KV41
+    notes: 16:1 hollow shaft two-stage planetary, 90x60.5mm, 48V
+    checked: '2026-08-27'
+
+  - name: GIM4310-36
+    vendor: SteadyWin
+    source: https://steadywin-motor.com/products/document-download
+    tau_peak_Nm: 25.43
+    mass_kg: 0.31
+    no_load_rpm: 64.2
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 36
+    OD_mm: 55
+    L_mm: 47
+    rotor_inertia: null       # TODO not in the text of the vendor page
+    notes: 36:1 planetary, 24V. Mass 310 g confirmed; peak torque is 25.43 N.m not the 20.16 N.m stall this row carried, max speed 64.2 rpm not 85, and the envelope phi55 x 47 was missing. Read from SteadyWin's own 'Planetary Reduction Motor Selection Table.xlsx', linked from the Document Download page. Mass and envelope are the WITH-DRIVER figures, matching this dataset's whole-shipped-unit convention; speed is 'Max Speed after reduction'.
+    checked: '2026-08-27'
+
+  - name: RMD-X10-P7-40-C-N
+    vendor: MyActuator
+    source: https://www.myactuator.com/_files/archives/cab28a_3b056e2d89b0455fab5e14164e82937b.zip?dn=X10-40-240403.zip
+    tau_peak_Nm: 40
+    mass_kg: 1.15
+    no_load_rpm: 190
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 7
+    OD_mm: 122
+    L_mm: 53
+    rotor_inertia:
+      value: 5675
+      unit: g.cm2
+      kind: rotor
+      source: MyActuator X10-40 package, RMD-X10 V3 1:7 parameter sheet
+    notes: 'Was ''RMD-X10 V3 (1:7)''. MyActuator''s own X10-40 package carries two sheets: the current one (RMD-X10-P7-40-C-N) gives peak torque 40 N.m - not the 50 this row claimed - and weight 1150 g, not 1190; the older RMD-X10 V3 sheet in the same package gives no-load output speed 190 rpm, which is what this row already had, and rotor inertia 5675 gcm2. Drawing: phi122 x 53.00 +/-0.2. The newer sheet''s ''Inertia 39.7 kg.cm2'' is rotor x N (5675 gcm2 x 7 = 39.7 kg.cm2), not the output-side value the label suggests.'
+    checked: '2026-08-27'
+
+  - name: X5-1
+    vendor: HEBI Robotics
+    source: https://docs.hebi.us/resources/datasheets/X-SeriesDatasheet.pdf
+    tau_peak_Nm: 2.5
+    mass_kg: 0.33
+    no_load_rpm: 90
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: null
+    OD_mm: 110
+    L_mm: 31
+    rotor_inertia: null       # TODO not in the text of the vendor page
+    notes: series-elastic geared servo; ratio not published
+    checked: '2026-08-27'
+
+  - name: X5-9
+    vendor: HEBI Robotics
+    source: https://docs.hebi.us/resources/datasheets/X-SeriesDatasheet.pdf
+    tau_peak_Nm: 13
+    mass_kg: 0.36
+    no_load_rpm: 14
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: null
+    OD_mm: 110
+    L_mm: 31
+    rotor_inertia: null       # TODO not in the text of the vendor page
+    notes: series-elastic geared servo; ratio not published
+    checked: '2026-08-27'
+
+  - name: IM6014
+    vendor: Unitree
+    source: https://www.unitree.com/mobile/IM6014/
+    tau_peak_Nm: 34.4
+    mass_kg: 0.535
+    no_load_rpm: null
+    omega_NL_rad_s: 54.2
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 12.667
+    OD_mm: 65
+    L_mm: 60
+    rotor_inertia: null       # TODO not in the text of the vendor page
+    notes: G1 arm motor, model N6014B-12.6. Unitree publishes max torque 34.4 N.m (opposing the rotation; 31.7 N.m with it), 535 g, phi65 x 60, gear 3:38 = 12.667:1 and max no-load speed 54.2 rad/s at 60 V. That last figure replaces the 250 rpm at 48 V this row had estimated, and is kept in rad/s because that is the unit Unitree prints.
+    checked: '2026-08-27'
+
+  - name: RMD-X2-P28-7-E
+    vendor: MyActuator
+    source: https://static1.squarespace.com/static/65098da04c5aa04f8f5ed336/t/687e92d71f42602362a7738c/1753125602005/MyActuator+2025+product+manual.pdf
+    tau_peak_Nm: 7
+    mass_kg: 0.26
+    no_load_rpm: 178
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 28.17
+    OD_mm: 44
+    L_mm: 63.5
+    rotor_inertia:
+      value: 0.17
+      unit: kg.cm2
+      kind: rotor
+      source: MyActuator 2025 catalog p8 (X2-7)
+    notes: X2-7; rated 37 W at 28.17:1. Catalog p8. Envelope from that page's installation drawing.
+    checked: '2026-08-27'
+
+  - name: RMD-X4-P12-10-E
+    vendor: MyActuator
+    source: https://static1.squarespace.com/static/65098da04c5aa04f8f5ed336/t/687e92d71f42602362a7738c/1753125602005/MyActuator+2025+product+manual.pdf
+    tau_peak_Nm: 10
+    mass_kg: 0.33
+    no_load_rpm: 317
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 12.6
+    OD_mm: 55
+    L_mm: 55.5
+    rotor_inertia:
+      value: 0.25
+      unit: kg.cm2
+      kind: rotor
+      source: MyActuator 2025 catalog p9 (X4-10)
+    notes: X4-10; rated 100 W at 12.6:1. Catalog p9. Envelope from that page's installation drawing.
+    checked: '2026-08-27'
+
+  - name: RMD-X4-P36-36-E
+    vendor: MyActuator
+    source: https://static1.squarespace.com/static/65098da04c5aa04f8f5ed336/t/687e92d71f42602362a7738c/1753125602005/MyActuator+2025+product+manual.pdf
+    tau_peak_Nm: 34
+    mass_kg: 0.36
+    no_load_rpm: 111
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 36
+    OD_mm: 55
+    L_mm: 61
+    rotor_inertia:
+      value: 0.3
+      unit: kg.cm2
+      kind: rotor
+      source: MyActuator 2025 catalog p10 (X4-36)
+    notes: X4-36; rated 100 W at 36:1. Catalog p10. Envelope from that page's installation drawing.
+    checked: '2026-08-27'
+
+  - name: RMD-X6-P20-60-E
+    vendor: MyActuator
+    source: https://static1.squarespace.com/static/65098da04c5aa04f8f5ed336/t/687e92d71f42602362a7738c/1753125602005/MyActuator+2025+product+manual.pdf
+    tau_peak_Nm: 60
+    mass_kg: 0.82
+    no_load_rpm: 176
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 19.612
+    OD_mm: 80
+    L_mm: 67.5
+    rotor_inertia:
+      value: 0.66
+      unit: kg.cm2
+      kind: rotor
+      source: MyActuator 2025 catalog p12 (X6-60)
+    notes: X6-60; rated 320 W at 19.612:1. Catalog p12. Envelope from that page's installation drawing.
+    checked: '2026-08-27'
+
+  - name: RMD-X8-P20-120-E
+    vendor: MyActuator
+    source: https://static1.squarespace.com/static/65098da04c5aa04f8f5ed336/t/687e92d71f42602362a7738c/1753125602005/MyActuator+2025+product+manual.pdf
+    tau_peak_Nm: 120
+    mass_kg: 1.4
+    no_load_rpm: 158
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 19.612
+    OD_mm: 96
+    L_mm: 76
+    rotor_inertia:
+      value: 1.5
+      unit: kg.cm2
+      kind: rotor
+      source: MyActuator 2025 catalog p15 (X8-120)
+    notes: X8-120; rated 574 W at 19.612:1. Catalog p15. Envelope from that page's installation drawing.
+    checked: '2026-08-27'
+
+  - name: RMD-X8-P33-150-E
+    vendor: MyActuator
+    source: https://files.seeedstudio.com/products/Myactuator/User_Manual_X_Series_Products_V1.1.pdf
+    tau_peak_Nm: 150
+    mass_kg: 1.48
+    no_load_rpm: 90
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 33
+    OD_mm: 105
+    L_mm: 72
+    rotor_inertia: null       # TODO not in the text of the vendor page
+    notes: 'Was ''RMD-X8-P33''. Present after all in MyActuator''s X-series product manual V1.1, Table 3-3, as RMD-X8-P33-150-C / -E: ratio 33, peak speed 90 rpm, peak torque 150 N.m, weight 1.48 kg - all four exactly as this row already had them. The 2025 general catalogue simply dropped the model. That manual carries no dimension drawing for the P33, so OD_mm 105 and L_mm 72 remain uncited.'
+    checked: '2026-08-27'
+
+  - name: RMD-X12-P20-320-E
+    vendor: MyActuator
+    source: https://static1.squarespace.com/static/65098da04c5aa04f8f5ed336/t/687e92d71f42602362a7738c/1753125602005/MyActuator+2025+product+manual.pdf
+    tau_peak_Nm: 320
+    mass_kg: 2.37
+    no_load_rpm: 125
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 20
+    OD_mm: 124
+    L_mm: 85
+    rotor_inertia:
+      value: 12.9
+      unit: kg.cm2
+      kind: rotor
+      source: MyActuator 2025 catalog p16 (X12-320)
+    notes: X12-320; rated 900 W at 20:1. Catalog p16. Envelope from that page's installation drawing.
+    checked: '2026-08-27'
+
+  - name: RMD-X15-P20-450-E
+    vendor: MyActuator
+    source: https://static1.squarespace.com/static/65098da04c5aa04f8f5ed336/t/687e92d71f42602362a7738c/1753125602005/MyActuator+2025+product+manual.pdf
+    tau_peak_Nm: 450
+    mass_kg: 3.5
+    no_load_rpm: 108
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 20.25
+    OD_mm: 166
+    L_mm: 90
+    rotor_inertia:
+      value: 31.6
+      unit: kg.cm2
+      kind: rotor
+      source: MyActuator 2025 catalog p17 (X15-450)
+    notes: X15-450; rated 1480 W at 20.25:1. Catalog p17. Envelope from that page's installation drawing. L is the 90 mm overall dimension (flange face to the back of the connector housing), not the 69 mm across the finned body.
+    checked: '2026-08-27'
+
+  - name: GIM3510-64
+    vendor: SteadyWin
+    source: https://steadywin-motor.com/products/document-download
+    tau_peak_Nm: 50
+    mass_kg: 0.5072
+    no_load_rpm: 74
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 64
+    OD_mm: 46
+    L_mm: 77.5
+    rotor_inertia: null       # TODO not in the text of the vendor page
+    notes: '64:1, 24 V. Every field moved: SteadyWin''s table gives 50 N.m peak, 507.2 g and phi46 x 77.5 at 74 rpm, against 20 N.m / 200 g / phi35 x 60 / 70 rpm here. Same body-size confusion as GIM3510-8. Read from SteadyWin''s own ''Planetary Reduction Motor Selection Table.xlsx'', linked from the Document Download page. Mass and envelope are the WITH-DRIVER figures, matching this dataset''s whole-shipped-unit convention; speed is ''Max Speed after reduction''.'
+    checked: '2026-08-27'
+
+  - name: X8-3
+    vendor: HEBI Robotics
+    source: https://docs.hebi.us/resources/datasheets/X-SeriesDatasheet.pdf
+    tau_peak_Nm: 7
+    mass_kg: 0.46
+    no_load_rpm: 84
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: null
+    OD_mm: 110
+    L_mm: 45
+    rotor_inertia: null       # TODO not in the text of the vendor page
+    notes: X8-3
+    checked: '2026-08-27'
+
+  - name: X8-9
+    vendor: HEBI Robotics
+    source: https://docs.hebi.us/resources/datasheets/X-SeriesDatasheet.pdf
+    tau_peak_Nm: 20
+    mass_kg: 0.48
+    no_load_rpm: 30
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: null
+    OD_mm: 110
+    L_mm: 45
+    rotor_inertia: null       # TODO not in the text of the vendor page
+    notes: X8-9
+    checked: '2026-08-27'
+
+  - name: X8-16
+    vendor: HEBI Robotics
+    source: https://docs.hebi.us/resources/datasheets/X-SeriesDatasheet.pdf
+    tau_peak_Nm: 38
+    mass_kg: 0.5
+    no_load_rpm: 15
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: null
+    OD_mm: 110
+    L_mm: 45
+    rotor_inertia: null       # TODO not in the text of the vendor page
+    notes: X8-16
+    checked: '2026-08-27'
+
+  - name: R8-3
+    vendor: HEBI Robotics
+    source: https://docs.hebi.us/resources/datasheets/R-Series+Datasheet.pdf
+    tau_peak_Nm: 8
+    mass_kg: 0.67
+    no_load_rpm: 110
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: null
+    OD_mm: 156
+    L_mm: 51
+    rotor_inertia:
+      value: 85
+      unit: g.mm2
+      kind: rotor
+      source: docs.hebi.us 'Motor Inertia' (T8/X8/R8)
+    geared_inrunner: true
+    notes: IP67 R8
+    checked: '2026-08-27'
+
+  - name: R8-9
+    vendor: HEBI Robotics
+    source: https://docs.hebi.us/resources/datasheets/R-Series+Datasheet.pdf
+    tau_peak_Nm: 23
+    mass_kg: 0.685
+    no_load_rpm: 39
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: null
+    OD_mm: 156
+    L_mm: 51
+    rotor_inertia:
+      value: 85
+      unit: g.mm2
+      kind: rotor
+      source: docs.hebi.us 'Motor Inertia' (T8/X8/R8)
+    geared_inrunner: true
+    notes: IP67 R8
+    checked: '2026-08-27'
+
+  - name: R8-16
+    vendor: HEBI Robotics
+    source: https://docs.hebi.us/resources/datasheets/R-Series+Datasheet.pdf
+    tau_peak_Nm: 44
+    mass_kg: 0.715
+    no_load_rpm: 20
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: null
+    OD_mm: 156
+    L_mm: 51
+    rotor_inertia:
+      value: 85
+      unit: g.mm2
+      kind: rotor
+      source: docs.hebi.us 'Motor Inertia' (T8/X8/R8)
+    geared_inrunner: true
+    notes: IP67 R8
+    checked: '2026-08-27'
+
+  - name: HEJ 70-48-60
+    vendor: maxon
+    source: https://global.maxongroup.com/hubfs/Datasheet_HEJ_70_48_60_rev1.2.pdf
+    tau_peak_Nm: 63
+    mass_kg: 1.04
+    omega_NL_rad_s: 17.8
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: null
+    OD_mm: 88
+    L_mm: 77
+    rotor_inertia: null       # TODO maxon publishes no rotor inertia for the HEJ
+    notes: 'Supersedes the Jul. 2025 rev. 0.92 PRELIMINARY sheet this row used to
+      cite (50 N.m, 28 rad/s, 86.5 x 73 mm). maxon''s production sheet, Jun. 2026
+      rev. 1.2, raises peak torque to +/-63 N.m and restates the envelope as ca.
+      88 mm dia. x 77 mm, 1.04 kg. Speed here is the 48 V figure (17.8 rad/s); at
+      60 V it is 22 rad/s. Peak torque holds ca. 1-2 s before thermal protection;
+      nominal (indefinite) torque is +/-27 N.m. 30-60 V, EtherCAT, IP67, 14-bit
+      absolute encoder on the OUTPUT (after the gear), cross-roller output bearing,
+      best motor-quadrant efficiency ca. 81.4%. No reduction ratio is published, so
+      gear stays null. Total mechanical moment of inertia at the joint is 112 kgcm2,
+      a whole-joint OUTPUT-side figure, not a rotor inertia. P/N 933846 (radial
+      connectors) / 933847 (axial).'
+
+  - name: EPS-CEM-15-E-N
+    vendor: MyActuator
+    source: https://static1.squarespace.com/static/65098da04c5aa04f8f5ed336/t/687e92d71f42602362a7738c/1753125602005/MyActuator+2025+product+manual.pdf
+    tau_peak_Nm: 15
+    mass_kg: 0.81
+    no_load_rpm: 170
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 30
+    OD_mm: 70
+    L_mm: 75.9
+    rotor_inertia:
+      value: 0.7
+      unit: kg.cm2
+      kind: rotor
+      source: MyActuator 2025 catalog p31 (CEM-15)
+    notes: CEM-15; cycloid, rated 132 W. Catalog p31. All three CEM sizes print the same 0.7 kg.cm2 inertia and the same 30:1 — one motor across the range, or a copied cell; the catalog does not say.
+    checked: '2026-08-27'
+
+  - name: EPS-CEM-25-E-N
+    vendor: MyActuator
+    source: https://static1.squarespace.com/static/65098da04c5aa04f8f5ed336/t/687e92d71f42602362a7738c/1753125602005/MyActuator+2025+product+manual.pdf
+    tau_peak_Nm: 25
+    mass_kg: 0.94
+    no_load_rpm: 130
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 30
+    OD_mm: 70
+    L_mm: 82
+    rotor_inertia:
+      value: 0.7
+      unit: kg.cm2
+      kind: rotor
+      source: MyActuator 2025 catalog p32 (CEM-25)
+    notes: 'CEM-25; cycloid, rated 157 W. Catalog p32. Envelope is null because p32''s drawing carries no diameter callout at all - CEM-15 and CEM-45 pages have one, this one does not - and the validator will not take a length without a diameter. The length IS printed: 82 +/-0.3 mm overall. Fill OD_mm and L_mm together once a diameter is found.'
+    checked: '2026-08-27'
+
+  - name: EPS-CEM-45-E-N
+    vendor: MyActuator
+    source: https://static1.squarespace.com/static/65098da04c5aa04f8f5ed336/t/687e92d71f42602362a7738c/1753125602005/MyActuator+2025+product+manual.pdf
+    tau_peak_Nm: 45
+    mass_kg: 1.09
+    no_load_rpm: 100
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 30
+    OD_mm: 78
+    L_mm: 85.5
+    rotor_inertia:
+      value: 0.7
+      unit: kg.cm2
+      kind: rotor
+      source: MyActuator 2025 catalog p33 (CEM-45)
+    notes: CEM-45; cycloid, rated 210 W. Catalog p33.
+    checked: '2026-08-27'
+
+  - name: HEJ 50-48-30
+    vendor: maxon
+    source: https://global.maxongroup.com/hubfs/Datasheet_HEJ_50_48_30_rev1.1.pdf
+    tau_peak_Nm: 28
+    mass_kg: 0.53
+    omega_NL_rad_s: 21
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: null
+    OD_mm: 71.5
+    L_mm: 65
+    rotor_inertia: null       # TODO maxon publishes no rotor inertia for the HEJ
+    notes: 'maxon''s smallest High Efficiency Joint. Datasheet Jun. 2026 rev. 1.1,
+      P/N 922156. Peak +/-28 N.m holds ca. 1-2 s before thermal protection; nominal
+      (indefinite) +/-11 N.m. Speed here is the 48 V figure (21 rad/s); at 60 V it
+      is 26 rad/s. 30-60 V, EtherCAT, 14-bit absolute encoder on the OUTPUT,
+      cross-roller output bearing, best motor-quadrant efficiency 74.1%. NOTE
+      maxon''s family web page quotes 30 N.m and 0.57 kg for this part; the
+      datasheet''s 28 N.m and 0.53 kg are what this row uses. No reduction ratio is
+      published, so gear stays null. Total mechanical moment of inertia at the joint
+      is 56 kgcm2, a whole-joint OUTPUT-side figure, not a rotor inertia. The default
+      P/N 922156 ships without an ingress-protected back cap.'
+
+  - name: HEJ 90-48-140
+    vendor: maxon
+    source: https://global.maxongroup.com/hubfs/Datasheet_HEJ_90_48_140_rev2.3.pdf
+    tau_peak_Nm: 140
+    mass_kg: 2.006
+    omega_NL_rad_s: 10.4
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: null
+    OD_mm: 108
+    L_mm: 90
+    rotor_inertia: null       # TODO maxon publishes no rotor inertia for the HEJ
+    notes: 'Datasheet Jun. 2026 rev. 2.3, P/N 831220 (radial connectors) / 895330
+      (axial). Peak +/-140 N.m holds ca. 4-5 s before thermal protection; a +/-180
+      N.m variant is offered on request and is NOT this row. Nominal (indefinite)
+      +/-75 N.m. Speed here is the 48 V figure (10.4 rad/s); at 60 V it is 13.0
+      rad/s. Mass is the radial-connector version. 30-60 V, EtherCAT, IP67,
+      cross-roller output bearing, best motor-quadrant efficiency ca. 86.1%. No
+      reduction ratio is published, so gear stays null. Total mechanical moment of
+      inertia at the joint is 0.045 kgm2, a whole-joint OUTPUT-side figure, not a
+      rotor inertia.'
+
+  - name: 9317 BXI G
+    vendor: FAULHABER
+    source: https://cdn.faulhaber.com/media/DAM/Documents/brochure/faulhaber-brochure-market-solution-robotic-joints-en.pdf
+    tau_peak_Nm: 20
+    mass_kg: 0.987
+    no_load_rpm: 114
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 10.5
+    OD_mm: 100
+    L_mm: 34
+    rotor_inertia: null       # TODO not in the text of the vendor page
+    notes: 'FAULHABER''s integrated robotics drive: a 21-pole-pair iron-core internal
+      rotor, a low-backlash planetary gearhead (2 stages in 1, needle bearings) and a
+      15-bit SSI absolute encoder in one 100 x 34 mm housing, L/D 0.34. THREE CAVEATS,
+      all material. (1) NO ONBOARD DRIVER. Unlike every other row in this population
+      the BXI ships without control electronics and is paired with an external
+      FAULHABER MC5010 motion controller, so 987 g is not the same quantity the rest
+      of the catalogue reports. (2) THE PUBLISHED NUMBERS ARE AT DIFFERENT VOLTAGES.
+      Max. torque 20 N.m, max. power output 270 W and max. phase current 13 A are all
+      "up to" figures over a 0-50 V motor range, while the 114 min-1 no-load speed is
+      explicitly stated at 24 V. The 114 min-1 is recorded because it is the only
+      speed FAULHABER publishes, but it is a HALF-VOLTAGE number and the row is
+      therefore speed-pessimistic: against the fitted speed trend it lands at 0.47x
+      predicted for a 10.5:1 reduction, and scaling it to the 50 V ceiling puts it
+      within 1% of the trend. (3) Consequently the tau*w/4 envelope mixes voltages and
+      returns 60 W against the 270 W FAULHABER publishes as mechanical output — a
+      4.5x gap, where the one other published-power row in the catalogue (MIT Mini
+      Cheetah U8) differs from its envelope by 1.47x. P_peak_W is left null so the
+      row stays on the envelope rule; flip it to 270 only together with a 50 V speed.
+      Against the fitted mass trend the part is 1.88x heavy for its torque, which is
+      what a 10.5:1 iron-core unit should look like next to a population of 30-60:1
+      modules. OD is the 100 mm on the brochure drawing; a second dimension,
+      106 mm -0.1, also appears there and is not identified. Ident-no. 000.9001.02.'

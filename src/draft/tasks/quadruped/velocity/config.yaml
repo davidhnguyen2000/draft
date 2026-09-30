@@ -1,0 +1,8 @@
+# Top-speed challenge. Warm-start from the flat base policy for this design.
+task: quadruped_velocity
+run_name: quadruped_velocity
+max_iterations: 1800
+save_interval: 250
+env_kwargs:
+  robot_xml: generated/cheetah/quadruped.xml
+# warmstart_checkpoint: logs/quadruped_flat/<timestamp>_quadruped_flat/model_<N>.pt
