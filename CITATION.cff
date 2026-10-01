@@ -13,6 +13,10 @@ authors:
     given-names: Sangbae
     affiliation: "Department of Mechanical Engineering, Massachusetts Institute of Technology"
 license: MIT
+identifiers:
+  - type: url
+    value: "https://arxiv.org/pdf/2609.38405"
+    description: "The paper (arXiv)"
 abstract: >-
   Draft is a parametric generation tool for design and controller exploration
   using medium-fidelity robot models, without CAD. A generalized engine compiles

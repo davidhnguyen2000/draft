@@ -5,7 +5,7 @@
 <p align="center"><em>A parametric tool for robot design exploration</em></p>
 
 <p align="center">
-  <a href="https://arxiv.org/abs/XXXX.XXXXX">Paper (arXiv)</a> ·
+  <a href="https://arxiv.org/pdf/2609.38405">Paper (arXiv)</a> ·
   <a href="https://youtu.be/egzlEqfwwLU">Video</a>
 </p>
 
