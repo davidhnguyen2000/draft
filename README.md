@@ -54,7 +54,20 @@ them. The full documentation is in [`docs/`](docs/README.md).
 
 ## Citing
 
-See [`CITATION.cff`](CITATION.cff).
+If you use Draft or its datasets, please cite the paper:
+
+```bibtex
+@article{nguyen2026draft,
+  title         = {Draft: A Parametric Tool for Robot Design Exploration},
+  author        = {Nguyen, David and Coelho, Marcelo and Kim, Sangbae},
+  journal       = {arXiv preprint arXiv:2609.38405},
+  year          = {2026},
+  eprint        = {2609.38405},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.RO},
+  url           = {https://arxiv.org/abs/2609.38405}
+}
+```
 
 ## License
 

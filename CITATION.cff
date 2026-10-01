@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-title: "Draft: A Parametric Design Tool for Robot Exploration"
+title: "Draft: A Parametric Tool for Robot Design Exploration"
 message: "If you use this software or its datasets, please cite the paper."
 type: software
 authors:
@@ -33,3 +33,16 @@ keywords:
   - MJCF
   - actuator scaling
   - legged robots
+preferred-citation:
+  type: article
+  title: "Draft: A Parametric Tool for Robot Design Exploration"
+  authors:
+    - family-names: Nguyen
+      given-names: David
+    - family-names: Coelho
+      given-names: Marcelo
+    - family-names: Kim
+      given-names: Sangbae
+  journal: "arXiv preprint arXiv:2609.38405"
+  year: 2026
+  url: "https://arxiv.org/abs/2609.38405"
