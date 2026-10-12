@@ -821,7 +821,11 @@ def _hull_2d(pts: np.ndarray) -> np.ndarray:
     def chain(seq):
         out: list = []
         for q in seq:
-            while len(out) >= 2 and np.cross(out[-1] - out[-2], q - out[-2]) <= 0:
+            while len(out) >= 2:
+                a, b = out[-1] - out[-2], q - out[-2]
+                # Signed 2D area; np.cross on 2D vectors is deprecated in NumPy 2.
+                if a[0] * b[1] - a[1] * b[0] > 0:
+                    break
                 out.pop()
             out.append(q)
         return out[:-1]

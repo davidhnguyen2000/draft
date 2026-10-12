@@ -9,6 +9,10 @@ results (§V); the trends and twins (§III–IV) need no GPU at any depth.
 | 2. From the released archives | a download, no GPU | the committed record, from raw evaluation cells |
 | 3. From scratch | one CUDA GPU (`pip install -e ".[rl]" -c constraints.txt`, then `wandb login`) | the 120 trainings and 360 evaluation cells |
 
+For a Mac, first use the [isolated CPU setup](contributing.md#macos-cpu-setup).
+The macOS compatibility pins differ from the paper's Linux numerical stack, so
+check the model fingerprints and tests before comparing numbers.
+
 ## Trends and twins
 
 ```shell

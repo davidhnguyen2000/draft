@@ -5,12 +5,19 @@
 # pyproject.toml states the ranges the code works with; this file pins one point
 # inside them so a fresh install matches the paper. The `rl` extra pins its own
 # stack in pyproject.toml, and mujoco and viser here agree with it. numpy is the
-# 2.x the twins were measured with; pin 4.x needs numpy>=2.
+# 2.x the twins were measured with; pin 4.x needs numpy>=2. The macOS
+# exceptions below are compatibility pins, not the paper's measurement stack.
 
 # generator
 mujoco==3.8.0
-numpy==2.2.5
-scipy==1.15.3
+# The paper's Linux pins stay unchanged. On macOS, NumPy 2.2.5 emits spurious
+# matmul warnings on recent Apple Silicon, and SciPy 1.15.3's PROPACK wheel is
+# rejected by recent dyld versions. These macOS wheels require Python >=3.11;
+# see docs/contributing.md for the isolated CPU setup and validation.
+numpy==2.2.5 ; sys_platform != "darwin"
+numpy==2.3.5 ; sys_platform == "darwin"
+scipy==1.15.3 ; sys_platform != "darwin"
+scipy==1.16.3 ; sys_platform == "darwin"
 pyyaml==6.0.3
 trimesh==4.11.3
 mapbox-earcut==2.0.0

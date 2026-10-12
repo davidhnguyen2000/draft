@@ -16,6 +16,62 @@ what was measured. Install `.[rl]` only on a machine with a CUDA GPU; everything
 else runs on a CPU.
 Training logs to Weights & Biases, so run `wandb login` once first.
 
+## macOS CPU setup
+
+Conda is only an interpreter provider here. On macOS use Python 3.11 in an
+isolated environment; the system Python and the Linux/CUDA setup above do not
+need to change. With [uv](https://docs.astral.sh/uv/):
+
+```shell
+uv venv --python 3.11 .venv
+source .venv/bin/activate
+export PYTHONNOUSERSITE=1
+uv pip install -e ".[editor,dev]" -c constraints.txt
+python scripts/generate_robot.py --robot quadruped
+python scripts/generate_robot.py --robot humanoid
+python scripts/robot_tuner.py         # http://localhost:8081; scene on :8080
+```
+
+The `editor` extra includes `mjviser`, which the viewer imports directly. It
+can be installed without `figures`, `twins`, or the CUDA/RL stack. For the CPU
+paper checks, extend the same environment:
+
+```shell
+uv pip install -e ".[editor,twins,figures,dev]" -c constraints.txt
+python scripts/fit_trends.py --skip-fetch
+python scripts/generate_quadrupeds.py
+python scripts/setup_data.py
+python scripts/make_twins.py --steps build adapt inertia
+pytest --runslow
+python scripts/train_all.py numbers
+```
+
+`constraints.txt` keeps the measured NumPy 2.2.5/SciPy 1.15.3 versions on Linux.
+On macOS it selects NumPy 2.3.5 and SciPy 1.16.3 (both require Python >=3.11):
+
+- SciPy 1.15.3's arm64 PROPACK extension failed to load on macOS 27.0.1 with
+  `section '__DATA/__thread_bss' has a zero-fill section type, but offset field
+  is not zero`. This stopped trimesh's connected-component calculation and
+  both generators. SciPy 1.15.2 on Python 3.10 and 1.15.3 on Python 3.11 also
+  failed; 1.16.3 loaded successfully. See the
+  [SciPy wheel issue](https://github.com/scipy/scipy/issues/25635).
+- NumPy 2.2.5 emitted divide-by-zero, overflow and invalid-value `matmul`
+  warnings on the tested Apple M5 Pro. NumPy 2.3.5 eliminated them while the
+  model fingerprints and mass tests remained unchanged. NumPy documents the
+  [Accelerate warning fix](https://numpy.org/doc/2.4/release/2.3.1-notes.html)
+  starting in 2.3.1. No floating-point warning filters are applied.
+
+Validated on an arm64 Apple M5 Pro, macOS 27.0.1, Python 3.11.17, MuJoCo
+3.8.0, Pinocchio 4.0.0, viser 1.0.27 and mjviser 0.0.14. The humanoid and
+quadruped compiled and ran in MuJoCo; both rendered in Chrome, and parameter
+edits and Generate rebuilt them. All three paper designs matched
+`experiments/machines.json`. The trends refit left the committed data unchanged;
+twin/vendor mass ratios were G1 1.1146, H2 0.9090, Go2 1.0105 and B2 0.8412
+(GMFE 1.1017). The CPU dynamics comparison at 300 poses reproduced Table III's
+rounded medians and sample variances. See [reproducing.md](reproducing.md) for
+figure prerequisites and the distinction between the committed RL record and
+new GPU experiments.
+
 ## Conventions
 
 - **Import the installed package** (`from draft.trends import ...`). Do not add

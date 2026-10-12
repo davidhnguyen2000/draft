@@ -28,6 +28,9 @@ python scripts/robot_tuner.py                       # browser editor
 python scripts/generate_robot.py --robot quadruped  # headless, writes generated/
 ```
 
+On macOS, use the [Python 3.11 CPU setup](docs/contributing.md#macos-cpu-setup)
+with uv; `environment.yml` supplies the paper's Linux Python 3.10 interpreter.
+
 Training needs a CUDA GPU: add the `rl` extra (`pip install -e ".[rl]" -c
 constraints.txt`) and see [`docs/tasks.md`](docs/tasks.md).
 Everything else runs on a laptop CPU.
