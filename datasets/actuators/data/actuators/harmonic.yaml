@@ -861,3 +861,229 @@ actuators:
       source: eRob manual V3.36 Table 2-1 (eRob170H), 'SWG Input Side Inertia', without brake
     notes: 'SHF 40-160 strain wave gear. Manual V3.36 Table 2-1 (sec 2.2, p5/110). tau_peak_Nm is the Permissible Maximum MOMENTARY Torque; the same line also gives peak start/stop 647, permissible max with average load 451, and rated 294 N.m. Torque motor rated power 1000 W (RATED, not a mechanical peak, so P_peak_W stays null). no_load_rpm is the Maximum Output Rotational Speed: across this module GR x RPM is constant, so the column is the motor''s own speed limit geared down. Mass and envelope are the WITHOUT-brake unit; with brake it is 9.5 kg, 170x144.9 mm, input inertia 1545541 g.mm2. Output-side inertia 6679752 g.mm2, output-side mass 2.02 kg.'
     checked: '2026-08-27'
+
+  # ── Catalogued after the paper, not fitted ──────────────────────────────────
+  # Every row below is listed in ../active_flags.json, so no trend, frontier or
+  # holdout sees it. None has been checked against its `source` by a person
+  # yet, so none carries `checked`.
+
+  - name: DM-JH11-51-2EC
+    vendor: Damiao
+    source: https://github.com/dmBots/dmBot/blob/master/2026-Damiao%20Technology-Product%20Selection%20Manual-2026-10-28.pdf
+    tau_peak_Nm: 7.8
+    mass_kg: 0.345
+    no_load_rpm: 60
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 51
+    OD_mm: 52
+    L_mm: 60
+    rotor_inertia:
+      value: 6.30E-06
+      unit: kg.m2
+      kind: rotor
+      source: Damiao 2026 product selection table (2026年-达妙科技-产品选型表-2026-10-28.pdf, github.com/dmBots/dmBot) p. 2, 转动惯量
+    notes: '51:1 harmonic drive. Damiao 2026 Product Selection Manual (2026-10-28) p. 49. 24 V (24-48 V).'
+
+  - name: DM-JH11-101-2EC
+    vendor: Damiao
+    source: https://github.com/dmBots/dmBot/blob/master/2026-Damiao%20Technology-Product%20Selection%20Manual-2026-10-28.pdf
+    tau_peak_Nm: 10.5
+    mass_kg: 0.345
+    no_load_rpm: 30
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 101
+    OD_mm: 52
+    L_mm: 60
+    rotor_inertia:
+      value: 6.30E-06
+      unit: kg.m2
+      kind: rotor
+      source: Damiao 2026 product selection table (2026年-达妙科技-产品选型表-2026-10-28.pdf, github.com/dmBots/dmBot) p. 2, 转动惯量
+    notes: '101:1 harmonic drive. Damiao 2026 Product Selection Manual (2026-10-28) p. 50. 24 V (24-48 V).'
+
+  - name: DM-JH14-51-2EC
+    vendor: Damiao
+    source: https://github.com/dmBots/dmBot/blob/master/2026-Damiao%20Technology-Product%20Selection%20Manual-2026-10-28.pdf
+    tau_peak_Nm: 18
+    mass_kg: 0.775
+    no_load_rpm: 60
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 51
+    OD_mm: 70
+    L_mm: 70
+    rotor_inertia:
+      value: 6.00E-05
+      unit: kg.m2
+      kind: rotor
+      source: Damiao 2026 product selection table (2026年-达妙科技-产品选型表-2026-10-28.pdf, github.com/dmBots/dmBot) p. 2, 转动惯量
+    notes: '51:1 harmonic drive. Damiao 2026 Product Selection Manual (2026-10-28) p. 51. 24 V (24-48 V).'
+
+  - name: DM-JH14-101-2EC
+    vendor: Damiao
+    source: https://github.com/dmBots/dmBot/blob/master/2026-Damiao%20Technology-Product%20Selection%20Manual-2026-10-28.pdf
+    tau_peak_Nm: 28
+    mass_kg: 0.775
+    no_load_rpm: 30
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 101
+    OD_mm: 70
+    L_mm: 70
+    rotor_inertia:
+      value: 6.00E-05
+      unit: kg.m2
+      kind: rotor
+      source: Damiao 2026 product selection table (2026年-达妙科技-产品选型表-2026-10-28.pdf, github.com/dmBots/dmBot) p. 2, 转动惯量
+    notes: '101:1 harmonic drive. Damiao 2026 Product Selection Manual (2026-10-28) p. 52. 24 V (24-48 V).'
+
+  - name: DM-JH17-51-2EC
+    vendor: Damiao
+    source: https://github.com/dmBots/dmBot/blob/master/2026-Damiao%20Technology-Product%20Selection%20Manual-2026-10-28.pdf
+    tau_peak_Nm: 24
+    mass_kg: 0.985
+    no_load_rpm: 60
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 51
+    OD_mm: 80
+    L_mm: 70
+    rotor_inertia:
+      value: 9.38E-05
+      unit: kg.m2
+      kind: rotor
+      source: Damiao 2026 product selection table (2026年-达妙科技-产品选型表-2026-10-28.pdf, github.com/dmBots/dmBot) p. 2, 转动惯量
+    notes: '51:1 harmonic drive. Damiao 2026 Product Selection Manual (2026-10-28) p. 53. 24 V (24-48 V).'
+
+  - name: DM-JH17-101-2EC
+    vendor: Damiao
+    source: https://github.com/dmBots/dmBot/blob/master/2026-Damiao%20Technology-Product%20Selection%20Manual-2026-10-28.pdf
+    tau_peak_Nm: 54
+    mass_kg: 0.985
+    no_load_rpm: 30
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 101
+    OD_mm: 80
+    L_mm: 70
+    rotor_inertia:
+      value: 9.38E-05
+      unit: kg.m2
+      kind: rotor
+      source: Damiao 2026 product selection table (2026年-达妙科技-产品选型表-2026-10-28.pdf, github.com/dmBots/dmBot) p. 2, 转动惯量
+    notes: '101:1 harmonic drive. Damiao 2026 Product Selection Manual (2026-10-28) p. 54. 24 V (24-48 V).'
+
+  - name: DM-JH20-51-2EC
+    vendor: Damiao
+    source: https://github.com/dmBots/dmBot/blob/master/2026-Damiao%20Technology-Product%20Selection%20Manual-2026-10-28.pdf
+    tau_peak_Nm: 69
+    mass_kg: 1.428
+    no_load_rpm: 60
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 51
+    OD_mm: 90
+    L_mm: 73
+    rotor_inertia:
+      value: 5.47E-05
+      unit: kg.m2
+      kind: rotor
+      source: Damiao 2026 product selection table (2026年-达妙科技-产品选型表-2026-10-28.pdf, github.com/dmBots/dmBot) p. 2, 转动惯量
+    notes: '51:1 harmonic drive. Damiao 2026 Product Selection Manual (2026-10-28) p. 55. 48 V.'
+
+  - name: DM-JH20-101-2EC
+    vendor: Damiao
+    source: https://github.com/dmBots/dmBot/blob/master/2026-Damiao%20Technology-Product%20Selection%20Manual-2026-10-28.pdf
+    tau_peak_Nm: 102
+    mass_kg: 1.434
+    no_load_rpm: 30
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 101
+    OD_mm: 90
+    L_mm: 73
+    rotor_inertia:
+      value: 5.47E-05
+      unit: kg.m2
+      kind: rotor
+      source: Damiao 2026 product selection table (2026年-达妙科技-产品选型表-2026-10-28.pdf, github.com/dmBots/dmBot) p. 2, 转动惯量
+    notes: '101:1 harmonic drive. Damiao 2026 Product Selection Manual (2026-10-28) p. 56. 48 V.'
+
+  - name: EC-A3814-H14-107
+    vendor: ENCOS
+    source: https://www.encos.cn/filedownload/3062532
+    tau_peak_Nm: 60
+    mass_kg: 0.434
+    no_load_rpm: 52
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 107
+    OD_mm: 53
+    L_mm: 78.5
+    rotor_inertia:
+      value: 30
+      unit: g.cm2
+      kind: rotor
+      source: ENCOS Gen-1 joint datasheet V3.19EAP (2026-11-16), motor rotor inertia (电机的转子惯量), printed 3 kg·mm²
+    notes: '107:1 strain-wave, size 14, 48 V. ENCOS Gen-1 joint datasheet V3.19EAP (2026-11-16) p. 136.'
+
+  - name: EC-A5013-H17-100
+    vendor: ENCOS
+    source: https://www.encos.cn/filedownload/3062532
+    tau_peak_Nm: 90
+    mass_kg: 0.63
+    no_load_rpm: 38
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 100
+    OD_mm: 63
+    L_mm: 81.5
+    rotor_inertia:
+      value: 100
+      unit: g.cm2
+      kind: rotor
+      source: ENCOS Gen-1 joint datasheet V3.19EAP (2026-11-16), motor rotor inertia (电机的转子惯量), printed 10 kg·mm²
+    notes: '100:1 strain-wave, size 17, 48 V. ENCOS Gen-1 joint datasheet V3.19EAP (2026-11-16) p. 142.'
+
+  - name: EC-A6013-H20-100
+    vendor: ENCOS
+    source: https://www.encos.cn/filedownload/3062532
+    tau_peak_Nm: 130
+    mass_kg: 0.906
+    no_load_rpm: 47
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 100
+    OD_mm: 73
+    L_mm: 84
+    rotor_inertia:
+      value: 240
+      unit: g.cm2
+      kind: rotor
+      source: ENCOS Gen-1 joint datasheet V3.19EAP (2026-11-16), motor rotor inertia (电机的转子惯量), printed 24 kg·mm²
+    notes: '100:1 strain-wave, size 20, 48 V. ENCOS Gen-1 joint datasheet V3.19EAP (2026-11-16) p. 148.'
+
+  - name: EC-A6416-H25-100B
+    vendor: ENCOS
+    source: https://www.encos.cn/filedownload/3062532
+    tau_peak_Nm: 260
+    mass_kg: 1.476
+    no_load_rpm: 27
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 100
+    OD_mm: 87
+    L_mm: 109
+    rotor_inertia:
+      value: 1070
+      unit: g.cm2
+      kind: rotor
+      source: ENCOS Gen-1 joint datasheet V3.19EAP (2026-11-16), motor rotor inertia (电机的转子惯量), printed 107 kg·mm²
+    notes: '100:1 strain-wave, size 25, 48 V. ENCOS Gen-1 joint datasheet V3.19EAP (2026-11-16) p. 154.'
+
+  - name: EC-A8116-H32-100B
+    vendor: ENCOS
+    source: https://www.encos.cn/filedownload/3062532
+    tau_peak_Nm: 600
+    mass_kg: 2.492
+    no_load_rpm: 25
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 100
+    OD_mm: 112
+    L_mm: 116.3
+    rotor_inertia:
+      value: 2250
+      unit: g.cm2
+      kind: rotor
+      source: ENCOS Gen-1 joint datasheet V3.19EAP (2026-11-16), motor rotor inertia (电机的转子惯量), printed 225 kg·mm²
+    notes: '100:1 strain-wave, size 32, 48 V. ENCOS Gen-1 joint datasheet V3.19EAP (2026-11-16) p. 159. 241 N.m/kg as printed, above every fitted Harmonic row (max 141.7).'

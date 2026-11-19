@@ -599,3 +599,756 @@ actuators:
       what a 10.5:1 iron-core unit should look like next to a population of 30-60:1
       modules. OD is the 100 mm on the brochure drawing; a second dimension,
       106 mm -0.1, also appears there and is not identified. Ident-no. 000.9001.02.'
+
+  # ── Catalogued after the paper, not fitted ──────────────────────────────────
+  # Every row below is listed in ../active_flags.json, so no trend, frontier or
+  # holdout sees it. None has been checked against its `source` by a person
+  # yet, so none carries `checked`.
+
+  - name: DM-J4340-2EC
+    vendor: Damiao
+    source: https://github.com/dmBots/dmBot/blob/master/2026-Damiao%20Technology-Product%20Selection%20Manual-2026-10-28.pdf
+    tau_peak_Nm: 27
+    mass_kg: 0.362
+    no_load_rpm: 100
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 40
+    OD_mm: 57
+    L_mm: 53.3
+    rotor_inertia:
+      value: 2.00E-05
+      unit: kg.m2
+      kind: rotor
+      source: Damiao 2026 product selection table (2026年-达妙科技-产品选型表-2026-10-28.pdf, github.com/dmBots/dmBot) p. 1, 转动惯量
+    notes: '40:1 planetary. Damiao 2026 Product Selection Manual (2026-10-28) pp. 17-18. Speed is the 48 V figure; 52.5 rpm at 24 V.'
+
+  - name: DM-J4340-2EC V1.1
+    vendor: Damiao
+    source: https://github.com/dmBots/dmBot/blob/master/2026-Damiao%20Technology-Product%20Selection%20Manual-2026-10-28.pdf
+    tau_peak_Nm: 40
+    mass_kg: 0.362
+    no_load_rpm: 112
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 40
+    OD_mm: 57
+    L_mm: 53.3
+    rotor_inertia:
+      value: 1.97E-05
+      unit: kg.m2
+      kind: rotor
+      source: Damiao 2026 product selection table (2026年-达妙科技-产品选型表-2026-10-28.pdf, github.com/dmBots/dmBot) p. 1, 转动惯量
+    notes: '40:1 planetary. Damiao 2026 Product Selection Manual (2026-10-28) pp. 19-20. Speed is the 48 V figure; 56 rpm at 24 V.'
+
+  - name: DM-J4340P-2EC
+    vendor: Damiao
+    source: https://github.com/dmBots/dmBot/blob/master/2026-Damiao%20Technology-Product%20Selection%20Manual-2026-10-28.pdf
+    tau_peak_Nm: 27
+    mass_kg: 0.381
+    no_load_rpm: 100
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 40
+    OD_mm: 57
+    L_mm: 56.5
+    rotor_inertia:
+      value: 2.00E-05
+      unit: kg.m2
+      kind: rotor
+      source: Damiao 2026 product selection table (2026年-达妙科技-产品选型表-2026-10-28.pdf, github.com/dmBots/dmBot) p. 1, 转动惯量
+    notes: '40:1 planetary, crossed-roller output bearing. Damiao 2026 Product Selection Manual (2026-10-28) pp. 21-22. Speed is the 48 V figure; 52.5 rpm at 24 V.'
+
+  - name: DM-J4340P-2EC V1.1
+    vendor: Damiao
+    source: https://github.com/dmBots/dmBot/blob/master/2026-Damiao%20Technology-Product%20Selection%20Manual-2026-10-28.pdf
+    tau_peak_Nm: 40
+    mass_kg: 0.381
+    no_load_rpm: 112
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 40
+    OD_mm: 57
+    L_mm: 56.5
+    rotor_inertia:
+      value: 1.97E-05
+      unit: kg.m2
+      kind: rotor
+      source: Damiao 2026 product selection table (2026年-达妙科技-产品选型表-2026-10-28.pdf, github.com/dmBots/dmBot) p. 1, 转动惯量
+    notes: '40:1 planetary, crossed-roller output bearing. Damiao 2026 Product Selection Manual (2026-10-28) pp. 23-24. Speed is the 48 V figure; 56 rpm at 24 V.'
+
+  - name: DM-J6216L-2EC
+    vendor: Damiao
+    source: https://github.com/dmBots/dmBot/blob/master/2026-Damiao%20Technology-Product%20Selection%20Manual-2026-10-28.pdf
+    tau_peak_Nm: 45
+    mass_kg: 0.74
+    no_load_rpm: 260
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 16
+    OD_mm: 67
+    L_mm: 62.5
+    rotor_inertia:
+      value: 4.91E-05
+      unit: kg.m2
+      kind: rotor
+      source: Damiao 2026 product selection table (2026年-达妙科技-产品选型表-2026-10-28.pdf, github.com/dmBots/dmBot) p. 1, 转动惯量
+    notes: '16:1 planetary. Damiao 2026 Product Selection Manual (2026-10-28) p. 35. Supply 24 V (24-48 V); the speed is printed without a voltage.'
+
+  - name: DM-J6216P-2EC
+    vendor: Damiao
+    source: https://github.com/dmBots/dmBot/blob/master/2026-Damiao%20Technology-Product%20Selection%20Manual-2026-10-28.pdf
+    tau_peak_Nm: 45
+    mass_kg: 0.74
+    no_load_rpm: 260
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 16
+    OD_mm: 67
+    L_mm: 62.5
+    rotor_inertia:
+      value: 4.91E-05
+      unit: kg.m2
+      kind: rotor
+      source: Damiao 2026 product selection table (2026年-达妙科技-产品选型表-2026-10-28.pdf, github.com/dmBots/dmBot) p. 1, 转动惯量
+    notes: '16:1 planetary, crossed-roller output bearing. Damiao 2026 Product Selection Manual (2026-10-28) p. 36. Supply 24 V (24-48 V); the speed is printed without a voltage.'
+
+  - name: DM-J6248P-2EC
+    vendor: Damiao
+    source: https://github.com/dmBots/dmBot/blob/master/2026-Damiao%20Technology-Product%20Selection%20Manual-2026-10-28.pdf
+    tau_peak_Nm: 97
+    mass_kg: 0.66
+    no_load_rpm: 115
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 48
+    OD_mm: 76
+    L_mm: 62.5
+    rotor_inertia:
+      value: 5.40E-05
+      unit: kg.m2
+      kind: rotor
+      source: Damiao 2026 product selection table (2026年-达妙科技-产品选型表-2026-10-28.pdf, github.com/dmBots/dmBot) p. 1, 转动惯量
+    notes: '48:1 planetary, crossed-roller output bearing. Damiao 2026 Product Selection Manual (2026-10-28) p. 26. Speed is the 48 V figure; 60 rpm at 24 V.'
+
+  - name: DM-J8520P-2EC
+    vendor: Damiao
+    source: https://github.com/dmBots/dmBot/blob/master/2026-Damiao%20Technology-Product%20Selection%20Manual-2026-10-28.pdf
+    tau_peak_Nm: 176
+    mass_kg: 1.392
+    no_load_rpm: 124
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 20
+    OD_mm: 90
+    L_mm: 70
+    rotor_inertia:
+      value: 1.49E-04
+      unit: kg.m2
+      kind: rotor
+      source: Damiao 2026 product selection table (2026年-达妙科技-产品选型表-2026-10-28.pdf, github.com/dmBots/dmBot) p. 1, 转动惯量
+    notes: '20:1 planetary, crossed-roller output bearing. Damiao 2026 Product Selection Manual (2026-10-28) p. 34. 48 V.'
+
+  - name: DM-J10422P-2EC
+    vendor: Damiao
+    source: https://github.com/dmBots/dmBot/blob/master/2026-Damiao%20Technology-Product%20Selection%20Manual-2026-10-28.pdf
+    tau_peak_Nm: 400
+    mass_kg: 2.7
+    no_load_rpm: 120
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 22
+    OD_mm: 110
+    L_mm: 89.9
+    rotor_inertia:
+      value: 5.64E-04
+      unit: kg.m2
+      kind: rotor
+      source: Damiao 2026 product selection table (2026年-达妙科技-产品选型表-2026-10-28.pdf, github.com/dmBots/dmBot) p. 1, 转动惯量
+    notes: '22:1 planetary, crossed-roller output bearing. Damiao 2026 Product Selection Manual (2026-10-28) p. 33. 48 V.'
+
+  - name: EC-A2806-P2-36
+    vendor: ENCOS
+    source: https://www.encos.cn/filedownload/3062532
+    tau_peak_Nm: 12
+    mass_kg: 0.162
+    no_load_rpm: 220
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 36
+    OD_mm: 44
+    L_mm: 44
+    rotor_inertia:
+      value: 42.6
+      unit: g.cm2
+      kind: rotor
+      source: ENCOS Gen-1 joint datasheet V3.19EAP (2026-11-16), motor rotor inertia (电机的转子惯量), printed 4.26 kg·mm²
+    notes: '36:1 two-stage planetary, 48 V. ENCOS Gen-1 joint datasheet V3.19EAP (2026-11-16) p. 3.'
+
+  - name: EC-A4310-P2-36
+    vendor: ENCOS
+    source: https://www.encos.cn/filedownload/3062532
+    tau_peak_Nm: 36
+    mass_kg: 0.382
+    no_load_rpm: 167
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 36
+    OD_mm: 56
+    L_mm: 60.5
+    rotor_inertia:
+      value: 190
+      unit: g.cm2
+      kind: rotor
+      source: ENCOS Gen-1 joint datasheet V3.19EAP (2026-11-16), motor rotor inertia (电机的转子惯量), printed 19 kg·mm²
+    notes: '36:1 two-stage planetary, 48 V. ENCOS Gen-1 joint datasheet V3.19EAP (2026-11-16) p. 9.'
+
+  - name: EC-A4315-P2-36
+    vendor: ENCOS
+    source: https://www.encos.cn/filedownload/3062532
+    tau_peak_Nm: 70
+    mass_kg: 0.485
+    no_load_rpm: 117
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 36
+    OD_mm: 56
+    L_mm: 69.5
+    rotor_inertia:
+      value: 250
+      unit: g.cm2
+      kind: rotor
+      source: ENCOS Gen-1 joint datasheet V3.19EAP (2026-11-16), motor rotor inertia (电机的转子惯量), printed 25 kg·mm²
+    notes: '36:1 two-stage planetary, 48 V. ENCOS Gen-1 joint datasheet V3.19EAP (2026-11-16) p. 14.'
+
+  - name: EC-A6408-P2-25
+    vendor: ENCOS
+    source: https://www.encos.cn/filedownload/3062532
+    tau_peak_Nm: 60
+    mass_kg: 0.625
+    no_load_rpm: 149
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 25
+    OD_mm: 88
+    L_mm: 59.5
+    rotor_inertia:
+      value: 620
+      unit: g.cm2
+      kind: rotor
+      source: ENCOS Gen-1 joint datasheet V3.19EAP (2026-11-16), motor rotor inertia (电机的转子惯量), printed 62 kg·mm²
+    notes: '25:1 two-stage planetary, 48 V. ENCOS Gen-1 joint datasheet V3.19EAP (2026-11-16) p. 19.'
+
+  - name: EC-A6416-P2-25
+    vendor: ENCOS
+    source: https://www.encos.cn/filedownload/3062532
+    tau_peak_Nm: 120
+    mass_kg: 0.805
+    no_load_rpm: 120
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 25
+    OD_mm: 88
+    L_mm: 67.5
+    rotor_inertia:
+      value: 1040
+      unit: g.cm2
+      kind: rotor
+      source: ENCOS Gen-1 joint datasheet V3.19EAP (2026-11-16), motor rotor inertia (电机的转子惯量), printed 104 kg·mm²
+    notes: '25:1 two-stage planetary, 48 V. ENCOS Gen-1 joint datasheet V3.19EAP (2026-11-16) p. 25.'
+
+  - name: EC-A8112-P1-18
+    vendor: ENCOS
+    source: https://www.encos.cn/filedownload/3062532
+    tau_peak_Nm: 90
+    mass_kg: 0.868
+    no_load_rpm: 157
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 18
+    OD_mm: 105
+    L_mm: 53
+    rotor_inertia:
+      value: 1490
+      unit: g.cm2
+      kind: rotor
+      source: ENCOS Gen-1 joint datasheet V3.19EAP (2026-11-16), motor rotor inertia (电机的转子惯量), printed 149 kg·mm²
+    notes: '18:1 single-stage planetary, 48 V. ENCOS Gen-1 joint datasheet V3.19EAP (2026-11-16) p. 31.'
+
+  - name: EC-A8116-P1-18
+    vendor: ENCOS
+    source: https://www.encos.cn/filedownload/3062532
+    tau_peak_Nm: 130
+    mass_kg: 0.961
+    no_load_rpm: 140
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 18
+    OD_mm: 105
+    L_mm: 57
+    rotor_inertia:
+      value: 1890
+      unit: g.cm2
+      kind: rotor
+      source: ENCOS Gen-1 joint datasheet V3.19EAP (2026-11-16), motor rotor inertia (电机的转子惯量), printed 189 kg·mm²
+    notes: '18:1 single-stage planetary, 48 V. ENCOS Gen-1 joint datasheet V3.19EAP (2026-11-16) p. 37.'
+
+  - name: EC-A10020-P1-12
+    vendor: ENCOS
+    source: https://www.encos.cn/filedownload/3062532
+    tau_peak_Nm: 150
+    mass_kg: 1.373
+    no_load_rpm: 140
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 12
+    OD_mm: 124
+    L_mm: 60
+    rotor_inertia:
+      value: 4850
+      unit: g.cm2
+      kind: rotor
+      source: ENCOS Gen-1 joint datasheet V3.19EAP (2026-11-16), motor rotor inertia (电机的转子惯量), printed 485 kg·mm²
+    notes: '12:1 single-stage planetary, 48 V. ENCOS Gen-1 joint datasheet V3.19EAP (2026-11-16) p. 43.'
+
+  - name: EC-A13715-P1-12.67
+    vendor: ENCOS
+    source: https://www.encos.cn/filedownload/3062532
+    tau_peak_Nm: 320
+    mass_kg: 2.695
+    no_load_rpm: 135
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 12.67
+    OD_mm: 170
+    L_mm: 73
+    rotor_inertia:
+      value: 12370
+      unit: g.cm2
+      kind: rotor
+      source: ENCOS Gen-1 joint datasheet V3.19EAP (2026-11-16), motor rotor inertia (电机的转子惯量), printed 1237 kg·mm²
+    notes: '12.67:1 single-stage planetary, 48 V. ENCOS Gen-1 joint datasheet V3.19EAP (2026-11-16) p. 48.'
+
+  - name: EC-A13720-P1-11.4
+    vendor: ENCOS
+    source: https://www.encos.cn/filedownload/3062532
+    tau_peak_Nm: 400
+    mass_kg: 3.16
+    no_load_rpm: 139
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 11.4
+    OD_mm: 170
+    L_mm: 84.5
+    rotor_inertia:
+      value: 15140
+      unit: g.cm2
+      kind: rotor
+      source: ENCOS Gen-1 joint datasheet V3.19EAP (2026-11-16), motor rotor inertia (电机的转子惯量), printed 1514 kg·mm²
+    notes: '11.4:1 single-stage planetary, 48 V. ENCOS Gen-1 joint datasheet V3.19EAP (2026-11-16) p. 54.'
+
+  - name: EC-A4310-P2-36H
+    vendor: ENCOS
+    source: https://www.encos.cn/filedownload/3062532
+    tau_peak_Nm: 36
+    mass_kg: 0.414
+    no_load_rpm: 167
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 36
+    OD_mm: 60
+    L_mm: 59.5
+    rotor_inertia:
+      value: 180
+      unit: g.cm2
+      kind: rotor
+      source: ENCOS Gen-1 joint datasheet V3.19EAP (2026-11-16), motor rotor inertia (电机的转子惯量), printed 18 kg·mm²
+    notes: '36:1 two-stage planetary, hollow shaft, 48 V. ENCOS Gen-1 joint datasheet V3.19EAP (2026-11-16) p. 60.'
+
+  - name: EC-A6408-P2-16H
+    vendor: ENCOS
+    source: https://www.encos.cn/filedownload/3062532
+    tau_peak_Nm: 45
+    mass_kg: 0.8
+    no_load_rpm: 130
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 16
+    OD_mm: 88
+    L_mm: 60
+    rotor_inertia:
+      value: 625.81
+      unit: g.cm2
+      kind: rotor
+      source: ENCOS Gen-1 joint datasheet V3.19EAP (2026-11-16), motor rotor inertia (电机的转子惯量), printed 62.581 kg·mm²
+    notes: '16:1 two-stage planetary, hollow shaft, 48 V. ENCOS Gen-1 joint datasheet V3.19EAP (2026-11-16) p. 65.'
+
+  - name: EC-A6408-P2-30.25H
+    vendor: ENCOS
+    source: https://www.encos.cn/filedownload/3062532
+    tau_peak_Nm: 70
+    mass_kg: 0.846
+    no_load_rpm: 128
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 30.25
+    OD_mm: 88
+    L_mm: 65
+    rotor_inertia:
+      value: 630
+      unit: g.cm2
+      kind: rotor
+      source: ENCOS Gen-1 joint datasheet V3.19EAP (2026-11-16), motor rotor inertia (电机的转子惯量), printed 63 kg·mm²
+    notes: '30.25:1 two-stage planetary, hollow shaft, 48 V. ENCOS Gen-1 joint datasheet V3.19EAP (2026-11-16) p. 71.'
+
+  - name: EC-A6408-P2-30.25HB
+    vendor: ENCOS
+    source: https://www.encos.cn/filedownload/3062532
+    tau_peak_Nm: 80
+    mass_kg: 0.95
+    no_load_rpm: 130
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 30.25
+    OD_mm: 88
+    L_mm: 73
+    rotor_inertia:
+      value: 740
+      unit: g.cm2
+      kind: rotor
+      source: ENCOS Gen-1 joint datasheet V3.19EAP (2026-11-16), motor rotor inertia (电机的转子惯量), printed 74 kg·mm²
+    notes: '30.25:1 two-stage planetary, hollow shaft, 48 V. ENCOS Gen-1 joint datasheet V3.19EAP (2026-11-16) p. 77.'
+
+  - name: EC-A6416-P2-30.25H
+    vendor: ENCOS
+    source: https://www.encos.cn/filedownload/3062532
+    tau_peak_Nm: 132
+    mass_kg: 1.013
+    no_load_rpm: 119
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 30.25
+    OD_mm: 88
+    L_mm: 73.9
+    rotor_inertia:
+      value: 1026.78
+      unit: g.cm2
+      kind: rotor
+      source: ENCOS Gen-1 joint datasheet V3.19EAP (2026-11-16), motor rotor inertia (电机的转子惯量), printed 102.678 kg·mm²
+    notes: '30.25:1 two-stage planetary, hollow shaft, 48 V. ENCOS Gen-1 joint datasheet V3.19EAP (2026-11-16) p. 83.'
+
+  - name: EC-A8112-P1-18H
+    vendor: ENCOS
+    source: https://www.encos.cn/filedownload/3062532
+    tau_peak_Nm: 90
+    mass_kg: 0.883
+    no_load_rpm: 157
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 18
+    OD_mm: 105
+    L_mm: 53
+    rotor_inertia:
+      value: 980
+      unit: g.cm2
+      kind: rotor
+      source: ENCOS Gen-1 joint datasheet V3.19EAP (2026-11-16), motor rotor inertia (电机的转子惯量), printed 98 kg·mm²
+    notes: '18:1 single-stage planetary, hollow shaft, 48 V. ENCOS Gen-1 joint datasheet V3.19EAP (2026-11-16) p. 89.'
+
+  - name: EC-A8116-P1-18H
+    vendor: ENCOS
+    source: https://www.encos.cn/filedownload/3062532
+    tau_peak_Nm: 130
+    mass_kg: 0.968
+    no_load_rpm: 140
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 18
+    OD_mm: 105
+    L_mm: 57
+    rotor_inertia:
+      value: 1970
+      unit: g.cm2
+      kind: rotor
+      source: ENCOS Gen-1 joint datasheet V3.19EAP (2026-11-16), motor rotor inertia (电机的转子惯量), printed 197 kg·mm²
+    notes: '18:1 single-stage planetary, hollow shaft, 48 V. ENCOS Gen-1 joint datasheet V3.19EAP (2026-11-16) p. 95.'
+
+  - name: EC-A10010-P2-16H
+    vendor: ENCOS
+    source: https://www.encos.cn/filedownload/3062532
+    tau_peak_Nm: 120
+    mass_kg: 2.012
+    no_load_rpm: 162
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 16
+    OD_mm: 124
+    L_mm: 71.5
+    rotor_inertia:
+      value: 3136.99
+      unit: g.cm2
+      kind: rotor
+      source: ENCOS Gen-1 joint datasheet V3.19EAP (2026-11-16), motor rotor inertia (电机的转子惯量), printed 313.699 kg·mm²
+    notes: '16:1 two-stage planetary, hollow shaft, 48 V. ENCOS Gen-1 joint datasheet V3.19EAP (2026-11-16) p. 101.'
+
+  - name: EC-A10010-P2-24H
+    vendor: ENCOS
+    source: https://www.encos.cn/filedownload/3062532
+    tau_peak_Nm: 150
+    mass_kg: 1.922
+    no_load_rpm: 159
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 24
+    OD_mm: 124
+    L_mm: 76.5
+    rotor_inertia:
+      value: 2919.25
+      unit: g.cm2
+      kind: rotor
+      source: ENCOS Gen-1 joint datasheet V3.19EAP (2026-11-16), motor rotor inertia (电机的转子惯量), printed 291.925 kg·mm²
+    notes: '24:1 two-stage planetary, hollow shaft, 48 V. ENCOS Gen-1 joint datasheet V3.19EAP (2026-11-16) p. 106. The printed speed is within 2% of the 16:1 sibling''s despite the higher reduction; recorded as printed.'
+
+  - name: EC-A10015-P2-16H
+    vendor: ENCOS
+    source: https://www.encos.cn/filedownload/3062532
+    tau_peak_Nm: 150
+    mass_kg: 2.162
+    no_load_rpm: 154
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 16
+    OD_mm: 124
+    L_mm: 76.5
+    rotor_inertia:
+      value: 4070.8
+      unit: g.cm2
+      kind: rotor
+      source: ENCOS Gen-1 joint datasheet V3.19EAP (2026-11-16), motor rotor inertia (电机的转子惯量), printed 407.08 kg·mm²
+    notes: '16:1 two-stage planetary, hollow shaft, 48 V. ENCOS Gen-1 joint datasheet V3.19EAP (2026-11-16) p. 111.'
+
+  - name: EC-A10015-P2-24H
+    vendor: ENCOS
+    source: https://www.encos.cn/filedownload/3062532
+    tau_peak_Nm: 220
+    mass_kg: 2.068
+    no_load_rpm: 157
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 24
+    OD_mm: 124
+    L_mm: 79.5
+    rotor_inertia:
+      value: 3845.32
+      unit: g.cm2
+      kind: rotor
+      source: ENCOS Gen-1 joint datasheet V3.19EAP (2026-11-16), motor rotor inertia (电机的转子惯量), printed 384.532 kg·mm²
+    notes: '24:1 two-stage planetary, hollow shaft, 48 V. ENCOS Gen-1 joint datasheet V3.19EAP (2026-11-16) p. 116. The printed speed exceeds the 16:1 sibling''s despite the higher reduction; recorded as printed.'
+
+  - name: EC-A10020-P2-16H
+    vendor: ENCOS
+    source: https://www.encos.cn/filedownload/3062532
+    tau_peak_Nm: 180
+    mass_kg: 2.358
+    no_load_rpm: 144
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 16
+    OD_mm: 124
+    L_mm: 81.5
+    rotor_inertia:
+      value: 4998.1
+      unit: g.cm2
+      kind: rotor
+      source: ENCOS Gen-1 joint datasheet V3.19EAP (2026-11-16), motor rotor inertia (电机的转子惯量), printed 499.81 kg·mm²
+    notes: '16:1 two-stage planetary, hollow shaft, 48 V. ENCOS Gen-1 joint datasheet V3.19EAP (2026-11-16) p. 121.'
+
+  - name: EC-A10020-P2-24H
+    vendor: ENCOS
+    source: https://www.encos.cn/filedownload/3062532
+    tau_peak_Nm: 330
+    mass_kg: 2.21
+    no_load_rpm: 123
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 24
+    OD_mm: 124
+    L_mm: 84.5
+    rotor_inertia:
+      value: 4770
+      unit: g.cm2
+      kind: rotor
+      source: ENCOS Gen-1 joint datasheet V3.19EAP (2026-11-16), motor rotor inertia (电机的转子惯量), printed 477 kg·mm²
+    notes: '24:1 two-stage planetary, hollow shaft, 48 V. ENCOS Gen-1 joint datasheet V3.19EAP (2026-11-16) p. 126.'
+
+  - name: EC-A10020-P2-24
+    vendor: ENCOS
+    source: https://www.encos.cn/filedownload/3062532
+    tau_peak_Nm: 330
+    mass_kg: 2.211
+    no_load_rpm: 123
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 24
+    OD_mm: 124
+    L_mm: 85
+    rotor_inertia:
+      value: 4770
+      unit: g.cm2
+      kind: rotor
+      source: ENCOS Gen-1 joint datasheet V3.19EAP (2026-11-16), motor rotor inertia (电机的转子惯量), printed 477 kg·mm²
+    notes: '24:1 two-stage planetary, 48 V. ENCOS Gen-1 joint datasheet V3.19EAP (2026-11-16) p. 131. Mass is printed as 2172-2211 g; the upper bound is recorded.'
+
+  - name: EC-A5016-P2-17H
+    vendor: ENCOS
+    source: https://www.encos.cn/filedownload/3063501
+    tau_peak_Nm: 36
+    mass_kg: 0.467
+    no_load_rpm: 332
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 17
+    OD_mm: 60
+    L_mm: 68
+    rotor_inertia:
+      value: 80
+      unit: g.cm2
+      kind: rotor
+      source: ENCOS Gen-2 joint datasheet V1.7EAP (2026-11-16), motor rotor inertia (电机的转子惯量), printed 8 kg·mm²
+    notes: '17:1 two-stage planetary, hollow shaft, 72 V. ENCOS Gen-2 joint datasheet V1.7EAP (2026-11-16) p. 2. Form A (A款): length 68 mm with the power connector, 59.8 mm without. Form B: 460 g, 67.5/57.5 mm.'
+
+  - name: EC-A5020-P2-17H
+    vendor: ENCOS
+    source: https://www.encos.cn/filedownload/3063501
+    tau_peak_Nm: 42
+    mass_kg: 0.505
+    no_load_rpm: 359
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 17
+    OD_mm: 60
+    L_mm: 72
+    rotor_inertia:
+      value: 110
+      unit: g.cm2
+      kind: rotor
+      source: ENCOS Gen-2 joint datasheet V1.7EAP (2026-11-16), motor rotor inertia (电机的转子惯量), printed 11 kg·mm²
+    notes: '17:1 two-stage planetary, hollow shaft, 72 V. ENCOS Gen-2 joint datasheet V1.7EAP (2026-11-16) p. 9. Form A (A款): length 72 mm with the power connector, 63.8 mm without. Form B: 501 g, 71.5/61.5 mm.'
+
+  - name: EC-A5025-P2-17H
+    vendor: ENCOS
+    source: https://www.encos.cn/filedownload/3063501
+    tau_peak_Nm: 50
+    mass_kg: 0.55
+    no_load_rpm: 340
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 17
+    OD_mm: 60
+    L_mm: 77
+    rotor_inertia:
+      value: 130
+      unit: g.cm2
+      kind: rotor
+      source: ENCOS Gen-2 joint datasheet V1.7EAP (2026-11-16), motor rotor inertia (电机的转子惯量), printed 13 kg·mm²
+    notes: '17:1 two-stage planetary, hollow shaft, 72 V. ENCOS Gen-2 joint datasheet V1.7EAP (2026-11-16) p. 16. Form A (A款): length 77 mm with the power connector, 68.8 mm without. Form B: 546 g, 76.5/66.5 mm.'
+
+  - name: EC-A7216-P2-22H
+    vendor: ENCOS
+    source: https://www.encos.cn/filedownload/3063501
+    tau_peak_Nm: 140
+    mass_kg: 1.09
+    no_load_rpm: 260
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 22
+    OD_mm: 88
+    L_mm: 72
+    rotor_inertia:
+      value: 500
+      unit: g.cm2
+      kind: rotor
+      source: ENCOS Gen-2 joint datasheet V1.7EAP (2026-11-16), motor rotor inertia (电机的转子惯量), printed 50 kg·mm²
+    notes: '22:1 two-stage planetary, hollow shaft, 72 V. ENCOS Gen-2 joint datasheet V1.7EAP (2026-11-16) p. 23. Form A (A款): length 72 mm with the power connector, 63.8 mm without. Form B: 1060 g, 70/60 mm.'
+
+  - name: EC-A7220-P2-22H
+    vendor: ENCOS
+    source: https://www.encos.cn/filedownload/3063501
+    tau_peak_Nm: 160
+    mass_kg: 1.173
+    no_load_rpm: 264
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 22
+    OD_mm: 88
+    L_mm: 76
+    rotor_inertia:
+      value: 620
+      unit: g.cm2
+      kind: rotor
+      source: ENCOS Gen-2 joint datasheet V1.7EAP (2026-11-16), motor rotor inertia (电机的转子惯量), printed 62 kg·mm²
+    notes: '22:1 two-stage planetary, hollow shaft, 72 V. ENCOS Gen-2 joint datasheet V1.7EAP (2026-11-16) p. 30. Form A (A款): length 76 mm with the power connector, 67.8 mm without. Form B: 1145 g, 74/64 mm.'
+
+  - name: EC-A7225-P2-22H
+    vendor: ENCOS
+    source: https://www.encos.cn/filedownload/3063501
+    tau_peak_Nm: 200
+    mass_kg: 1.275
+    no_load_rpm: 249
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 22
+    OD_mm: 88
+    L_mm: 81
+    rotor_inertia:
+      value: 760
+      unit: g.cm2
+      kind: rotor
+      source: ENCOS Gen-2 joint datasheet V1.7EAP (2026-11-16), motor rotor inertia (电机的转子惯量), printed 76 kg·mm²
+    notes: '22:1 two-stage planetary, hollow shaft, 72 V. ENCOS Gen-2 joint datasheet V1.7EAP (2026-11-16) p. 37. Form A (A款): length 81 mm with the power connector, 72.8 mm without. Form B: 1240 g, 79/69 mm.'
+
+  - name: EC-A9016-P2-23.625H
+    vendor: ENCOS
+    source: https://www.encos.cn/filedownload/3063501
+    tau_peak_Nm: 240
+    mass_kg: 1.572
+    no_load_rpm: 240
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 23.625
+    OD_mm: 106
+    L_mm: 77
+    rotor_inertia:
+      value: 1181
+      unit: g.cm2
+      kind: rotor
+      source: ENCOS Gen-2 joint datasheet V1.7EAP (2026-11-16), motor rotor inertia (电机的转子惯量), printed 118.1 kg·mm²
+    notes: '23.625:1 two-stage planetary, hollow shaft, 72 V. ENCOS Gen-2 joint datasheet V1.7EAP (2026-11-16) p. 44. Form A (A款): length 77 mm with the power connector, 66.8 mm without. Form B: 1530 g, 74/62 mm.'
+
+  - name: EC-A9020-P2-23.625H
+    vendor: ENCOS
+    source: https://www.encos.cn/filedownload/3063501
+    tau_peak_Nm: 280
+    mass_kg: 1.741
+    no_load_rpm: 245
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 23.625
+    OD_mm: 106
+    L_mm: 82
+    rotor_inertia:
+      value: 1509
+      unit: g.cm2
+      kind: rotor
+      source: ENCOS Gen-2 joint datasheet V1.7EAP (2026-11-16), motor rotor inertia (电机的转子惯量), printed 150.9 kg·mm²
+    notes: '23.625:1 two-stage planetary, hollow shaft, 72 V. ENCOS Gen-2 joint datasheet V1.7EAP (2026-11-16) p. 50. Form A (A款): length 82 mm with the power connector, 71.8 mm without. Form B: 1698 g, 79/67 mm.'
+
+  - name: EC-A9025-P2-23.625H
+    vendor: ENCOS
+    source: https://www.encos.cn/filedownload/3063501
+    tau_peak_Nm: 320
+    mass_kg: 1.89
+    no_load_rpm: 226
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 23.625
+    OD_mm: 106
+    L_mm: 87
+    rotor_inertia:
+      value: 1825
+      unit: g.cm2
+      kind: rotor
+      source: ENCOS Gen-2 joint datasheet V1.7EAP (2026-11-16), motor rotor inertia (电机的转子惯量), printed 182.5 kg·mm²
+    notes: '23.625:1 two-stage planetary, hollow shaft, 72 V. ENCOS Gen-2 joint datasheet V1.7EAP (2026-11-16) p. 56. Form A (A款): length 87 mm with the power connector, 76.8 mm without. Form B: 1843 g, 84/72 mm.'
+
+  - name: EC-A10820-P2-24H
+    vendor: ENCOS
+    source: https://www.encos.cn/filedownload/3063501
+    tau_peak_Nm: 400
+    mass_kg: 2.698
+    no_load_rpm: 235
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 24
+    OD_mm: 124
+    L_mm: 88.5
+    rotor_inertia:
+      value: 3264
+      unit: g.cm2
+      kind: rotor
+      source: ENCOS Gen-2 joint datasheet V1.7EAP (2026-11-16), motor rotor inertia (电机的转子惯量), printed 326.4 kg·mm²
+    notes: '24:1 two-stage planetary, hollow shaft, 72 V. ENCOS Gen-2 joint datasheet V1.7EAP (2026-11-16) p. 62. Form A (A款): length 88.5 mm with the power connector, 78.3 mm without. Form B: 2610 g, 84/72 mm.'
+
+  - name: EC-A10825-P2-24H
+    vendor: ENCOS
+    source: https://www.encos.cn/filedownload/3063501
+    tau_peak_Nm: 450
+    mass_kg: 2.917
+    no_load_rpm: 230
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 24
+    OD_mm: 124
+    L_mm: 93.5
+    rotor_inertia:
+      value: 4019
+      unit: g.cm2
+      kind: rotor
+      source: ENCOS Gen-2 joint datasheet V1.7EAP (2026-11-16), motor rotor inertia (电机的转子惯量), printed 401.9 kg·mm²
+    notes: '24:1 two-stage planetary, hollow shaft, 72 V. ENCOS Gen-2 joint datasheet V1.7EAP (2026-11-16) p. 68. Form A (A款): length 93.5 mm with the power connector, 83.3 mm without. Form B: 2846 g, 89/77 mm.'

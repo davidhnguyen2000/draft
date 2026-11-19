@@ -576,3 +576,212 @@ actuators:
       source: MyActuator 2025 catalog p14 (X8-50)
     notes: X8-50; rated 125 W at 9:1. Catalog p14. Envelope from that page's installation drawing.
     checked: '2026-08-27'
+
+  # ── Catalogued after the paper, not fitted ──────────────────────────────────
+  # Every row below is listed in ../active_flags.json, so no trend, frontier or
+  # holdout sees it. None has been checked against its `source` by a person
+  # yet, so none carries `checked`.
+
+  - name: DM-J3507-2EC
+    vendor: Damiao
+    source: https://github.com/dmBots/dmBot/blob/master/2026-Damiao%20Technology-Product%20Selection%20Manual-2026-10-28.pdf
+    tau_peak_Nm: 3
+    mass_kg: 0.15
+    no_load_rpm: 900
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 7
+    OD_mm: 46
+    L_mm: 37.9
+    rotor_inertia:
+      value: 8.70E-06
+      unit: kg.m2
+      kind: rotor
+      source: Damiao 2026 product selection table (2026年-达妙科技-产品选型表-2026-10-28.pdf, github.com/dmBots/dmBot) p. 1, 转动惯量
+    notes: '7:1 planetary. Damiao 2026 Product Selection Manual (2026-10-28) pp. 9-10. Speed is the 48 V figure; 460 rpm at 24 V.'
+
+  - name: DM-J4310-2EC V1.1
+    vendor: Damiao
+    source: https://github.com/dmBots/dmBot/blob/master/2026-Damiao%20Technology-Product%20Selection%20Manual-2026-10-28.pdf
+    tau_peak_Nm: 7
+    mass_kg: 0.306
+    no_load_rpm: 400
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 10
+    OD_mm: 57
+    L_mm: 46
+    rotor_inertia:
+      value: 1.80E-05
+      unit: kg.m2
+      kind: rotor
+      source: Damiao 2026 product selection table (2026年-达妙科技-产品选型表-2026-10-28.pdf, github.com/dmBots/dmBot) p. 1, 转动惯量
+    notes: '10:1 planetary. Damiao 2026 Product Selection Manual (2026-10-28) pp. 11-12. Speed is the 48 V figure; 200 rpm at 24 V.'
+
+  - name: DM-J4310-2EC V1.2
+    vendor: Damiao
+    source: https://github.com/dmBots/dmBot/blob/master/2026-Damiao%20Technology-Product%20Selection%20Manual-2026-10-28.pdf
+    tau_peak_Nm: 12.5
+    mass_kg: 0.306
+    no_load_rpm: 450
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 10
+    OD_mm: 57
+    L_mm: 46
+    rotor_inertia:
+      value: 2.00E-05
+      unit: kg.m2
+      kind: rotor
+      source: Damiao 2026 product selection table (2026年-达妙科技-产品选型表-2026-10-28.pdf, github.com/dmBots/dmBot) p. 1, 转动惯量
+    notes: '10:1 planetary. Damiao 2026 Product Selection Manual (2026-10-28) pp. 13-14. Speed is the 48 V figure; 200 rpm at 24 V.'
+
+  - name: DM-J4310P-2EC
+    vendor: Damiao
+    source: https://github.com/dmBots/dmBot/blob/master/2026-Damiao%20Technology-Product%20Selection%20Manual-2026-10-28.pdf
+    tau_peak_Nm: 12.5
+    mass_kg: 0.33
+    no_load_rpm: 450
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 10
+    OD_mm: 57
+    L_mm: 49.05
+    rotor_inertia:
+      value: 1.90E-05
+      unit: kg.m2
+      kind: rotor
+      source: Damiao 2026 product selection table (2026年-达妙科技-产品选型表-2026-10-28.pdf, github.com/dmBots/dmBot) p. 1, 转动惯量
+    notes: '10:1 planetary, crossed-roller output bearing. Damiao 2026 Product Selection Manual (2026-10-28) pp. 15-16. Speed is the 48 V figure; 200 rpm at 24 V.'
+
+  - name: DM-J4310M-2EC
+    vendor: Damiao
+    source: https://github.com/dmBots/dmBot/blob/master/2026-Damiao%20Technology-Product%20Selection%20Manual-2026-10-28.pdf
+    tau_peak_Nm: 18
+    mass_kg: 0.37
+    no_load_rpm: 232
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 10
+    OD_mm: 57
+    L_mm: 53.3
+    rotor_inertia:
+      value: 2.16E-05
+      unit: kg.m2
+      kind: rotor
+      source: Damiao 2026 product selection table (2026年-达妙科技-产品选型表-2026-10-28.pdf, github.com/dmBots/dmBot) p. 1, 转动惯量
+    notes: '10:1 planetary. Damiao 2026 Product Selection Manual (2026-10-28) p. 37. 24 V; no 48 V figure is printed.'
+
+  - name: DM-J6006-2EC
+    vendor: Damiao
+    source: https://github.com/dmBots/dmBot/blob/master/2026-Damiao%20Technology-Product%20Selection%20Manual-2026-10-28.pdf
+    tau_peak_Nm: 11
+    mass_kg: 0.335
+    no_load_rpm: 408
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 6
+    OD_mm: 76
+    L_mm: 36.5
+    rotor_inertia:
+      value: 5.80E-05
+      unit: kg.m2
+      kind: rotor
+      source: Damiao 2026 product selection table (2026年-达妙科技-产品选型表-2026-10-28.pdf, github.com/dmBots/dmBot) p. 1, 转动惯量
+    notes: '6:1 planetary. Damiao 2026 Product Selection Manual (2026-10-28) p. 25; the speed is from the p. 4 selection table, since p. 25 leaves it blank. Speed is the 48 V figure; 226 rpm at 24 V.'
+
+  - name: DM-J8006-2EC V1.1
+    vendor: Damiao
+    source: https://github.com/dmBots/dmBot/blob/master/2026-Damiao%20Technology-Product%20Selection%20Manual-2026-10-28.pdf
+    tau_peak_Nm: 20
+    mass_kg: 0.559
+    no_load_rpm: 392.8
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 6
+    OD_mm: 96
+    L_mm: 40
+    rotor_inertia:
+      value: 1.15E-04
+      unit: kg.m2
+      kind: rotor
+      source: Damiao 2026 product selection table (2026年-达妙科技-产品选型表-2026-10-28.pdf, github.com/dmBots/dmBot) p. 1, 转动惯量
+    notes: '6:1 planetary. Damiao 2026 Product Selection Manual (2026-10-28) p. 27. Speed is the 48 V figure; 194.2 rpm at 24 V.'
+
+  - name: DM-J8009-2EC
+    vendor: Damiao
+    source: https://github.com/dmBots/dmBot/blob/master/2026-Damiao%20Technology-Product%20Selection%20Manual-2026-10-28.pdf
+    tau_peak_Nm: 40
+    mass_kg: 0.896
+    no_load_rpm: 335
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 9
+    OD_mm: 98
+    L_mm: 61.7
+    rotor_inertia:
+      value: 1.95E-04
+      unit: kg.m2
+      kind: rotor
+      source: Damiao 2026 product selection table (2026年-达妙科技-产品选型表-2026-10-28.pdf, github.com/dmBots/dmBot) p. 1, 转动惯量
+    notes: '9:1 planetary. Damiao 2026 Product Selection Manual (2026-10-28) p. 28. Speed is the 48 V figure; 168 rpm at 24 V.'
+
+  - name: DM-J8009P-2EC
+    vendor: Damiao
+    source: https://github.com/dmBots/dmBot/blob/master/2026-Damiao%20Technology-Product%20Selection%20Manual-2026-10-28.pdf
+    tau_peak_Nm: 40
+    mass_kg: 0.963
+    no_load_rpm: 335
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 9
+    OD_mm: 98
+    L_mm: 61.7
+    rotor_inertia:
+      value: 1.95E-04
+      unit: kg.m2
+      kind: rotor
+      source: Damiao 2026 product selection table (2026年-达妙科技-产品选型表-2026-10-28.pdf, github.com/dmBots/dmBot) p. 1, 转动惯量
+    notes: '9:1 planetary, crossed-roller output bearing. Damiao 2026 Product Selection Manual (2026-10-28) p. 29. Speed is the 48 V figure; 168 rpm at 24 V.'
+
+  - name: DM-J8009P-2EC V1.1
+    vendor: Damiao
+    source: https://github.com/dmBots/dmBot/blob/master/2026-Damiao%20Technology-Product%20Selection%20Manual-2026-10-28.pdf
+    tau_peak_Nm: 40
+    mass_kg: 0.95
+    no_load_rpm: 335
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 9
+    OD_mm: 98
+    L_mm: 61.7
+    rotor_inertia:
+      value: 1.95E-04
+      unit: kg.m2
+      kind: rotor
+      source: Damiao 2026 product selection table (2026年-达妙科技-产品选型表-2026-10-28.pdf, github.com/dmBots/dmBot) p. 1, 转动惯量
+    notes: '9:1 planetary, crossed-roller output bearing. Damiao 2026 Product Selection Manual (2026-10-28) p. 30. Speed is the 48 V figure; 168 rpm at 24 V. The p. 4 table prints 335 rpm as the 24 V figure; p. 30 and every sibling give it at 48 V.'
+
+  - name: DM-J10010-2EC
+    vendor: Damiao
+    source: https://github.com/dmBots/dmBot/blob/master/2026-Damiao%20Technology-Product%20Selection%20Manual-2026-10-28.pdf
+    tau_peak_Nm: 150
+    mass_kg: 1.485
+    no_load_rpm: 150
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 10
+    OD_mm: 112
+    L_mm: 62
+    rotor_inertia:
+      value: 5.50E-04
+      unit: kg.m2
+      kind: rotor
+      source: Damiao 2026 product selection table (2026年-达妙科技-产品选型表-2026-10-28.pdf, github.com/dmBots/dmBot) p. 1, 转动惯量
+    notes: '10:1 planetary. Damiao 2026 Product Selection Manual (2026-10-28) p. 31. Speed is the 48 V figure; 75 rpm at 24 V. Body phi112; the maximum outer dimension is 120 mm.'
+
+  - name: DM-J10010L-2EC
+    vendor: Damiao
+    source: https://github.com/dmBots/dmBot/blob/master/2026-Damiao%20Technology-Product%20Selection%20Manual-2026-10-28.pdf
+    tau_peak_Nm: 120
+    mass_kg: 1.375
+    no_load_rpm: 200
+    P_peak_W: null        # vendor-published MECHANICAL peak; null -> tau*w/4
+    gear: 10
+    OD_mm: 120
+    L_mm: 53
+    rotor_inertia:
+      value: 5.56E-04
+      unit: kg.m2
+      kind: rotor
+      source: Damiao 2026 product selection table (2026年-达妙科技-产品选型表-2026-10-28.pdf, github.com/dmBots/dmBot) p. 1, 转动惯量
+    notes: '10:1 planetary. Damiao 2026 Product Selection Manual (2026-10-28) p. 32. Speed is the 48 V figure; 100 rpm at 24 V. Height excludes the locating pins.'
